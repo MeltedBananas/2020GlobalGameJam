@@ -15,7 +15,7 @@ public class LevelBrainNode
     public string Label;
     public int StartingIndex = 0;
     public int NumberOfNode;
-    public List<string> PossibleNames;
+    public List<Word> PossibleNames;
 }
 
 [System.Serializable]
