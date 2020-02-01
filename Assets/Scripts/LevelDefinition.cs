@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
 public class LevelQuestion
 {
     public Texture2D QuestionIcon;
-    List<TextDiagnostic> Answers;
+    public List<TextDiagnostic> Answers;
 }
 
+[System.Serializable]
 public class LevelBrainNode
 {
     public string Label;
@@ -16,19 +18,34 @@ public class LevelBrainNode
     public List<string> PossibleNames;
 }
 
+[System.Serializable]
 public class LevelProblem
 {
-    public bool bWordSwap = false;
+    public bool WordSwap = false;
     public string WordSwapLabel;
     public List<string> WordSwapPossibilities;
 }
 
-public class LevelDefinition
+public class LevelDefinition  : ScriptableObject
 {
-    public GameObject Client;
+    public Client Client;
     public string SetupDescription = "This is your assignment - please fix the issue";
     public Texture2D InventoryTexture;
     public List<LevelQuestion> Questions;
-    public List<LevelBrainNode> Nodes;
+    public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;
+
+#if UNITY_EDITOR
+    [UnityEditor.MenuItem("Assets/Create/JAM2020/LevelDefinition", false, int.MinValue)]
+    public static void CreateAsset()
+    {
+        var asset = ScriptableObject.CreateInstance<LevelDefinition>();
+        UnityEditor.AssetDatabase.CreateAsset(asset, "Assets/Levels/LevelDefinition.asset");
+        UnityEditor.AssetDatabase.SaveAssets();
+
+        UnityEditor.EditorUtility.FocusProjectWindow();
+
+        UnityEditor.Selection.activeObject = asset;
+    }
+#endif
 }

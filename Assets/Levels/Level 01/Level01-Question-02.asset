@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level01-Question-02
+  m_EditorClassIdentifier: 
+  Phrase: It's a nice shirt. I was told that [color-1] really brought out my eyes.
+  sperator:
+  - ' '
+  - ','
+  - '!'
+  - '?'
+  - .
+  wordList:
+  - Text: It's
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: nice
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: shirt
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: told
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: that
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: blue
+    Label: color-1
+    Prefix: <color="blue">
+    Suffix: </blue>
+  - Text: really
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: brought
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: out
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: eyes
+    Label: 
+    Prefix: 
+    Suffix: 
