@@ -1,7 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEditor;
 using UnityEngine;
 
+[ExecuteInEditMode]
 public class Billboard : MonoBehaviour
 {
     private Camera mainCamera;
@@ -14,5 +16,13 @@ public class Billboard : MonoBehaviour
     void LateUpdate()
     {
         transform.rotation = Camera.main.transform.rotation;
+    }
+
+    private void Update()
+    {
+        if (Application.isEditor)
+        {
+            transform.rotation = SceneView.lastActiveSceneView.rotation;
+        }
     }
 }

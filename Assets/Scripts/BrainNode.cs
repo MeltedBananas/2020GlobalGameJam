@@ -14,6 +14,9 @@ public class BrainNode : MonoBehaviour
     private Camera mainCamera;
     private SpriteRenderer mySpriteRenderer;
 
+    public object data = null;
+    bool bMouseOver = false;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -21,13 +24,31 @@ public class BrainNode : MonoBehaviour
         mySpriteRenderer.color = NormalColor;
     }
 
+    void OnMouseDown()
+    {
+        Debug.Log(data.ToString());
+    }
+
     void OnMouseEnter()
     {
-        mySpriteRenderer.color = MouseOverColor;
+        bMouseOver = true;
+        if (!Input.GetMouseButton(1))
+        {
+            mySpriteRenderer.color = MouseOverColor;
+        }
+    }
+
+    public void RightClickReleased()
+    {
+        if(bMouseOver)
+        {
+            OnMouseEnter();
+        }
     }
 
     void OnMouseExit()
     {
+        bMouseOver = false;
         mySpriteRenderer.color = NormalColor;
     }
 }
