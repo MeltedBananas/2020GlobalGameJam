@@ -27,7 +27,7 @@ public class TextDiagnostic : ScriptableObject
     public void BuildWordList()
     {
         
-        _stringSplit = Phrase.Split(spearator,  
+        _stringSplit = Phrase.Split(sperator,  
            StringSplitOptions.RemoveEmptyEntries); 
 
         wordList.Clear();
