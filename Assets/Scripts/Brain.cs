@@ -52,6 +52,7 @@ public class Brain : MonoBehaviour
     public Texture2D SwapCursorEnd;
     public Texture2D SwapButtonUI;
     public Vector2 SwapPosition;
+    private BrainNode SwappingBrainNode;
 
     BrainToolType Tool;
 
@@ -120,6 +121,24 @@ public class Brain : MonoBehaviour
             case BrainToolType.Cancel:
                 node.SetEnabled(!node.BrainNodeEnabled);
                 break;
+            case BrainToolType.SwapStart:
+                SwappingBrainNode = node;
+                SwappingBrainNode.SetReadyToSwap(true);
+                Tool = BrainToolType.SwapEnd;
+                Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.SwapEnd:
+                object swapData = node.data;
+                node.data = SwappingBrainNode.data;
+                SwappingBrainNode.data = swapData;
+                Tool = BrainToolType.SwapEnd;
+                Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
+                if (SwappingBrainNode != null)
+                {
+                    SwappingBrainNode.SetReadyToSwap(false);
+                    SwappingBrainNode = null;
+                }
+                break;
         }
     }
 
@@ -135,6 +154,11 @@ public class Brain : MonoBehaviour
                 Tool = BrainToolType.Inspect;
                 Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
                 InspectBrainNode = null;
+                if (SwappingBrainNode != null)
+                {
+                    SwappingBrainNode.SetReadyToSwap(false);
+                    SwappingBrainNode = null;
+                }
             }
         }
         else
@@ -150,6 +174,11 @@ public class Brain : MonoBehaviour
                 Tool = BrainToolType.Cancel;
                 Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
                 InspectBrainNode = null;
+                if (SwappingBrainNode != null)
+                {
+                    SwappingBrainNode.SetReadyToSwap(false);
+                    SwappingBrainNode = null;
+                }
             }
         }
         else
@@ -165,6 +194,11 @@ public class Brain : MonoBehaviour
                 Tool = BrainToolType.SwapStart;
                 Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
                 InspectBrainNode = null;
+                if (SwappingBrainNode != null)
+                {
+                    SwappingBrainNode.SetReadyToSwap(false);
+                    SwappingBrainNode = null;
+                }
             }
         }
         else

@@ -214,6 +214,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 14209299336492486, guid: dfc07af2ed0a0c74db96c656bd005b78,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: ad72e9983315f344a865ef4a9ff8f935, type: 2}
+    - target: {fileID: 2424800028000255172, guid: dfc07af2ed0a0c74db96c656bd005b78,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 916e98fce28400242a699b5e21693252, type: 2}
     - target: {fileID: 6849221629484373112, guid: dfc07af2ed0a0c74db96c656bd005b78,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -274,5 +284,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Brain
       objectReference: {fileID: 0}
+    - target: {fileID: 8391242282989515832, guid: dfc07af2ed0a0c74db96c656bd005b78,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 989b43cf566376540a99f663229b633b, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dfc07af2ed0a0c74db96c656bd005b78, type: 3}

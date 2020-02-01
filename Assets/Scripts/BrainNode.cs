@@ -19,6 +19,7 @@ public class BrainNode : MonoBehaviour
 
     public Texture2D BaseIcon;
     public Texture2D CancelIcon;
+    public Texture2D SwapIcon;
 
     public Brain BrainOwner;
     public bool BrainNodeEnabled = true;
@@ -68,6 +69,18 @@ public class BrainNode : MonoBehaviour
         else
         {
             mySpriteRenderer.sprite = Sprite.Create(CancelIcon, new Rect(0.0f, 0.0f, CancelIcon.width, CancelIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
+        }
+    }
+
+    public void SetReadyToSwap(bool bReadyToSwap)
+    {
+        if (bReadyToSwap)
+        {
+            mySpriteRenderer.sprite = Sprite.Create(SwapIcon, new Rect(0.0f, 0.0f, SwapIcon.width, SwapIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
+        }
+        else
+        {
+            SetEnabled(BrainNodeEnabled);
         }
     }
 }
