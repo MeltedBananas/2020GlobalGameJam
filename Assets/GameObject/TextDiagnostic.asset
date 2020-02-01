@@ -20,15 +20,15 @@ MonoBehaviour:
   - '?'
   - .
   wordList:
-  - Text: Bonjour
-    Label: 
-    Prefix: <color=red>
-    Suffix: </color>
-  - Text: vous
+  - Text: Allo
     Label: 
     Prefix: 
     Suffix: 
-  - Text: autres
+  - Text: mon
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: coco
     Label: 
     Prefix: 
     Suffix: 
