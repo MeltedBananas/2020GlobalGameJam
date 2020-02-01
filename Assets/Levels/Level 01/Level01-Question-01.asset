@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level01-Question-01
+  m_EditorClassIdentifier: 
+  Phrase: What about my [color-1] shirt? I swear, i did not steal it.
+  sperator:
+  - ' '
+  - ','
+  - '!'
+  - '?'
+  - .
+  wordList:
+  - Text: What
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: about
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: blue
+    Label: color-1
+    Prefix: <color=blue>
+    Suffix: </color>
+  - Text: shirt
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: swear
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: i
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: did
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: not
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: steal
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
