@@ -65,10 +65,13 @@
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Brain.cs" />
     <Compile Include="Assets\Scripts\BrainNode.cs" />
+    <Compile Include="Assets\Scripts\LevelDefinition.cs" />
     <Compile Include="Assets\Scripts\OrbitCamera.cs" />
     <Compile Include="Assets\Scripts\TextDiagnostic.cs" />
     <Compile Include="Assets\Scripts\Views\BootLoader.cs" />
+    <Compile Include="Assets\Scripts\Views\Downscale.cs" />
     <Compile Include="Assets\Scripts\Views\SetCameraViewport.cs" />
+    <Compile Include="Assets\Scripts\Views\Upscale.cs" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
