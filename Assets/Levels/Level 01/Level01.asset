@@ -29,10 +29,22 @@ MonoBehaviour:
     StartingIndex: 1
     NumberOfNode: 1
     PossibleNames:
-    - red
-    - green
-    - orange
-    - black
+    - Text: red
+      Label: 
+      Prefix: <color="red">
+      Suffix: </color>
+    - Text: green
+      Label: 
+      Prefix: <color="green">
+      Suffix: </color>
+    - Text: yellow
+      Label: 
+      Prefix: <color="yellow">
+      Suffix: </color>
+    - Text: black
+      Label: 
+      Prefix: <color="black">
+      Suffix: </color>
   Problems:
   - WordSwap: 1
     WordSwapLabel: color-1

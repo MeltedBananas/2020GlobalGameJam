@@ -7,7 +7,7 @@ public class WordDisplayText
 
     Word word;
     string result;
-    private int letterIndex = 1;
+    private int letterIndex = 0;
     // Start is called before the first frame update
     public WordDisplayText(Word w)
     {
@@ -23,14 +23,11 @@ public class WordDisplayText
         result = "";
         if (letterIndex < word.Text.Length)
         {
-            
-            result  = word.Prefix + word.Text.Substring(0,letterIndex ) + word.Suffix;
-            ++letterIndex;
-           
+            result  = word.Prefix + word.Text.Substring(0,++letterIndex ) + word.Suffix;
         }
         else
         {
-            result  = word.Prefix + word.Text.Substring(0,word.Text.Length ) + word.Suffix;
+            result  = word.Prefix + word.Text.Substring(0, word.Text.Length ) + word.Suffix;
         }
 
         return result;
