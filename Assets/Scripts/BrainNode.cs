@@ -17,6 +17,13 @@ public class BrainNode : MonoBehaviour
     public object data = null;
     bool bMouseOver = false;
 
+    public Texture2D BaseIcon;
+    public Texture2D CancelIcon;
+    public Texture2D SwapIcon;
+
+    public Brain BrainOwner;
+    public bool BrainNodeEnabled = true;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -26,7 +33,7 @@ public class BrainNode : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log(data.ToString());
+        BrainOwner.OnNodeClick(this);
     }
 
     void OnMouseEnter()
@@ -50,5 +57,30 @@ public class BrainNode : MonoBehaviour
     {
         bMouseOver = false;
         mySpriteRenderer.color = NormalColor;
+    }
+
+    public void SetEnabled(bool bEnabled)
+    {
+        BrainNodeEnabled = bEnabled;
+        if (BrainNodeEnabled)
+        {
+            mySpriteRenderer.sprite = Sprite.Create(BaseIcon, new Rect(0.0f, 0.0f, BaseIcon.width, BaseIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
+        }
+        else
+        {
+            mySpriteRenderer.sprite = Sprite.Create(CancelIcon, new Rect(0.0f, 0.0f, CancelIcon.width, CancelIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
+        }
+    }
+
+    public void SetReadyToSwap(bool bReadyToSwap)
+    {
+        if (bReadyToSwap)
+        {
+            mySpriteRenderer.sprite = Sprite.Create(SwapIcon, new Rect(0.0f, 0.0f, SwapIcon.width, SwapIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
+        }
+        else
+        {
+            SetEnabled(BrainNodeEnabled);
+        }
     }
 }

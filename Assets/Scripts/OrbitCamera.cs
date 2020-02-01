@@ -7,6 +7,7 @@ public class OrbitCamera : MonoBehaviour
     public float Distance = 5.0f;
     public float YawSpeed = 1.0f;
     public float PitchSpeed = -1.0f;
+    public Vector3 Offset = Vector3.zero;
     public GameObject Subject;
 
     public float Yaw = 0.0f;
@@ -25,6 +26,7 @@ public class OrbitCamera : MonoBehaviour
         {
             LastMousePositon = Input.mousePosition;
             Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         if(Input.GetMouseButton(1))
@@ -40,6 +42,7 @@ public class OrbitCamera : MonoBehaviour
         else
         {
             Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
         }
     }
 
@@ -49,5 +52,6 @@ public class OrbitCamera : MonoBehaviour
         Quaternion pitchQuat = Quaternion.AngleAxis(Pitch, Vector3.Cross(horizontal, Vector3.up));
         gameObject.transform.position = Subject.transform.position + pitchQuat * horizontal;
         gameObject.transform.LookAt(Subject.transform.position);
+        gameObject.transform.position += gameObject.transform.rotation * Offset;
     }
 }

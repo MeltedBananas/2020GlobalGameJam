@@ -63,6 +63,11 @@ MonoBehaviour:
   MouseOverColor: {r: 0.19215687, g: 0.78431374, b: 0.78431374, a: 1}
   Label: 
   Size: {x: 32, y: 32}
+  BaseIcon: {fileID: 2800000, guid: edc4d40897d1e9e419c69aff12314a91, type: 3}
+  CancelIcon: {fileID: 2800000, guid: 5f7c9d6952c6b0747a3fef07498f64b2, type: 3}
+  SwapIcon: {fileID: 2800000, guid: 94cb80647e66cec4cbf5e19561fe98ad, type: 3}
+  BrainOwner: {fileID: 0}
+  BrainNodeEnabled: 1
 --- !u!212 &5098022224424613642
 SpriteRenderer:
   m_ObjectHideFlags: 0
