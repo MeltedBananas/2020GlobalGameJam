@@ -9,22 +9,26 @@ public class Word
     public string Prefix;
     public string Suffix;
 
-    private int letterIndex = 0;
+   
     public Word( string txt)
     {
+        
         Text = txt;
-    }
-    public bool IsFullyDisplayed()
-    {
-        return letterIndex >= Text.Length;
-    }
-    public string Animate()
-    {
-
-        string result = Prefix + Text.Substring(0,(++letterIndex < Text.Length)?letterIndex :Text.Length) + Suffix;
-        Debug.Log("Animate word :"+ result);
-        return result;
+        ExtractLabel();
 
     }
+    public void ExtractLabel()
+    {
+        if (Text.Contains("[") || Text.Contains("]"))
+        {
+           Label = Text.Substring(Text.IndexOf('[')+1,Text.IndexOf(']')-1);
+           Text = "undefined";
+        }
+
+    }
+
+
+   
+   
 
 }

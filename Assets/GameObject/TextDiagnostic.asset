@@ -12,23 +12,23 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: TextDiagnostic
   m_EditorClassIdentifier: 
-  Phrase: Bonjour, vous autres ?
-  spearator:
+  Phrase: Bonjour  [unity1]  autres ?
+  sperator:
   - ' '
-  - ','
-  - '!'
-  - '?'
-  - .
   wordList:
-  - Text: Allo
+  - Text: Bonjour
     Label: 
     Prefix: 
     Suffix: 
-  - Text: mon
+  - Text: undefined
+    Label: unity1]
+    Prefix: 
+    Suffix: 
+  - Text: autres
     Label: 
     Prefix: 
     Suffix: 
-  - Text: coco
+  - Text: '?'
     Label: 
     Prefix: 
     Suffix: 

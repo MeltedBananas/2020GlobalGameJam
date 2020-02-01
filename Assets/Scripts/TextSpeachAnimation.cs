@@ -8,7 +8,7 @@ public class TextSpeachAnimation : MonoBehaviour
     public float delayBetweenLetters = 0.5f;
     public float letterTimer = 0.0f;
     public TextDiagnostic TextDiagnostic;
-
+    List<WordDisplayText> wordDisplayList = new List<WordDisplayText>();
     public TMP_Text textBox;
 
     string result = "";
@@ -18,8 +18,16 @@ public class TextSpeachAnimation : MonoBehaviour
     void Start()
     {
         letterTimer = 0.5f;
+        SetupLine(TextDiagnostic);
     }
-
+    void SetupLine(TextDiagnostic td)
+    {
+       wordDisplayList.Clear();
+       foreach(Word w in TextDiagnostic.wordList)
+       {
+           wordDisplayList.Add(new WordDisplayText(w));
+       }  
+    }
     // Update is called once per frame
     void Update()
     {
@@ -32,19 +40,25 @@ public class TextSpeachAnimation : MonoBehaviour
         if (letterTimer <= 0.0f )
         {
             result = "";
-            for (int i = 0; i<=_currentWordIndex && i<TextDiagnostic.wordList.Count;++i )
+            for (int i = 0; i < _currentWordIndex && i < wordDisplayList.Count;++i )
             {
-                result += TextDiagnostic.wordList[i].Animate();
-                result += " ";
+                result += wordDisplayList[i].Animate();
+                if (wordDisplayList[i].IsFullyDisplayed())
+                {
+                    result += " ";
+                }
+                
             }
 
-            if (_currentWordIndex < TextDiagnostic.wordList.Count && TextDiagnostic.wordList[_currentWordIndex].IsFullyDisplayed() )
+            if (_currentWordIndex < wordDisplayList.Count && wordDisplayList[_currentWordIndex].IsFullyDisplayed() )
             {
-                ++_currentWordIndex; 
+                ++_currentWordIndex;
+                 
             }
 
             letterTimer = delayBetweenLetters;
         }
+        Debug.Log(result);
         textBox.SetText(result);
     }
 
