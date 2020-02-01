@@ -48,11 +48,14 @@
      <Compile Include="Assets\Scripts\Billboard.cs" />
      <Compile Include="Assets\Scripts\Brain.cs" />
      <Compile Include="Assets\Scripts\BrainNode.cs" />
+     <Compile Include="Assets\Scripts\LevelDefinition.cs" />
      <Compile Include="Assets\Scripts\OrbitCamera.cs" />
      <Compile Include="Assets\Scripts\TextDiagnostic.cs" />
      <Compile Include="Assets\Scripts\TextDiagnosticEditor.cs" />
      <Compile Include="Assets\Scripts\TextSpeachAnimation.cs" />
+     <Compile Include="Assets\Scripts\Views\Animate.cs" />
      <Compile Include="Assets\Scripts\Views\BootLoader.cs" />
+     <Compile Include="Assets\Scripts\Views\Client.cs" />
      <Compile Include="Assets\Scripts\Views\Downscale.cs" />
      <Compile Include="Assets\Scripts\Views\SetCameraViewport.cs" />
      <Compile Include="Assets\Scripts\Views\Upscale.cs" />
@@ -61,6 +64,7 @@
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+     <None Include="Assets\Shaders\Average.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
      <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
      <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -641,6 +645,10 @@
     <ProjectReference Include="UnityEditor.UI.csproj">
       <Project>{f363e9d5-8636-8be7-abc4-423e46b07084}</Project>
       <Name>UnityEditor.UI</Name>
+    </ProjectReference>
+    <ProjectReference Include="Unity.2D.Sprite.Editor.csproj">
+      <Project>{d5b93148-56ea-5797-f81b-254e23255704}</Project>
+      <Name>Unity.2D.Sprite.Editor</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

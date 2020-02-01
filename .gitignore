@@ -30,3 +30,6 @@ Assembly-CSharp.csproj
 Assembly-CSharp.csproj
 Assembly-CSharp.csproj
 2020GlobalGameJam.sln
+*.csproj
+*.csproj
+*.sln

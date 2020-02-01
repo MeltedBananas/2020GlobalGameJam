@@ -15,9 +15,11 @@
 	
 -Solution:
 	-color-1 : blue
+-Problem:
+	-color-1 : 1 mistmatch
 	
 ### Level 2 ###
--Description: This young lady needs your help. She doesnt look to good.
+-Description: This young lady needs your help. She doesnt look too good.
 
 -Inventory:
 	- NONE
@@ -27,7 +29,7 @@
 		Answers:
 			- Just got my hair done. Thanks for noticing. I really like how the [color-1] came out.
 			- Can you believe that on the subway, someone made fun of my [color-1] hair. At least I have hair, you... baldy.
-			- Yesterday, I wore my [color-1] dress. It was very nice how it matched my hair.
+			- Yesterday, I wore my [color-1] dress. It was very nice how it looked identical to my hair.
 	-Fire truck
 		Answers:
 			- When I was young and heard the sirens, I would run outside to watch the [color-2] fire trucks drive by.
@@ -37,6 +39,10 @@
 -Solution:
 	-color-1 : black
 	-color-2 : red
+-Problem:
+	color-1 and color-2 are swapped 
+	-color-3 : green
+	-color-4 : blue
 	
 			
 ### Level 3 ###
@@ -66,3 +72,9 @@
 	-color-1 : yellow
 	-color-2 : white
 	-color-3 : red
+
+-Problem:
+	color-2 and color-3 are swapped with something
+	-color-4 : blue
+	-color-5 : orange
+	-color-6 : cyan
