@@ -8,13 +8,17 @@ public class TextDiagnosticEditor : Editor {
     
     public override void OnInspectorGUI()
     {
-        DrawDefaultInspector();
-
         TextDiagnostic diagnostic = (TextDiagnostic)target;
+        
         if(GUILayout.Button("Split sentence"))
         {
             diagnostic.BuildWordList();
         }
+
+        DrawDefaultInspector();
+
+      
+        
     }
 
 }

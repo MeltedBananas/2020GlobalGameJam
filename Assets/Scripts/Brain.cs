@@ -54,6 +54,8 @@ public class Brain : MonoBehaviour
     public Vector2 SwapPosition;
     private BrainNode SwappingBrainNode;
 
+    public List<Texture2D> PossibleNodeIcons;
+
     BrainToolType Tool;
 
     private void Start()
@@ -88,6 +90,15 @@ public class Brain : MonoBehaviour
 
         Nodes.Clear();
         Nodes.AddRange(randomizeNodes);
+
+        foreach(BrainNode node in Nodes)
+        {
+            int rndIconIdx = UnityEngine.Random.Range(0, PossibleNodeIcons.Count);
+            Texture2D icon = PossibleNodeIcons[rndIconIdx];
+            node.IconRenderer.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+            PossibleNodeIcons.RemoveAt(rndIconIdx);
+        }
     }
 
     void GatherBrainNodes(Transform itTransform)
@@ -128,10 +139,8 @@ public class Brain : MonoBehaviour
                 Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
                 break;
             case BrainToolType.SwapEnd:
-                object swapData = node.data;
-                node.data = SwappingBrainNode.data;
-                SwappingBrainNode.data = swapData;
-                Tool = BrainToolType.SwapEnd;
+                node.Swap(SwappingBrainNode);
+                Tool = BrainToolType.SwapStart;
                 Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
                 if (SwappingBrainNode != null)
                 {
