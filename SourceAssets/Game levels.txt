@@ -1,0 +1,68 @@
+### Level 1 ###
+-Description: We found him at our door step. Could you have look at him to make sure that he is ok? He seems lost.
+
+-Inventory:
+	- NONE
+	
+-Question:
+	-Shirt
+		Answers:
+			- What about my [color-1] shirt? I swear, i did not steal it.
+			- It's a nice shirt. I was told that [color-1] really brought out my eyes.
+			- I have other shirts, but this is my only [color-1] one.
+			- I use to have a pair of [color-1] pants that matched this shirt, but I dont wear pants anymore.
+			- You know, if you are so obsessed with my [color-1] shirt, I can sell it to you.
+	
+-Solution:
+	-color-1 : blue
+	
+### Level 2 ###
+-Description: This young lady needs your help. She doesnt look to good.
+
+-Inventory:
+	- NONE
+	
+-Question:
+	-Hair
+		Answers:
+			- Just got my hair done. Thanks for noticing. I really like how the [color-1] came out.
+			- Can you believe that on the subway, someone made fun of my [color-1] hair. At least I have hair, you... baldy.
+			- Yesterday, I wore my [color-1] dress. It was very nice how it matched my hair.
+	-Fire truck
+		Answers:
+			- When I was young and heard the sirens, I would run outside to watch the [color-2] fire trucks drive by.
+			- Whats more sexy than fireman in their [color-2] fire truck? You tell me.
+			- Do you think its a coincidence that Fire hydrant are [color-2]? The same color has the fire trucks. I dont think so.
+
+-Solution:
+	-color-1 : black
+	-color-2 : red
+	
+			
+### Level 3 ###
+-Description: Bill was in a car accident and his wife says that he is not making sense.
+
+-Inventory:
+	- Photo
+	
+-Question:
+	-House
+		Answers:
+			- Ah, yes. This is the house I grow up in. It was the only [color-1] house on our street.
+			- I remember when we painted the house [color-1]. It was in 1985.
+			- We would always tell the pizza delivery guy, its the only [color-1] house on Pine steet.
+	-Car
+		Answers:
+			- One time, I was able to get it up to 88 mph. Not bad for an old [color-2] car.
+			- It wasnt the fastest, but our [color-2] car was very reliable.
+			- My first car. My mom gave it for me on my 16th birthday. Did not really care that it was [color-2].
+	-House door
+		Answers:
+			- Wanna hear a joke? Knock knock. Who's there? Open this [color-3] door, this is the FBI.
+			- Me and my dad painted the door every summer. Always the same [color-3].
+			- In the spring, my mom would plant [color-3] flowers to match the door.
+			
+-Solution:
+	-color-1 : yellow
+	-color-2 : white
+	-color-3 : red
