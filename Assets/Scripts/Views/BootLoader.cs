@@ -10,6 +10,14 @@ public class BootLoader : MonoBehaviour
     
     private void Awake()
     {
-        var asyncOp = SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
+        SceneManager.sceneLoaded += OnSceneLoaded;
+        SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
+    }
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
+    {
+        // Brain Scene was loaded !!
+        var rootGameObjects = scene.GetRootGameObjects();
+        // Get from root game objects whichever components you need !!
     }
 }
