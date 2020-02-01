@@ -162,7 +162,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 258838520744565908}
   _spriteSheet: {fileID: 2800000, guid: ca44e29eb64b5a9468d1fdb9acd215ac, type: 3}
-  _secondsPerSheet: 0.25
+  _secondsPerSheet: 0.1
+  _usesRandomTimer: 1
+  _randomBetweenSprite: {x: 0.04, y: 0.1}
 --- !u!1 &258838520859361740
 GameObject:
   m_ObjectHideFlags: 0
@@ -305,4 +307,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _image: {fileID: 6435549675380043925}
   _spriteSheet: {fileID: 2800000, guid: 0aaf49018efd2984f844ff35ae300718, type: 3}
-  _secondsPerSheet: 0.25
+  _secondsPerSheet: 0.15
+  _usesRandomTimer: 0
+  _randomBetweenSprite: {x: 0.025, y: 0.05}
