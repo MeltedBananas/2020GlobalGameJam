@@ -3,6 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+enum BrainToolType
+{
+    None,
+    Inspect,
+    SwapStart,
+    SwapEnd,
+    Cancel,
+}
+
 public class BrainData
 {
     string Name;
@@ -22,9 +31,37 @@ public class Brain : MonoBehaviour
 {
     List<BrainNode> Nodes = new List<BrainNode>();
 
+    public Texture2D BarUI;
+    public Vector2 BarPosition;
+    public Vector2 BarWidth;
+
+    public Vector2 ButtonWidth;
+
+    public Texture2D InspectCursor;
+    public Texture2D InspectButtonUI;
+    public Vector2 InspectPosition;
+    public Vector2 InspectBoxPosition;
+    public Vector2 InspectBoxSize;
+    private BrainNode InspectBrainNode;
+
+    public Texture2D CancelCursor;
+    public Texture2D CancelButtonUI;
+    public Vector2 CancelPosition;
+
+    public Texture2D SwapCursorStart;
+    public Texture2D SwapCursorEnd;
+    public Texture2D SwapButtonUI;
+    public Vector2 SwapPosition;
+
+    BrainToolType Tool;
+
     private void Start()
     {
         GatherBrainNodes(transform);
+        foreach(BrainNode node in Nodes)
+        {
+            node.BrainOwner = this;
+        }
 
         Setup(new List<object>() { new BrainData("A"), new BrainData("B"), new BrainData("C"), new BrainData("D"), new BrainData("E"), new BrainData("F"), new BrainData("G"), new BrainData("H") });
     }
@@ -70,6 +107,71 @@ public class Brain : MonoBehaviour
             {
                 node.RightClickReleased();
             }
+        }
+    }
+
+    public void OnNodeClick(BrainNode node)
+    {
+        switch(Tool)
+        {
+            case BrainToolType.Inspect:
+                InspectBrainNode = node;
+                break;
+        }
+    }
+
+    private void OnGUI()
+    {
+        GUI.DrawTexture(new Rect(BarPosition, BarWidth), BarUI);
+
+        if (Tool != BrainToolType.Inspect)
+        {
+            if (GUI.Button(new Rect(InspectPosition, ButtonWidth), InspectButtonUI))
+            {
+
+                Tool = BrainToolType.Inspect;
+                Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
+                InspectBrainNode = null;
+            }
+        }
+        else
+        {
+            GUI.DrawTexture(new Rect(InspectPosition, ButtonWidth), InspectButtonUI);
+        }
+
+        if (Tool != BrainToolType.Cancel)
+        {
+            if (GUI.Button(new Rect(CancelPosition, ButtonWidth), CancelButtonUI))
+            {
+
+                Tool = BrainToolType.Cancel;
+                Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
+                InspectBrainNode = null;
+            }
+        }
+        else
+        {
+            GUI.DrawTexture(new Rect(CancelPosition, ButtonWidth), CancelButtonUI);
+        }
+
+        if (Tool != BrainToolType.SwapStart && Tool != BrainToolType.SwapEnd)
+        {
+            if (GUI.Button(new Rect(SwapPosition, ButtonWidth), SwapButtonUI))
+            {
+
+                Tool = BrainToolType.SwapStart;
+                Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
+                InspectBrainNode = null;
+            }
+        }
+        else
+        {
+            GUI.DrawTexture(new Rect(SwapPosition, ButtonWidth), SwapButtonUI);
+        }
+        
+        if(Tool == BrainToolType.Inspect && InspectBrainNode != null)
+        {
+            GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), ((BrainData)InspectBrainNode.data).ToString());
         }
     }
 }

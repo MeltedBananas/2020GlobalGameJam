@@ -17,6 +17,8 @@ public class BrainNode : MonoBehaviour
     public object data = null;
     bool bMouseOver = false;
 
+    public Brain BrainOwner;
+
     private void Start()
     {
         mainCamera = Camera.main;
@@ -26,7 +28,7 @@ public class BrainNode : MonoBehaviour
 
     void OnMouseDown()
     {
-        Debug.Log(data.ToString());
+        BrainOwner.OnNodeClick(this);
     }
 
     void OnMouseEnter()
