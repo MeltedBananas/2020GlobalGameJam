@@ -117,6 +117,9 @@ public class Brain : MonoBehaviour
             case BrainToolType.Inspect:
                 InspectBrainNode = node;
                 break;
+            case BrainToolType.Cancel:
+                node.SetEnabled(!node.BrainNodeEnabled);
+                break;
         }
     }
 
@@ -171,7 +174,11 @@ public class Brain : MonoBehaviour
         
         if(Tool == BrainToolType.Inspect && InspectBrainNode != null)
         {
-            GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), ((BrainData)InspectBrainNode.data).ToString());
+            // Create style for a button
+            GUIStyle myStyle = new GUIStyle(GUI.skin.box);
+            myStyle.fontSize = 50;
+            string nodeInfo = string.Format("{0} - {1}", ((BrainData)InspectBrainNode.data).ToString(), InspectBrainNode.BrainNodeEnabled ? "Enabled" : "Disabled");
+            GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), nodeInfo, myStyle);
         }
     }
 }

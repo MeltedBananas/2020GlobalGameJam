@@ -45,21 +45,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   BarUI: {fileID: 2800000, guid: cf2b26ac833ed9d47af711bef368df22, type: 3}
-  BarPosition: {x: 1720, y: 290}
+  BarPosition: {x: 1696, y: 340}
   BarWidth: {x: 200, y: 500}
   ButtonWidth: {x: 128, y: 128}
   InspectCursor: {fileID: 2800000, guid: 686a8f2c5e9195340b3b7ce451d53d1b, type: 3}
   InspectButtonUI: {fileID: 2800000, guid: 9b1768db496cfab46a82b703c77e2569, type: 3}
-  InspectPosition: {x: 1765, y: 325}
-  InspectBoxPosition: {x: 25, y: 25}
-  InspectBoxSize: {x: 100, y: 100}
+  InspectPosition: {x: 1750, y: 360}
+  InspectBoxPosition: {x: 780, y: 280}
+  InspectBoxSize: {x: 300, y: 75}
   CancelCursor: {fileID: 2800000, guid: 1db6189f40243df458cecf53032f11b6, type: 3}
   CancelButtonUI: {fileID: 2800000, guid: 87ed338377889ee47acaa74a1b27e873, type: 3}
-  CancelPosition: {x: 1765, y: 475}
+  CancelPosition: {x: 1750, y: 510}
   SwapCursorStart: {fileID: 2800000, guid: cc266ae5283e2cc4ca44f24f86853010, type: 3}
   SwapCursorEnd: {fileID: 2800000, guid: cc21b844e220127459bd716a51485c63, type: 3}
   SwapButtonUI: {fileID: 2800000, guid: ea581f61cb3352545a1d7f3bd0e7f402, type: 3}
-  SwapPosition: {x: 1765, y: 625}
+  SwapPosition: {x: 1750, y: 660}
 --- !u!1001 &1851686411835532696
 PrefabInstance:
   m_ObjectHideFlags: 0

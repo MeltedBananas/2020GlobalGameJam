@@ -193,9 +193,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4df30aee01763b649ad78e875e48572e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Distance: 5.75
+  Distance: 5
   YawSpeed: -10
   PitchSpeed: -1
+  Offset: {x: 0.5, y: 0, z: 0}
   Subject: {fileID: 0}
   Yaw: 0
   Pitch: 0
@@ -211,7 +212,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 150afd4c0a7d4fb489c563038871001f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _camera: {fileID: 5715000856582812511}
+  _viewportRect:
+    serializedVersion: 2
+    x: 0.395
+    y: 0.135
+    width: 0.59
+    height: 0.62
 --- !u!1 &5715000856803273909
 GameObject:
   m_ObjectHideFlags: 0
