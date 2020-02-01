@@ -1,8 +1,14 @@
 ﻿using UnityEngine;
-
+using System.Collections;
+using System.Collections.Generic;
+using System;
 public class TextDiagnostic : ScriptableObject
 {
     public string Phrase = "";
+    public string[] sperator = { " ", ",","!","?","."};
+
+    private string[] _stringSplit;
+    public List<Word> wordList;
     
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Assets/Create/JAM2020/TextDiagnostic", false, int.MinValue)]
@@ -17,4 +23,18 @@ public class TextDiagnostic : ScriptableObject
         UnityEditor.Selection.activeObject = asset;
     }
 #endif
+
+    public void BuildWordList()
+    {
+        
+        _stringSplit = Phrase.Split(spearator,  
+           StringSplitOptions.RemoveEmptyEntries); 
+
+        wordList.Clear();
+
+        foreach(String s in _stringSplit) 
+        { 
+            wordList.Add(new Word(s)); 
+        } 
+    }
 }
