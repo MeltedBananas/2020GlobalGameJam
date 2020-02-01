@@ -10,18 +10,17 @@ public class Client : MonoBehaviour
 
     private void Start()
     {
-        Invoke(nameof(Talk), 2f);
+        if (_eyes != null) _eyes.Play();
     }
 
     public void Talk()
     {
-        if (_eyes != null) _eyes.Play();
+        
         if (_mouth != null) _mouth.Play();
     }
 
     public void Shutup()
     {
-        if (_eyes != null) _eyes.Stop();
         if (_mouth != null) _mouth.Stop();
     }
 }

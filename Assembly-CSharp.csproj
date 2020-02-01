@@ -10,9 +10,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
-    <ProjectGuid>{FA515A42-DCEA-4E7E-8AD9-8284D4E440E3}</ProjectGuid>
+    <RootNamespace></RootNamespace>
+    <ProjectGuid>{7948CDE9-7EEB-0D85-E1DD-A8E2E4462493}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -71,7 +70,9 @@
     <Compile Include="Assets\Scripts\TextDiagnostic.cs" />
     <Compile Include="Assets\Scripts\TextDiagnosticEditor.cs" />
     <Compile Include="Assets\Scripts\TextSpeachAnimation.cs" />
+    <Compile Include="Assets\Scripts\Views\Animate.cs" />
     <Compile Include="Assets\Scripts\Views\BootLoader.cs" />
+    <Compile Include="Assets\Scripts\Views\Client.cs" />
     <Compile Include="Assets\Scripts\Views\Downscale.cs" />
     <Compile Include="Assets\Scripts\Views\SetCameraViewport.cs" />
     <Compile Include="Assets\Scripts\Views\Upscale.cs" />
@@ -120,6 +121,9 @@
     </Reference>
     <Reference Include="UnityEditor.UI">
       <HintPath>D:/Projets/Unity Projects/GGJ2020/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.2D.Sprite.Editor">
+      <HintPath>D:/Projets/Unity Projects/GGJ2020/Library/ScriptAssemblies/Unity.2D.Sprite.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.AIModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.AIModule.dll</HintPath>

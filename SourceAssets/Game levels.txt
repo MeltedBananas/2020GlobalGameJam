@@ -16,7 +16,8 @@
 -Solution:
 	-color-1 : blue
 -Problem:
-	-color-1 : 1 mistmatch
+	color-1 and color-2 are swapped 
+	-color-2 : red
 	
 ### Level 2 ###
 -Description: This young lady needs your help. She doesnt look too good.
