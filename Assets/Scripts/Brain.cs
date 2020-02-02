@@ -58,8 +58,16 @@ public class Brain : MonoBehaviour
 
     BrainToolType Tool;
 
+    private bool bOnBrainScreen = false;
+    Rect CursorZone;
+
     private void Start()
     {
+        SetCameraViewport cameraViewport = Camera.main.GetComponent<SetCameraViewport>();
+
+        float zoneHeight = cameraViewport._viewportRect.size.y * Screen.height;
+        CursorZone = new Rect(cameraViewport._viewportRect.position.x * Screen.width, Screen.height - cameraViewport._viewportRect.position.y * Screen.height - zoneHeight, cameraViewport._viewportRect.size.x * Screen.width, zoneHeight);
+
         GatherBrainNodes(transform);
         foreach(BrainNode node in Nodes)
         {
@@ -136,7 +144,7 @@ public class Brain : MonoBehaviour
                 SwappingBrainNode = node;
                 SwappingBrainNode.SetReadyToSwap(true);
                 Tool = BrainToolType.SwapEnd;
-                Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
+                RefreshCursor();
                 break;
             case BrainToolType.SwapEnd:
                 node.Swap(SwappingBrainNode);
@@ -222,6 +230,41 @@ public class Brain : MonoBehaviour
             myStyle.fontSize = 50;
             string nodeInfo = string.Format("{0} - {1}", ((BrainData)InspectBrainNode.data).ToString(), InspectBrainNode.BrainNodeEnabled ? "Enabled" : "Disabled");
             GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), nodeInfo, myStyle);
+        }
+
+        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+        bool bIsCurrentlyOnScreen = CursorZone.Contains(mousePosition);
+        if(bIsCurrentlyOnScreen != bOnBrainScreen)
+        {
+            bOnBrainScreen = bIsCurrentlyOnScreen;
+
+            if(bOnBrainScreen)
+            {
+                RefreshCursor();
+            }
+            else
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+        }
+    }
+
+    void RefreshCursor()
+    {
+        switch(Tool)
+        {
+            case BrainToolType.Cancel:
+                Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.Inspect:
+                Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.SwapEnd:
+                Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.SwapStart:
+                Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
+                break;
         }
     }
 }
