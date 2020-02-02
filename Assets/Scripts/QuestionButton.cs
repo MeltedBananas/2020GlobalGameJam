@@ -37,19 +37,8 @@ public class QuestionButton : MonoBehaviour
             bIsSubmit = true;
             Label = "Submit Answer";
         }
-
-		WorldButton button = GetComponent<WorldButton>();
-        if(button != null)
-        {
-            button.enabled = bEnabled;
-        }
-        {
-            bEnabled = true;
-            bIsSubmit = true;
-            Label = "Submit Answer";
-        }
-
-		WorldButton button = GetComponent<WorldButton>();
+        
+        WorldButton button = GetComponent<WorldButton>();
         if(button != null)
         {
             button.enabled = false;
