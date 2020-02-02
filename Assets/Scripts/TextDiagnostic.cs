@@ -15,7 +15,7 @@ public class TextDiagnostic : ScriptableObject
     public static void CreateAsset()
     {
         var asset = ScriptableObject.CreateInstance<TextDiagnostic>();
-        UnityEditor.AssetDatabase.CreateAsset(asset, "Assets/GameObject/TextDiagnostic.asset");
+        UnityEditor.AssetDatabase.CreateAsset(asset, UnityEditor.AssetDatabase.GetAssetPath(UnityEditor.Selection.activeObject) + "/TextDiagnostic.asset");
         UnityEditor.AssetDatabase.SaveAssets();
 
         UnityEditor.EditorUtility.FocusProjectWindow();
