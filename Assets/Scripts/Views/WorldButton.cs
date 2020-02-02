@@ -47,7 +47,7 @@ public class WorldButton : MonoBehaviour
     /// <returns>if the Action was consumed</returns>
     public bool Click()
     {
-        if (enabled && _action != null)
+        if (gameObject.activeSelf && enabled && _action != null)
         {
             if (_disableOnClick)
                 enabled = false;

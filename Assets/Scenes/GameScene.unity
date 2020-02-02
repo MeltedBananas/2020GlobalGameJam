@@ -1053,6 +1053,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _uiCamera: {fileID: 2073892504}
+  _quitKeyCode: 27
 --- !u!20 &2073892504
 Camera:
   m_ObjectHideFlags: 0
