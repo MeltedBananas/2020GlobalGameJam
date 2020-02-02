@@ -5,6 +5,8 @@ using UnityEngine;
 public class InputManager : MonoBehaviour
 {
     public Camera _uiCamera = null;
+    public KeyCode _quitKeyCode = KeyCode.Escape;
+    
     private RaycastHit[] _hits = { };
     private int _uiLayerMask;
 
@@ -28,6 +30,12 @@ public class InputManager : MonoBehaviour
 
     private void Update()
     {
+        if (Input.GetKeyDown(_quitKeyCode))
+        {
+            Application.Quit();
+            return;
+        }
+        
         // Hovering
         if (_registerHovering > 0)
         {

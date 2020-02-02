@@ -28,6 +28,19 @@ public class LevelProblem
     public List<Word> WordSwapPossibilities;
 }
 
+[System.Serializable]
+public class LevelSolution
+{
+    public bool IsEnabled = false;
+    public string Text;
+    public string Label;
+
+    public bool ValidateSolution(BrainNode brainNode)
+    {
+        return brainNode.data.Word.Text == Text && brainNode.BrainNodeEnabled == IsEnabled;
+    }
+    
+}
 public class LevelDefinition  : ScriptableObject
 {
     public Client Client;
@@ -37,6 +50,7 @@ public class LevelDefinition  : ScriptableObject
     public List<LevelQuestion> Questions;
     public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;
+    public List<LevelSolution> Solutions;
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Assets/Create/JAM2020/LevelDefinition", false, int.MinValue)]
