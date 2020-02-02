@@ -17,13 +17,20 @@ public class WordDisplayText
     {
         return letterIndex >= word.Text.Length;
     }
-
+    public string ColorFromPrefix()
+    {
+        if (word.Prefix.Contains("color"))
+        {
+            return word.Prefix.Substring(word.Prefix.IndexOf("=") + 1, word.Prefix.IndexOf(">") - word.Prefix.IndexOf("=")-1);
+        }
+        return "black";
+    }
      public string Animate()
     {
         result = "";
         if (letterIndex < word.Text.Length)
         {
-            result  = word.Prefix + word.Text.Substring(0,++letterIndex ) + word.Suffix;
+            result  = word.Prefix + ShowCharacters() + word.Suffix;
         }
         else
         {
@@ -32,5 +39,14 @@ public class WordDisplayText
 
         return result;
 
+    }
+    public string ShowBigLetter()
+    {
+        return  "<size=15>" + word.Text.Substring(letterIndex++,1)+ "</size>";
+    }
+    public string ShowCharacters()
+    {
+        return  "<color="+ColorFromPrefix()+">" + word.Text.Substring(0,letterIndex )+ ShowBigLetter() + "</color>"+
+        "<color=white>"+ word.Text.Substring(letterIndex,word.Text.Length-letterIndex) + "</color>";
     }
 }

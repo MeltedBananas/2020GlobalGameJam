@@ -219,12 +219,17 @@ MonoBehaviour:
   _brainScene: BrainScene
   _levelDefinitions:
   - {fileID: 11400000, guid: 7a93f9c83a348e1489fd7433d1faaac3, type: 2}
+  _menu: {fileID: 0}
   _clientsParent: {fileID: 2021832112}
   _speachBubble: {fileID: 1624902615}
+  _levelDescription: {fileID: 0}
   _appearAfterSeconds: 0.25
   _speechBubbleImage: {fileID: 1365591417}
   _scaleUpEaseType: 28
   _scaleUpTime: 0.4
+  _disappearSeconds: 0.85
+  _disappearEaseType: 1
+  _appearSeconds: 0.25
 --- !u!4 &635197360
 Transform:
   m_ObjectHideFlags: 0
