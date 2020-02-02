@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.0052352473, g: 0.17999727, b: 0.22340876, a: 1}
+  m_IndirectSpecularColor: {r: 0.00480682, g: 0.18001637, b: 0.22335297, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -505,8 +505,8 @@ MonoBehaviour:
 
 
     ex.:
-    Swapping two concepts (<color=blue>blue</color> and <color=green>green</color>)
-    will inverse them for the client.'
+    Swapping two concepts (<color=blue>blue</color> and <color=red>red</color>) will
+    inverse them for the client.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b893ad10f19d03438a6c8a8c71472f2, type: 2}
   m_sharedMaterial: {fileID: 8422421959260043240, guid: 6b893ad10f19d03438a6c8a8c71472f2,
@@ -552,7 +552,7 @@ MonoBehaviour:
   m_enableWordWrapping: 1
   m_wordWrappingRatios: 0.4
   m_overflowMode: 0
-  m_firstOverflowCharacterIndex: 114
+  m_firstOverflowCharacterIndex: 112
   m_linkedTextComponent: {fileID: 0}
   m_isLinkedTextComponent: 0
   m_isTextTruncated: 0
@@ -576,7 +576,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 1336077683}
-    characterCount: 134
+    characterCount: 132
     spriteCount: 0
     spaceCount: 24
     wordCount: 24
