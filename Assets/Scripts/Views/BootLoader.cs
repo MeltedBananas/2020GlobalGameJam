@@ -72,6 +72,8 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
+
+            _currentClient.Init(_currentLevel, _speachBubble);
         }
     }
 
@@ -94,5 +96,10 @@ public class BootLoader : MonoBehaviour
     public void UI_ShowMenu()
     {
         LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() => _startGameButton.enabled = true);
+    }
+
+    public void UI_AskQuestion(int index)
+    {
+        _currentClient.AskQuestion(index);
     }
 }
