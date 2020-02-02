@@ -27,7 +27,7 @@ public class BootLoader : MonoBehaviour
 
     [Header("Question Buttons")]
     public List<QuestionButton> QuestionButtons;
-    public GameObject ContextualMenu;
+    public List<QuestionButton> ContextualMenuButtons;
 
     [Header("Menu Disappear")]
     public float _disappearSeconds = 0.85f;
@@ -174,7 +174,8 @@ public class BootLoader : MonoBehaviour
         if (!_firstTimeShown)
         {
             QuestionButtons.ForEach(x => x.ScaleUp());
-
+            ContextualMenuButtons.ForEach(x => x.gameObject.SetActive(true));
+            ContextualMenuButtons.ForEach(x => x.ScaleUp());
             _firstTimeShown = true;
         }
     }
@@ -185,6 +186,8 @@ public class BootLoader : MonoBehaviour
         {
             _brainCamera.gameObject.SetActive(false);
         }
+        QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
+        ContextualMenuButtons.ForEach(x => x.gameObject.SetActive(false));
 
         LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
@@ -207,7 +210,7 @@ public class BootLoader : MonoBehaviour
     {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            ContextualMenu.SetActive(false);
+            
             NextLevel(true);
         }
     }

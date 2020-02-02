@@ -11,6 +11,8 @@ public class Inventory : MonoBehaviour
     public float _appearSeconds = 0.25f;
     public void Start()
     {
+        isActive = false;
+        Item.SetActive(false);
         LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType);
     }
     public void UI_ShowInventory()
@@ -24,7 +26,10 @@ public class Inventory : MonoBehaviour
         else
         {
             isActive = false;
-            LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType);
+            LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+            {
+                Item.SetActive(false);
+            });
         }
         
     }
