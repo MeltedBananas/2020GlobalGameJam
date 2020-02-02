@@ -284,4 +284,24 @@ public class Brain : MonoBehaviour
                 break;
         }
     }
+    public bool ValidateBrain(List<LevelSolution> solution)
+    { 
+        
+        bool result = true;
+
+        foreach(LevelSolution s in solution)
+        {   
+            bool solutionFound = false;
+            foreach(BrainNode node in Nodes)
+            {
+                if(s.ValidateSolution(node))
+                {
+                    solutionFound = true;
+                    break;
+                }
+            }
+            result &= solutionFound;
+        }
+        return result;
+    }
 }

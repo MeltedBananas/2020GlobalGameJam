@@ -54,3 +54,7 @@ MonoBehaviour:
       Label: color-2
       Prefix: 
       Suffix: 
+  Solutions:
+  - IsEnabled: 1
+    Text: blue
+    Label: color-1

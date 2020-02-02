@@ -151,5 +151,12 @@ public class BootLoader : MonoBehaviour
     public void UI_AskQuestion(int index)
     {
         _currentClient.AskQuestion(index);
+        if (_brain.ValidateBrain(_currentLevel.Solutions))
+        {
+            Debug.Log("WIN!!!!")
+        }
+        
     }
+
+
 }
