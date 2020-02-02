@@ -31,6 +31,7 @@ public class TextSpeachAnimation : MonoBehaviour
     }
     public void SetupLine(TextDiagnostic td)
     {
+        _currentWordIndex = 0;
        wordDisplayList.Clear();
        foreach(Word w in td.wordList)
        {

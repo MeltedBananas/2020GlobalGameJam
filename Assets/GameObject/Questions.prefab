@@ -134,13 +134,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5664931484390219851}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -291,13 +291,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 8234596248792876761}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -361,6 +361,7 @@ GameObject:
   - component: {fileID: 9059810133595765731}
   - component: {fileID: 4056349912099916699}
   - component: {fileID: 4737100500765482681}
+  - component: {fileID: 2302455155615325200}
   m_Layer: 5
   m_Name: QuestionButton4
   m_TagString: Untagged
@@ -449,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -464,6 +465,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2302455155615325200
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4445512388006327397}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccf68a19a6375444943f9cae1041966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionIndex: 3
+  AppearTimeSeconds: 0.25
+  AppearTween: 28
+  TextMeshPro: {fileID: 7967512225646168104}
 --- !u!1 &5025643193800477476
 GameObject:
   m_ObjectHideFlags: 0
@@ -598,13 +615,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 7967512225646168104}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -755,13 +772,13 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_textInfo:
     textComponent: {fileID: 5537920384622452158}
-    characterCount: 8
+    characterCount: 0
     spriteCount: 0
-    spaceCount: 1
-    wordCount: 1
+    spaceCount: 0
+    wordCount: 0
     linkCount: 0
-    lineCount: 1
-    pageCount: 1
+    lineCount: 0
+    pageCount: 0
     materialCount: 1
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
@@ -791,6 +808,7 @@ GameObject:
   - component: {fileID: 5537920385353252477}
   - component: {fileID: 5537920385353252476}
   - component: {fileID: 5537920385353252479}
+  - component: {fileID: 4590455613969344534}
   m_Layer: 5
   m_Name: QuestionButton1
   m_TagString: Untagged
@@ -879,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -894,6 +912,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &4590455613969344534
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5537920385353252473}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccf68a19a6375444943f9cae1041966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionIndex: 0
+  AppearTimeSeconds: 0.25
+  AppearTween: 28
+  TextMeshPro: {fileID: 5537920384622452158}
 --- !u!1 &8619570002049131580
 GameObject:
   m_ObjectHideFlags: 0
@@ -907,6 +941,7 @@ GameObject:
   - component: {fileID: 5080773036557071244}
   - component: {fileID: 8453266349274432112}
   - component: {fileID: 5103997954522829277}
+  - component: {fileID: 6899762488552895069}
   m_Layer: 5
   m_Name: QuestionButton3
   m_TagString: Untagged
@@ -995,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -1010,6 +1045,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6899762488552895069
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8619570002049131580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccf68a19a6375444943f9cae1041966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionIndex: 2
+  AppearTimeSeconds: 0.25
+  AppearTween: 28
+  TextMeshPro: {fileID: 5664931484390219851}
 --- !u!1 &8682649528071943121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1023,6 +1074,7 @@ GameObject:
   - component: {fileID: 9055289837238941789}
   - component: {fileID: 1491363967013016341}
   - component: {fileID: 8606503622723201489}
+  - component: {fileID: 6875756582792963787}
   m_Layer: 5
   m_Name: QuestionButton2
   m_TagString: Untagged
@@ -1111,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -1126,3 +1178,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6875756582792963787
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682649528071943121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fccf68a19a6375444943f9cae1041966, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  QuestionIndex: 1
+  AppearTimeSeconds: 0.25
+  AppearTween: 28
+  TextMeshPro: {fileID: 8234596248792876761}

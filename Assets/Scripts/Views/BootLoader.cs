@@ -25,6 +25,9 @@ public class BootLoader : MonoBehaviour
     public LeanTweenType _scaleUpEaseType = LeanTweenType.easeInOutBack;
     public float _scaleUpTime = 0.4f;
 
+    [Header("Question Buttons")]
+    public List<QuestionButton> QuestionButtons;
+
     [Header("Menu Disappear")]
     public float _disappearSeconds = 0.85f;
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
@@ -34,6 +37,7 @@ public class BootLoader : MonoBehaviour
     private Client _currentClient = null;
     private Vector3 _speechBubbleInitialScale = Vector3.one;
     private readonly List<GameObject> _brainSceneRootGameObjects = new List<GameObject>();
+    private bool _firstTimeShown = false;
 
     private void Awake()
     {
@@ -65,6 +69,7 @@ public class BootLoader : MonoBehaviour
     {
         _currentLevel = _levelDefinitions[UnityEngine.Random.Range(0, _levelDefinitions.Count)];
         _levelDescription.SetText(_currentLevel.SetupDescription);
+        _firstTimeShown = false;
     }
     
     private void InstantiateLevelObjects()
@@ -74,6 +79,10 @@ public class BootLoader : MonoBehaviour
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
 
             _currentClient.Init(_currentLevel, _speachBubble);
+            foreach(QuestionButton questionButton in QuestionButtons)
+            {
+                questionButton.Initialized(_currentLevel);
+            }
         }
     }
 
@@ -101,6 +110,12 @@ public class BootLoader : MonoBehaviour
     private void OnTextComplete()
     {
         _currentClient.Shutup();
+
+        if (!_firstTimeShown)
+        {
+            QuestionButtons.ForEach(x => x.ScaleUp());
+            _firstTimeShown = true;
+        }
     }
 
     public void UI_ShowMenu()
