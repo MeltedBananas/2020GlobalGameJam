@@ -10,17 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
-  m_Name: Level03-Question03-Answer02
+  m_Name: Level03-Question03-Answer03
   m_EditorClassIdentifier: 
-  Phrase: Me and my dad painted the door every summer. Always the same [color-3].
+  Phrase: In the spring, my mom would plant [color-3] flowers to match the door.
   sperator:
   - ' '
   wordList:
-  - Text: Me
+  - Text: In
     Label: 
     Prefix: 
     Suffix: 
-  - Text: and
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: spring,
     Label: 
     Prefix: 
     Suffix: 
@@ -28,43 +32,39 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: dad
+  - Text: mom
     Label: 
     Prefix: 
     Suffix: 
-  - Text: painted
+  - Text: would
     Label: 
     Prefix: 
     Suffix: 
-  - Text: the
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: door
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: every
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: summer.
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: Always
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: the
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: same
+  - Text: plant
     Label: 
     Prefix: 
     Suffix: 
   - Text: red
     Label: color-3
-    Prefix: <color=red>
+    Prefix: <color="red">
     Suffix: </color>
+  - Text: flowers
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: match
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: door.
+    Label: 
+    Prefix: 
+    Suffix: 

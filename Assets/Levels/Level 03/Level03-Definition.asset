@@ -16,13 +16,104 @@ MonoBehaviour:
   ClientDescription: {fileID: 11400000, guid: bbaa1bb45bf303a4b8e29a8dc442e75e, type: 2}
   FailSpeech: {fileID: 11400000, guid: 84358244192b4a346b5faa7f2e9da352, type: 2}
   SuccessSpeech: {fileID: 11400000, guid: 4d0d73b8424b03f4488e3e8294293df4, type: 2}
-  SetupDescription: This young lady needs your help. She doesnt look too good.
+  SetupDescription: Joe is hit by a wave of amnesia and can't remember simple everyday
+    thing. He brought a picture of his old home with him and can't seems to remember
+    all the details.
   ItemPrefab: {fileID: 903715349595367694, guid: b416369ced851cc4abe3de9316f9b75d,
     type: 3}
-  SubmitAnswerTexture: {fileID: 0}
-  ItemSprite: {fileID: 0}
-  Questions: []
-  BrainNodes: []
-  Problems: []
-  Solutions: []
+  SubmitAnswerTexture: {fileID: 21300000, guid: 821ac5628bfc2b449a0f3330f711b60e,
+    type: 3}
+  ItemSprite: {fileID: 21300000, guid: 3be32adf26b91e54eb2b3c060a06fbd6, type: 3}
+  Questions:
+  - QuestionIcon: {fileID: 21300000, guid: 59bea72d15c2bdd4191e51082851ad9d, type: 3}
+    QuestionLabel: 
+    Answers:
+    - {fileID: 11400000, guid: fe81b82c135eb7d4a8fd7cf05f1d8c84, type: 2}
+    - {fileID: 11400000, guid: f481cdb99618a384ea2d808646fbf7e0, type: 2}
+    - {fileID: 11400000, guid: 4247798cb2a00be49a4510bf4d9d5770, type: 2}
+  - QuestionIcon: {fileID: 21300000, guid: fa95298e5c2bb8749844ca9e3316627c, type: 3}
+    QuestionLabel: 
+    Answers:
+    - {fileID: 11400000, guid: 83650cb2ec90dd249b54f85d08b4cc94, type: 2}
+    - {fileID: 11400000, guid: 35acb721363d59a4a85c8088519cdee5, type: 2}
+    - {fileID: 11400000, guid: b47389236a15bd545a2b008aa5f193da, type: 2}
+  - QuestionIcon: {fileID: 21300000, guid: 20e8dac1b75afdf4cab23068ea5da97a, type: 3}
+    QuestionLabel: 
+    Answers:
+    - {fileID: 11400000, guid: d20a9f5cba6282c40a3eae82a1478a89, type: 2}
+    - {fileID: 11400000, guid: e2df17a36b003a44cb949278f8a1fc1b, type: 2}
+    - {fileID: 11400000, guid: 510f69fc7cefcc94583227d51816a4aa, type: 2}
+  BrainNodes:
+  - Label: color-
+    StartingIndex: 4
+    NumberOfNode: 3
+    PossibleNames:
+    - Text: black
+      Label: 
+      Prefix: 
+      Suffix: 
+    - Text: purple
+      Label: 
+      Prefix: <color=#7C4DFF>
+      Suffix: </color>
+    - Text: green
+      Label: 
+      Prefix: <color=green>
+      Suffix: </color>
+  Problems:
+  - WordSwap: 1
+    WordSwapLabel: color-1
+    WordSwapPossibilities:
+    - Text: 
+      Label: color-4
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-5
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-6
+      Prefix: 
+      Suffix: 
+  - WordSwap: 1
+    WordSwapLabel: color-2
+    WordSwapPossibilities:
+    - Text: 
+      Label: color-4
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-5
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-6
+      Prefix: 
+      Suffix: 
+  - WordSwap: 1
+    WordSwapLabel: color-3
+    WordSwapPossibilities:
+    - Text: 
+      Label: color-4
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-5
+      Prefix: 
+      Suffix: 
+    - Text: 
+      Label: color-6
+      Prefix: 
+      Suffix: 
+  Solutions:
+  - IsEnabled: 1
+    Text: blue
+    Label: color-1
+  - IsEnabled: 1
+    Text: pink
+    Label: color-2
+  - IsEnabled: 1
+    Text: red
+    Label: color-3
   AvailableTools: 02000000

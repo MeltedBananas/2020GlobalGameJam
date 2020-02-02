@@ -12,47 +12,51 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04-SuccessSpeech
   m_EditorClassIdentifier: 
-  Phrase: Amazing! You're the best around, no one can say otherwise
+  Phrase: You've helped me today and I'll always be in your debt
   sperator:
   - ' '
   wordList:
-  - Text: Amazing!
+  - Text: You've
     Label: 
     Prefix: 
     Suffix: 
-  - Text: You're
+  - Text: helped
     Label: 
     Prefix: 
     Suffix: 
-  - Text: the
+  - Text: me
     Label: 
     Prefix: 
     Suffix: 
-  - Text: best
+  - Text: today
     Label: 
     Prefix: 
     Suffix: 
-  - Text: around,
+  - Text: and
     Label: 
     Prefix: 
     Suffix: 
-  - Text: no
+  - Text: I'll
     Label: 
     Prefix: 
     Suffix: 
-  - Text: one
+  - Text: always
     Label: 
     Prefix: 
     Suffix: 
-  - Text: can
+  - Text: be
     Label: 
     Prefix: 
     Suffix: 
-  - Text: say
+  - Text: in
     Label: 
     Prefix: 
     Suffix: 
-  - Text: otherwise
+  - Text: your
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: debt
     Label: 
     Prefix: 
     Suffix: 

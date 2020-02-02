@@ -16,11 +16,22 @@ MonoBehaviour:
   ClientDescription: {fileID: 11400000, guid: 2dcfe85fc5d07d44d96f149bbd799d2b, type: 2}
   FailSpeech: {fileID: 11400000, guid: c434daf5a87f08c47909b3fa2a680192, type: 2}
   SuccessSpeech: {fileID: 11400000, guid: 96adc58d52f52034798eca3485ee7642, type: 2}
-  SetupDescription: This young lady needs your help. She doesnt look too good.
+  SetupDescription: Ronald Frump is an highly distinguished man, but he recently
+    have a very special problem. He's been told you could fix it.
   ItemPrefab: {fileID: 0}
-  SubmitAnswerTexture: {fileID: 0}
+  SubmitAnswerTexture: {fileID: 21300000, guid: 821ac5628bfc2b449a0f3330f711b60e,
+    type: 3}
   ItemSprite: {fileID: 0}
-  Questions: []
+  Questions:
+  - QuestionIcon: {fileID: 0}
+    QuestionLabel: 
+    Answers: []
+  - QuestionIcon: {fileID: 0}
+    QuestionLabel: 
+    Answers: []
+  - QuestionIcon: {fileID: 0}
+    QuestionLabel: 
+    Answers: []
   BrainNodes: []
   Problems: []
   Solutions: []
