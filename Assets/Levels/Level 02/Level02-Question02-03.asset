@@ -1,0 +1,107 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level02-Question02-03
+  m_EditorClassIdentifier: 
+  Phrase: Do you think its a coincidence that Fire hydrant are [color-2]? The same
+    color has the fire trucks. I dont think so.
+  sperator:
+  - ' '
+  wordList:
+  - Text: Do
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: you
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: think
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: its
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: coincidence
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: that
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Fire
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: hydrant
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: are
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: red
+    Label: color-2
+    Prefix: <color="red">
+    Suffix: </color>
+  - Text: The
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: same
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: color
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: has
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: fire
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: trucks.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: dont
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: think
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: so.
+    Label: 
+    Prefix: 
+    Suffix: 
