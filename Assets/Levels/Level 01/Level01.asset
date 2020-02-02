@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: Level01
   m_EditorClassIdentifier: 
   Client: {fileID: 2124898037925491123, guid: 4e62222b1b1a5674195da35b25c136ff, type: 3}
+  ClientDescription: {fileID: 11400000, guid: c0c549708e32f464eb605e5c001d9744, type: 2}
   SetupDescription: We found him at our door step. Could you have look at him to
     make sure that he is ok? He seems lost.
   InventoryTexture: {fileID: 0}

@@ -168,6 +168,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d279861fe22ca9c45a9379860a81c66e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  delayBetweenLetters: 0.2
+  delayBetweenLetters: 0.12
   TextDiagnostic: {fileID: 11400000, guid: 8e21a0a974f07ef4e861197b50a316ef, type: 2}
   textBox: {fileID: 6621070375181499962}

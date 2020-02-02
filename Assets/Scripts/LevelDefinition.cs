@@ -29,6 +29,7 @@ public class LevelProblem
 public class LevelDefinition  : ScriptableObject
 {
     public Client Client;
+    public TextDiagnostic ClientDescription;
     public string SetupDescription = "This is your assignment - please fix the issue";
     public Texture2D InventoryTexture;
     public List<LevelQuestion> Questions;
@@ -40,7 +41,7 @@ public class LevelDefinition  : ScriptableObject
     public static void CreateAsset()
     {
         var asset = ScriptableObject.CreateInstance<LevelDefinition>();
-        UnityEditor.AssetDatabase.CreateAsset(asset, "Assets/Levels/LevelDefinition.asset");
+        UnityEditor.AssetDatabase.CreateAsset(asset, UnityEditor.AssetDatabase.GetAssetPath(UnityEditor.Selection.activeObject) + "/LevelDefinition.asset");
         UnityEditor.AssetDatabase.SaveAssets();
 
         UnityEditor.EditorUtility.FocusProjectWindow();
