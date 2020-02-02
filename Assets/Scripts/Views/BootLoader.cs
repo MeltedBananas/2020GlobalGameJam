@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class BootLoader : MonoBehaviour
 {
     [Header("BrainScene")]
@@ -251,8 +251,9 @@ public class BootLoader : MonoBehaviour
             QuestionButtons.ForEach(x => x.ScaleUp());
             QuestionMenuButton.gameObject.SetActive(true);
             QuestionMenuButton.ScaleUp();
-            if (_currentLevel.ItemPrefab != null)
+            if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
             {
+                InventoryMenuButton.gameObject.GetComponent<Image>().sprite = _currentLevel.ItemSprite;
                 InventoryMenuButton.gameObject.SetActive(true);
                 InventoryMenuButton.ScaleUp();
             }

@@ -6,7 +6,7 @@ using UnityEngine;
 [System.Serializable]
 public class LevelQuestion
 {
-    public Texture2D QuestionIcon;
+    public Sprite QuestionIcon;
     public string QuestionLabel;
     public List<TextDiagnostic> Answers;
 }
@@ -59,6 +59,8 @@ public class LevelDefinition  : ScriptableObject
     public TextDiagnostic SuccessSpeech;
     public string SetupDescription = "This is your assignment - please fix the issue";
     public GameObject ItemPrefab;
+    public Sprite SubmitAnswerTexture;
+    public Sprite ItemSprite;
     public List<LevelQuestion> Questions;
     public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;

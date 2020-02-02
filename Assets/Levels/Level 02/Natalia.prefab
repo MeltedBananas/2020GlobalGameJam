@@ -137,7 +137,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -757510352457501718, guid: ca44e29eb64b5a9468d1fdb9acd215ac,
+  m_Sprite: {fileID: 8952245955184647166, guid: 658266100d19a7047844f98859c0ee9c,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -161,7 +161,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 258838520744565908}
-  _spriteSheet: {fileID: 2800000, guid: ca44e29eb64b5a9468d1fdb9acd215ac, type: 3}
+  _spriteSheet: {fileID: 2800000, guid: 658266100d19a7047844f98859c0ee9c, type: 3}
   _secondsPerSheet: 0.15
   _usesRandomTimer: 0
   _randomBetweenSprite: {x: 0.025, y: 0.05}
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7329104672413992719, guid: 0aaf49018efd2984f844ff35ae300718,
+  m_Sprite: {fileID: -5065248541976729145, guid: 757f30384cb162941bfc93d5f8453129,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 6435549675380043925}
-  _spriteSheet: {fileID: 2800000, guid: 0aaf49018efd2984f844ff35ae300718, type: 3}
+  _spriteSheet: {fileID: 2800000, guid: 757f30384cb162941bfc93d5f8453129, type: 3}
   _secondsPerSheet: 0.15
   _usesRandomTimer: 0
   _randomBetweenSprite: {x: 0.025, y: 0.05}

@@ -2,13 +2,15 @@
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class QuestionButton : MonoBehaviour
 {
     public int QuestionIndex = 0;
     public float AppearTimeSeconds = 0.25f;
     public LeanTweenType AppearTween = LeanTweenType.easeInOutBack;
     public TMP_Text TextMeshPro;
+    public Image image;
+    
     private bool bIsSubmit = false;
     private bool bEnabled = false;
     private string Label;
@@ -17,17 +19,30 @@ public class QuestionButton : MonoBehaviour
     private void Awake()
     {
         _initialScale = transform.localScale;
+        
     }
 
     public void Initialized(LevelDefinition definition)
     {
+        image = GetComponent<Image>();
         bEnabled = false;
         Label = string.Empty;
 
         if(QuestionIndex < definition.Questions.Count)
         {
             bEnabled = true;
-            Label = definition.Questions[QuestionIndex].QuestionLabel;
+            if (definition.Questions[QuestionIndex].QuestionIcon)
+            {
+                image.sprite = definition.Questions[QuestionIndex].QuestionIcon;
+                TextMeshPro.gameObject.SetActive(false);
+            }
+            else
+            {
+                Label = definition.Questions[QuestionIndex].QuestionLabel;
+                TextMeshPro.SetText(Label);
+                TextMeshPro.gameObject.SetActive(true);
+            }
+            
         }
 
 
@@ -36,6 +51,17 @@ public class QuestionButton : MonoBehaviour
             bEnabled = true;
             bIsSubmit = true;
             Label = "Submit Answer";
+            if (definition.SubmitAnswerTexture)
+            {
+                image.sprite = definition.SubmitAnswerTexture;
+                TextMeshPro.gameObject.SetActive(false);
+            }
+            else
+            {
+                TextMeshPro.SetText(Label);
+                TextMeshPro.gameObject.SetActive(true);
+            }
+            
         }
 
 		WorldButton button = GetComponent<WorldButton>();
