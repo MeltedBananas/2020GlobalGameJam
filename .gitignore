@@ -33,3 +33,4 @@ Assembly-CSharp.csproj
 *.csproj
 *.csproj
 *.sln
+/Assembly-CSharp.csproj
