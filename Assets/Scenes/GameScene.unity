@@ -1256,6 +1256,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
+      propertyPath: _levelDefinitions.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
+        type: 3}
       propertyPath: _clientsParent
       value: 
       objectReference: {fileID: 2057728489}
@@ -1299,6 +1304,12 @@ PrefabInstance:
       propertyPath: QuestionButtons.Array.data[3]
       value: 
       objectReference: {fileID: 466825579}
+    - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
+        type: 3}
+      propertyPath: _levelDefinitions.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: 7de1a62a02e80f444819361d74d97d65,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e036cd92fab758e44a8b45494720cb7a, type: 3}
 --- !u!1001 &6621070376089368857

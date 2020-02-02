@@ -58,3 +58,4 @@ MonoBehaviour:
   - IsEnabled: 1
     Text: blue
     Label: color-1
+  AvailableTools: 040000000200000001000000010000000100000001000000
