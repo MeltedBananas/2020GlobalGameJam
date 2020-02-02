@@ -82,7 +82,7 @@ public class Brain : MonoBehaviour
     private bool bOnBrainScreen = false;
     Rect CursorZone;
 
-    bool bShow = false;
+    public bool bShow = false;
 
     private void Start()
     {
@@ -103,6 +103,14 @@ public class Brain : MonoBehaviour
     {
         CurrentLevel = currentLevel;
 
+        Nodes.Clear();
+        GatherBrainNodes(transform);
+
+        for (int i = Nodes.Count - 1; i >= 0; --i)
+        {
+            Nodes[i].gameObject.SetActive(false);
+        }
+
         List<BrainData> dataList = CurrentLevel.GenerateBrainDataList();
 
         List<BrainNode> randomizeNodes = new List<BrainNode>();
@@ -110,28 +118,22 @@ public class Brain : MonoBehaviour
         {
             int randomIdx = UnityEngine.Random.Range(0, Nodes.Count);
             Nodes[randomIdx].data = dataList[i];
+            Nodes[randomIdx].gameObject.SetActive(true);
             randomizeNodes.Add(Nodes[randomIdx]);
             Nodes.RemoveAt(randomIdx);
-        }
-
-        for(int i = Nodes.Count - 1; i >= 0; --i)
-        {
-            if(Nodes[i].data == null)
-            {
-                UnityEngine.Object.Destroy(Nodes[i].gameObject);
-            }
         }
 
         Nodes.Clear();
         Nodes.AddRange(randomizeNodes);
 
-        foreach(BrainNode node in Nodes)
+        List<Texture2D> possibleNodeIcons = new List<Texture2D>(PossibleNodeIcons);
+        foreach (BrainNode node in Nodes)
         {
-            int rndIconIdx = UnityEngine.Random.Range(0, PossibleNodeIcons.Count);
-            Texture2D icon = PossibleNodeIcons[rndIconIdx];
+            int rndIconIdx = UnityEngine.Random.Range(0, possibleNodeIcons.Count);
+            Texture2D icon = possibleNodeIcons[rndIconIdx];
             node.IconRenderer.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
 
-            PossibleNodeIcons.RemoveAt(rndIconIdx);
+            possibleNodeIcons.RemoveAt(rndIconIdx);
 
             node.Init(MainCamera);
         }

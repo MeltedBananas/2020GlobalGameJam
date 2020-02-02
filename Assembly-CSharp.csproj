@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\Views\BootLoader.cs" />
     <Compile Include="Assets\Scripts\Views\Client.cs" />
     <Compile Include="Assets\Scripts\Views\Downscale.cs" />
+    <Compile Include="Assets\Scripts\Views\FadeInOut.cs" />
     <Compile Include="Assets\Scripts\Views\InputManager.cs" />
     <Compile Include="Assets\Scripts\Views\LoadingScreen.cs" />
     <Compile Include="Assets\Scripts\Views\Menu.cs" />

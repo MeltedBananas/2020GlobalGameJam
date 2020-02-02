@@ -11,14 +11,17 @@ public class Menu : MonoBehaviour
     public float _disappearSeconds = 0.85f;
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.25f;
+    public BootLoader Bootloader;
     
     public void UI_StartGame()
     {
+        Bootloader.StartGame(false);
         LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _postItsParent.SetActive(false);
             _levelDescParent.SetActive(true);
-            LeanTween.moveY(gameObject, 0f, _appearSeconds).setEase(_disappearEaseType);
+
+            Bootloader.StartGame(true);
         });
     }
 
