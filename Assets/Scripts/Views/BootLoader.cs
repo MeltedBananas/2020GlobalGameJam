@@ -45,7 +45,7 @@ public class BootLoader : MonoBehaviour
 
     private int CurrentLevelIndex = -1;
 
-    private void Awake()
+    private void Start()
     {
         NextLevel();
 
@@ -59,10 +59,6 @@ public class BootLoader : MonoBehaviour
         SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
     }
 
-    private void Start()
-    {
-        //NextLevel();
-    }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
     {
@@ -107,6 +103,8 @@ public class BootLoader : MonoBehaviour
         _currentLevel = _levelDefinitions[++CurrentLevelIndex];
         _levelDescription.SetText(_currentLevel.SetupDescription);
         _firstTimeShown = false;
+
+        UI_ShowMenu();
     }
     
     private void InstantiateLevelObjects()
