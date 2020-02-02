@@ -41,7 +41,7 @@ public class QuestionButton : MonoBehaviour
         if (bEnabled)
         {
             gameObject.SetActive(true);
-            LeanTween.scale(gameObject, _initialScale, AppearTimeSeconds).setEase(AppearTween);
+            LeanTween.scale(gameObject, _initialScale, AppearTimeSeconds).setEase(AppearTween).setOnComplete(() => TextMeshPro.SetAllDirty());
         }
     }
 }

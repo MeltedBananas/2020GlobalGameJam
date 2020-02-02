@@ -13,7 +13,7 @@ public class WorldButton : MonoBehaviour
     /// <returns>if the Action was consumed</returns>
     public bool Click()
     {
-        if (_action != null)
+        if (enabled && _action != null)
         {
             if (_disableOnClick)
                 enabled = false;

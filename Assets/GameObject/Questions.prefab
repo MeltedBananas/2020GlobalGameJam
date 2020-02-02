@@ -450,7 +450,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -897,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -1030,7 +1030,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
@@ -1163,7 +1163,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _disableOnClick: 1
+  _disableOnClick: 0
   _action:
     m_PersistentCalls:
       m_Calls:
