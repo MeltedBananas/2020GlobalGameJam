@@ -12,11 +12,18 @@ public class Word
    
     public Word( string txt)
     {
-        
         Text = txt;
         ExtractLabel();
-
     }
+
+    public Word(Word word)
+    {
+        Text = word.Text;
+        Label = word.Label;
+        Prefix = word.Prefix;
+        Suffix = word.Suffix;
+    }
+
     public void ExtractLabel()
     {
         if (Text.Contains("[") || Text.Contains("]"))
