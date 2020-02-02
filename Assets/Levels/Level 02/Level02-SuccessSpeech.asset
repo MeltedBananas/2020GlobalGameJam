@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level02-SuccessSpeech
   m_EditorClassIdentifier: 
-  Phrase: Amazing! You're the best around, no one can say otherwise
+  Phrase: Amazing! You're the best around, no one can say otherwise.
   sperator:
   - ' '
   wordList:
@@ -52,7 +52,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: otherwise
+  - Text: otherwise.
     Label: 
     Prefix: 
     Suffix: 
