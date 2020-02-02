@@ -154,7 +154,7 @@ public class BootLoader : MonoBehaviour
         _currentClient.AskQuestion(index);
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            Debug.Log("WIN!!!!")
+            Debug.Log("WIN!!!!");
         }
         
     }
