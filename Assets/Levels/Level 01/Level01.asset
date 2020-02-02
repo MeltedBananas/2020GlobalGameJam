@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Client: {fileID: 2124898037925491123, guid: 4e62222b1b1a5674195da35b25c136ff, type: 3}
   ClientDescription: {fileID: 11400000, guid: c0c549708e32f464eb605e5c001d9744, type: 2}
-  FailSpeech: {fileID: 0}
-  SuccessSpeech: {fileID: 0}
+  FailSpeech: {fileID: 11400000, guid: 8f9190f6dc7afec438c3d2f53ce32362, type: 2}
+  SuccessSpeech: {fileID: 11400000, guid: a1484b787d1015a408ac7cccf17ad19c, type: 2}
   SetupDescription: We found him at our door step. Could you have look at him to
     make sure that he is ok? He seems lost.
   ItemPrefab: {fileID: 0}
@@ -38,18 +38,6 @@ MonoBehaviour:
     - Text: blue
       Label: 
       Prefix: <color="blue">
-      Suffix: </color>
-    - Text: green
-      Label: 
-      Prefix: <color="green">
-      Suffix: </color>
-    - Text: orange
-      Label: 
-      Prefix: <color="orange">
-      Suffix: </color>
-    - Text: black
-      Label: 
-      Prefix: <color="black">
       Suffix: </color>
   Problems:
   - WordSwap: 1
