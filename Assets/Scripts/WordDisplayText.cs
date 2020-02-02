@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class WordDisplayText 
 {
-
+    public int lastLetterfontSize;
     Word word;
     string result;
     private int letterIndex = 0;
     // Start is called before the first frame update
-    public WordDisplayText(Word w)
+    public WordDisplayText(Word w, int fontSize  )
     {
         word = w;
+        lastLetterfontSize = fontSize;
     }
     public bool IsFullyDisplayed()
     {
@@ -28,8 +29,10 @@ public class WordDisplayText
      public string Animate()
     {
         result = "";
+        ++letterIndex;
         if (letterIndex < word.Text.Length)
         {
+            
             result  = word.Prefix + ShowCharacters() + word.Suffix;
         }
         else
@@ -40,13 +43,13 @@ public class WordDisplayText
         return result;
 
     }
-    public string ShowBigLetter()
+    public string ShowLastLetter()
     {
-        return  "<size=15>" + word.Text.Substring(letterIndex++,1)+ "</size>";
+        return  "<size="+lastLetterfontSize+">" + word.Text.Substring(letterIndex,1)+ "</size>";
     }
     public string ShowCharacters()
     {
-        return  "<color="+ColorFromPrefix()+">" + word.Text.Substring(0,letterIndex )+ ShowBigLetter() + "</color>"+
+        return  "<color="+ColorFromPrefix()+">" + word.Text.Substring(0,letterIndex )+ ShowLastLetter() + "</color>"+
         "<color=white>"+ word.Text.Substring(letterIndex,word.Text.Length-letterIndex) + "</color>";
     }
 }
