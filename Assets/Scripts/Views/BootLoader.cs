@@ -15,13 +15,16 @@ public class BootLoader : MonoBehaviour
     [Header("References")]
     public GameObject _menu = null;
     public Transform _clientsParent = null;
+    public Transform _inventoryParent = null;
     public TextSpeachAnimation _speachBubble = null;
     public TMP_Text _levelDescription = null;
     public WorldButton _startGameButton = null;
+    
 
     [Header("Speech Bubble Appear")]
     public float _appearAfterSeconds = 0.25f;
     public GameObject _speechBubbleImage = null;
+    
     public LeanTweenType _scaleUpEaseType = LeanTweenType.easeInOutBack;
     public float _scaleUpTime = 0.4f;
 
@@ -46,7 +49,7 @@ public class BootLoader : MonoBehaviour
     private FadeInOut _brainFadeInOut = null;
     private int CurrentLevelIndex = -1;
     private bool bWaitingForSpawn = false;
-
+    private GameObject item;
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -84,6 +87,8 @@ public class BootLoader : MonoBehaviour
                 if (_brain != null)
                     break;
             }
+            
+            
 
             /*_brain.OnLoaded += () =>
             {
@@ -134,9 +139,15 @@ public class BootLoader : MonoBehaviour
                 _currentClient = null;
             }
 
+             if(item != null)
+            {
+                Destroy(item);
+                item = null;
+            } 
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
             _currentClient.Init(_currentLevel, _speachBubble);
 
+            item = Instantiate(_currentLevel.ItemPrefab.gameObject, _inventoryParent);
             foreach(QuestionButton questionButton in QuestionButtons)
             {
                 questionButton.Initialized(_currentLevel);

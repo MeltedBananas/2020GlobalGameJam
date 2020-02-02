@@ -56,12 +56,13 @@ public class LevelDefinition  : ScriptableObject
     public Client Client;
     public TextDiagnostic ClientDescription;
     public string SetupDescription = "This is your assignment - please fix the issue";
-    public Texture2D InventoryTexture;
+    public GameObject ItemPrefab;
     public List<LevelQuestion> Questions;
     public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;
     public List<LevelSolution> Solutions;
     public List<BrainToolType> AvailableTools = new List<BrainToolType>() { BrainToolType.SwapStart };
+
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Assets/Create/JAM2020/LevelDefinition", false, int.MinValue)]
