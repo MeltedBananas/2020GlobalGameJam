@@ -231,6 +231,7 @@ public class BootLoader : MonoBehaviour
         else
         {
             _currentClient.AskQuestion(index);
+            _currentClient.Talk();
         }
         
     }
@@ -238,7 +239,6 @@ public class BootLoader : MonoBehaviour
     {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            
             NextLevel(true);
         }
     }
