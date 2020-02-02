@@ -82,9 +82,7 @@ public class BrainNode : MonoBehaviour
 
     public void Swap(BrainNode otherNode)
     {
-        BrainData swapData = data;
-        data = otherNode.data;
-        otherNode.data = swapData;
+        data.Swap(otherNode.data);
 
         Sprite swapSprite = IconRenderer.sprite;
         IconRenderer.sprite = otherNode.IconRenderer.sprite;

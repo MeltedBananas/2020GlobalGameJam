@@ -81,6 +81,7 @@ public class BootLoader : MonoBehaviour
             _brain.OnLoaded += () =>
             {
                 _brain.Setup(_currentLevel.GenerateBrainDataList());
+                _currentLevel.FuckUp(_brain);
             };
 
 
