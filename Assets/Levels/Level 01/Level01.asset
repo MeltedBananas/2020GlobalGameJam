@@ -38,9 +38,9 @@ MonoBehaviour:
       Label: 
       Prefix: <color="green">
       Suffix: </color>
-    - Text: yellow
+    - Text: orange
       Label: 
-      Prefix: <color="yellow">
+      Prefix: <color="orange">
       Suffix: </color>
     - Text: black
       Label: 
