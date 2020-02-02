@@ -40,11 +40,13 @@ public class BootLoader : MonoBehaviour
     private bool _firstTimeShown = false;
     public Brain _brain = null;
     private Camera _brainCamera = null;
-
-    private int CurrentLevelIndex = -1;
+    private Rect _brainCameraViewport = Rect.zero;
+    private bool _isBrainCameraOpened = true;
 
     private void Awake()
     {
+        PickRandomLevel();
+
         _speachBubble.enabled = false;
         _speachBubble.OnTextComplete += OnTextComplete;
         _speechBubbleImage.SetActive(false);
@@ -53,11 +55,6 @@ public class BootLoader : MonoBehaviour
         
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
-    }
-
-    private void Start()
-    {
-        NextLevel();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
@@ -74,6 +71,7 @@ public class BootLoader : MonoBehaviour
                     break;
             }
 
+            _brainCameraViewport = _brainCamera.rect;
             _brainCamera.gameObject.SetActive(false);
 
             foreach (var root in _brainSceneRootGameObjects)
@@ -97,9 +95,9 @@ public class BootLoader : MonoBehaviour
         }
     }
 
-    private void NextLevel()
+    private void PickRandomLevel()
     {
-        _currentLevel = _levelDefinitions[CurrentLevelIndex++];
+        _currentLevel = _levelDefinitions[UnityEngine.Random.Range(0, _levelDefinitions.Count)];
         _levelDescription.SetText(_currentLevel.SetupDescription);
         _firstTimeShown = false;
     }
@@ -167,9 +165,17 @@ public class BootLoader : MonoBehaviour
         
     }
 
+    public void UI_CloseScreen()
+    {
+        // TODO: only enable after it has opened
+        _isBrainCameraOpened = !_isBrainCameraOpened;
+        
+        
+    }
+
     public void Update()
     {
-        if(Input.GetButtonDown("CheatNextLevel"))
+        if (Input.GetButtonDown("CheatNextLevel"))
         {
             NextLevel();
         }
