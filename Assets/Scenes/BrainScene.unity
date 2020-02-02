@@ -505,8 +505,8 @@ MonoBehaviour:
 
 
     ex.:
-    Swapping two concepts (<color=blue>blue</color> and <color=red>red</color>) will
-    inverse them for the client.'
+    Swapping two concepts (<color="blue">blue</color> and <color=red>red</color>)
+    will inverse them for the client.'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6b893ad10f19d03438a6c8a8c71472f2, type: 2}
   m_sharedMaterial: {fileID: 8422421959260043240, guid: 6b893ad10f19d03438a6c8a8c71472f2,
