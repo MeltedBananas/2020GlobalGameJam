@@ -25,7 +25,7 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d3e3a7482980f4e44a38b7f6ea1d8578, type: 2}
     - {fileID: 11400000, guid: 143dcab43e694094195e5086a7cc6ba9, type: 2}
   BrainNodes:
-  - Label: color-
+  - Label: color-1
     StartingIndex: 1
     NumberOfNode: 1
     PossibleNames:
@@ -49,4 +49,7 @@ MonoBehaviour:
   - WordSwap: 1
     WordSwapLabel: color-1
     WordSwapPossibilities:
-    - color-2
+    - Text: 
+      Label: 
+      Prefix: 
+      Suffix: 

@@ -16,8 +16,6 @@ public class TextDiagnosticEditor : Editor {
         }
 
         DrawDefaultInspector();
-
-      
         
     }
 
