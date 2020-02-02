@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class BrainNode : MonoBehaviour
@@ -21,6 +22,9 @@ public class BrainNode : MonoBehaviour
     public SpriteRenderer IconRenderer;
     public SpriteRenderer SwapIconRenderer;
     public SpriteRenderer CancelIconRenderer;
+
+    public ParticleSystem PingPS = null;
+    public float StopPingAfterSeconds = 2f;
 
     private void Start()
     {
@@ -90,5 +94,21 @@ public class BrainNode : MonoBehaviour
         bool swapEnabled = BrainNodeEnabled;
         SetEnabled(otherNode.BrainNodeEnabled);
         otherNode.SetEnabled(swapEnabled);
+    }
+
+    private Coroutine _stopPingCoroutine = null;
+    public void Ping()
+    {
+        if (_stopPingCoroutine != null)
+            StopCoroutine(_stopPingCoroutine);
+        
+        PingPS.Play();
+        _stopPingCoroutine = StartCoroutine(DoStopPingAfterSeconds());
+    }
+
+    private IEnumerator DoStopPingAfterSeconds()
+    {
+        yield return new WaitForSeconds(StopPingAfterSeconds);
+        PingPS.Stop();
     }
 }

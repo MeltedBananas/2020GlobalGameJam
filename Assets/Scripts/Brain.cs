@@ -333,6 +333,15 @@ public class Brain : MonoBehaviour
 
     public void RefreshFromLabel(string label, out Word word)
     {
-        word = GetFromLabel(label).data.Word;
+        BrainNode node = GetFromLabel(label);
+        if (node != null)
+        {
+            word = node.data.Word;
+            node.Ping();
+        }
+        else
+        {
+            word = null;    
+        }
     }
 }
