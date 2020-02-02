@@ -19,6 +19,7 @@ MonoBehaviour:
   InventoryTexture: {fileID: 0}
   Questions:
   - QuestionIcon: {fileID: 0}
+    QuestionLabel: 
     Answers:
     - {fileID: 11400000, guid: 8e21a0a974f07ef4e861197b50a316ef, type: 2}
     - {fileID: 11400000, guid: 467761558b1072e41b4bed6388c7ef8c, type: 2}
@@ -26,8 +27,8 @@ MonoBehaviour:
     - {fileID: 11400000, guid: d3e3a7482980f4e44a38b7f6ea1d8578, type: 2}
     - {fileID: 11400000, guid: 143dcab43e694094195e5086a7cc6ba9, type: 2}
   BrainNodes:
-  - Label: color-1
-    StartingIndex: 1
+  - Label: color-
+    StartingIndex: 2
     NumberOfNode: 1
     PossibleNames:
     - Text: red
@@ -51,6 +52,6 @@ MonoBehaviour:
     WordSwapLabel: color-1
     WordSwapPossibilities:
     - Text: 
-      Label: 
+      Label: color-2
       Prefix: 
       Suffix: 

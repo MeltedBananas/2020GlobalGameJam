@@ -14,6 +14,7 @@ enum BrainToolType
 
 public class BrainData
 {
+
     string Name;
 
     public BrainData(string name)
@@ -73,6 +74,7 @@ public class Brain : MonoBehaviour
         {
             node.BrainOwner = this;
         }
+
 
         Setup(new List<object>() { new BrainData("A"), new BrainData("B"), new BrainData("C"), new BrainData("D"), new BrainData("E"), new BrainData("F"), new BrainData("G"), new BrainData("H") });
     }

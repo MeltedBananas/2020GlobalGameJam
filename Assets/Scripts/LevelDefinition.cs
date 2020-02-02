@@ -6,6 +6,7 @@ using UnityEngine;
 public class LevelQuestion
 {
     public Texture2D QuestionIcon;
+    public string QuestionLabel;
     public List<TextDiagnostic> Answers;
 }
 
