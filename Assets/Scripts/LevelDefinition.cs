@@ -33,10 +33,20 @@ public class LevelSolution
     public bool IsEnabled = false;
     public string Text;
     public string Label;
-
+    public bool ValidateBrain(List<BrainNode> brainNodes)
+    {
+        foreach(BrainNode node in brainNodes)
+        {
+            if(ValidateSolution(node))
+            {
+                return true;
+            }
+        }
+        return false;
+    }
     public bool ValidateSolution(BrainNode brainNode)
     {
-        return brainNode.data.Word.Text == Text && brainNode.BrainNodeEnabled == IsEnabled;
+        return brainNode.data.Word.Label == Label && brainNode.data.Word.Text == Text && brainNode.BrainNodeEnabled == IsEnabled;
     }
     
 }
@@ -133,4 +143,5 @@ public class LevelDefinition  : ScriptableObject
             }
         }
     }
+    
 }

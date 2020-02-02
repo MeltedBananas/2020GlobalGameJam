@@ -300,23 +300,14 @@ public class Brain : MonoBehaviour
     }
     public bool ValidateBrain(List<LevelSolution> solution)
     { 
-        
-        bool result = true;
-
         foreach(LevelSolution s in solution)
-        {   
-            bool solutionFound = false;
-            foreach(BrainNode node in Nodes)
+        {
+            if(!s.ValidateBrain(Nodes))
             {
-                if(s.ValidateSolution(node))
-                {
-                    solutionFound = true;
-                    break;
-                }
+                return false;
             }
-            result &= solutionFound;
         }
-        return result;
+        return true;
     }
     public BrainNode GetFromLabel(string label)
     {
