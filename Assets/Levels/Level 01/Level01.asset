@@ -19,7 +19,7 @@ MonoBehaviour:
   InventoryTexture: {fileID: 0}
   Questions:
   - QuestionIcon: {fileID: 0}
-    QuestionLabel: 
+    QuestionLabel: Shirt
     Answers:
     - {fileID: 11400000, guid: 8e21a0a974f07ef4e861197b50a316ef, type: 2}
     - {fileID: 11400000, guid: 467761558b1072e41b4bed6388c7ef8c, type: 2}
