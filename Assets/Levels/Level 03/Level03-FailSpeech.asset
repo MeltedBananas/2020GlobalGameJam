@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level03-FailSpeech
   m_EditorClassIdentifier: 
-  Phrase: I don't think we're done here, I still don't feel myself again...
+  Phrase: There are still some thing that seems fuzzy to me...
   sperator:
   - ' '
   wordList:

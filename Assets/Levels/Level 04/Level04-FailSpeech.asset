@@ -12,35 +12,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04-FailSpeech
   m_EditorClassIdentifier: 
-  Phrase: I don't think we're done here, I still don't feel myself again...
+  Phrase: This was a tremendous waste of my time, I'm still barking insanities!
   sperator:
   - ' '
   wordList:
-  - Text: I
+  - Text: This
     Label: 
     Prefix: 
     Suffix: 
-  - Text: don't
+  - Text: was
     Label: 
     Prefix: 
     Suffix: 
-  - Text: think
+  - Text: a
     Label: 
     Prefix: 
     Suffix: 
-  - Text: we're
+  - Text: tremendous
     Label: 
     Prefix: 
     Suffix: 
-  - Text: done
+  - Text: waste
     Label: 
     Prefix: 
     Suffix: 
-  - Text: here,
+  - Text: of
     Label: 
     Prefix: 
     Suffix: 
-  - Text: I
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: time,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I'm
     Label: 
     Prefix: 
     Suffix: 
@@ -48,19 +56,11 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: don't
+  - Text: barking
     Label: 
     Prefix: 
     Suffix: 
-  - Text: feel
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: myself
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: again...
+  - Text: insanities!
     Label: 
     Prefix: 
     Suffix: 
