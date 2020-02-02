@@ -23,14 +23,14 @@ public class Menu : MonoBehaviour
         _postItsParent.SetActive(true);
         _levelDescParent.SetActive(false);
         _creditParent.SetActive(false);
-        LeanTween.moveY(gameObject, 0f, _appearSeconds).setEase(_disappearEaseType);
+        LeanTween.moveY(gameObject, 10f, _appearSeconds).setEase(_disappearEaseType);
     }
 
     public void UI_StartGame()
     {
         _audioManager.PlayMusic();
         Bootloader.StartGame(false);
-        LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        LeanTween.moveY(gameObject, -Screen.height -100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _postItsParent.SetActive(false);
             _levelDescParent.SetActive(true);
@@ -42,12 +42,12 @@ public class Menu : MonoBehaviour
     public void UI_EndofGame()
     {
         _levelDescription.SetText(EndOfGameMessage);
-        LeanTween.moveY(gameObject, 0f, _appearSeconds).setEase(_disappearEaseType);
+        LeanTween.moveY(gameObject, 10f, _appearSeconds).setEase(_disappearEaseType);
     }
 
     public void UI_Credits()
     {   
-        LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        LeanTween.moveY(gameObject, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _postItsParent.SetActive(false);
             _levelDescription.SetText("");

@@ -37,6 +37,7 @@ public class TextSpeachAnimation : MonoBehaviour
         _currentWordIndex = 0;
         wordDisplayList.Clear();
         textBox.SetText("");
+        result = "";
     }
 
     public void SetupLine(TextDiagnostic td)

@@ -58,7 +58,6 @@ public class BootLoader : MonoBehaviour
     private bool bStartNextLevelAfterSpeech = false;
     public bool bInCredits = false;
 
-
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -188,7 +187,7 @@ public class BootLoader : MonoBehaviour
             CurrentLevelIndex = -1;
             bInCredits = false;
 
-            LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+            LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
             {
                 _clipboard.UI_MainMenu();
             });
@@ -198,7 +197,7 @@ public class BootLoader : MonoBehaviour
         {
             if (CurrentLevelIndex < _levelDefinitions.Count)
             {
-                LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+                LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
                 {
                     _brainCamera.gameObject.SetActive(true);
                     _brain.Show(true);
@@ -228,6 +227,18 @@ public class BootLoader : MonoBehaviour
     private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        ShowSpeech();
+    }
+
+    private IEnumerator NextLevelAfterAFewSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        HideSpeech();
+        NextLevel(true);
+    }
+
+    public void ShowSpeech()
+    {
         _speechBubbleImage.SetActive(true);
         LeanTween.scale(_speechBubbleImage, _speechBubbleInitialScale, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() =>
         {
@@ -235,6 +246,16 @@ public class BootLoader : MonoBehaviour
             _currentClient.Talk();
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
+        });
+    }
+
+    public void HideSpeech()
+    {
+        LeanTween.scale(_speechBubbleImage, Vector3.zero, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() =>
+        {
+            _speachBubble.enabled = false;
+            _currentClient.Shutup();
+            _speachBubble.ClearLine();
         });
     }
     
@@ -262,7 +283,7 @@ public class BootLoader : MonoBehaviour
 
         if(bStartNextLevelAfterSpeech)
         {
-            NextLevel(true);
+            StartCoroutine(NextLevelAfterAFewSeconds(2.0f));
             bStartNextLevelAfterSpeech = false;
         }
     }
@@ -277,7 +298,7 @@ public class BootLoader : MonoBehaviour
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
         QuestionMenuButton.gameObject.SetActive(false);
         InventoryMenuButton.gameObject.SetActive(false);
-        LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        LeanTween.moveY(_menu, 10f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _startGameButton.enabled = true;
             if (bWaitingForSpawn)
