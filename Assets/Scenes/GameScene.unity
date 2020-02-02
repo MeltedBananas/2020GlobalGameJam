@@ -2554,7 +2554,7 @@ PrefabInstance:
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
       propertyPath: _levelDefinitions.Array.size
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
@@ -2672,6 +2672,12 @@ PrefabInstance:
       propertyPath: _clipboard
       value: 
       objectReference: {fileID: 266710923}
+    - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
+        type: 3}
+      propertyPath: _levelDefinitions.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: 5a608623c0310ea4ea274b078777c528,
+        type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e036cd92fab758e44a8b45494720cb7a, type: 3}
 --- !u!1001 &6621070376089368857
