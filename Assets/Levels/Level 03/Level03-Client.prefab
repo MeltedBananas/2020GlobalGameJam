@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: cd1e10dff8857374cb903473a70a267e, type: 3}
+  m_Sprite: {fileID: 21300000, guid: d52ac0966a5e69c4fb403a20c6f7ccb8, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -176,7 +176,7 @@ GameObject:
   - component: {fileID: 258838520859361779}
   - component: {fileID: 2124898037925491123}
   m_Layer: 5
-  m_Name: Natalia
+  m_Name: Level03-Client
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -284,7 +284,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5065248541976729145, guid: 757f30384cb162941bfc93d5f8453129,
+  m_Sprite: {fileID: 7329104672413992719, guid: 0aaf49018efd2984f844ff35ae300718,
     type: 3}
   m_Type: 0
   m_PreserveAspect: 0
@@ -308,7 +308,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _image: {fileID: 6435549675380043925}
-  _spriteSheet: {fileID: 2800000, guid: 757f30384cb162941bfc93d5f8453129, type: 3}
+  _spriteSheet: {fileID: 2800000, guid: 0aaf49018efd2984f844ff35ae300718, type: 3}
   _secondsPerSheet: 0.15
   _usesRandomTimer: 0
   _randomBetweenSprite: {x: 0.025, y: 0.05}
