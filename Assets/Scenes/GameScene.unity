@@ -515,6 +515,11 @@ PrefabInstance:
       propertyPath: m_SizeDelta.x
       value: 128
       objectReference: {fileID: 0}
+    - target: {fileID: 1491363967013016341, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 2321507244520810331, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -605,6 +610,11 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4056349912099916699, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 128
+      objectReference: {fileID: 0}
     - target: {fileID: 4445512388006327397, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_IsActive
@@ -664,6 +674,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5537920385353252476, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 5537920385353252477, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
@@ -784,6 +799,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8453266349274432112, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: m_Size.x
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 8606503622723201489, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}

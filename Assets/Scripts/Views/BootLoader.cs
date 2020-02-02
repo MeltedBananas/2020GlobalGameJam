@@ -256,6 +256,13 @@ public class BootLoader : MonoBehaviour
             _speachBubble.enabled = false;
             _currentClient.Shutup();
             _speachBubble.ClearLine();
+
+            QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
+            QuestionMenuButton.gameObject.SetActive(false);
+            if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
+            {
+                InventoryMenuButton.gameObject.SetActive(false);
+            }
         });
     }
     
@@ -282,7 +289,9 @@ public class BootLoader : MonoBehaviour
         }
 
         if(bStartNextLevelAfterSpeech)
-        {
+        {   
+            
+
             StartCoroutine(NextLevelAfterAFewSeconds(2.0f));
             bStartNextLevelAfterSpeech = false;
         }
