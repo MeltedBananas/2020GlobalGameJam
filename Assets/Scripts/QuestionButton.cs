@@ -67,8 +67,9 @@ public class QuestionButton : MonoBehaviour
 		WorldButton button = GetComponent<WorldButton>();
         if(button != null)
         {
-            button.enabled = false;
+            button.enabled = bEnabled;
         }
+        
 
         TextMeshPro.SetText(Label);
 
