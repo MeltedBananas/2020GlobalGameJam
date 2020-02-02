@@ -24,12 +24,12 @@ public class TextSpeachAnimation : MonoBehaviour
     void Start()
     {
         _letterTimer = 0.5f;
-        SetupLine(TextDiagnostic);
+        //SetupLine(TextDiagnostic);
     }
-    void SetupLine(TextDiagnostic td)
+    public void SetupLine(TextDiagnostic td)
     {
        wordDisplayList.Clear();
-       foreach(Word w in TextDiagnostic.wordList)
+       foreach(Word w in td.wordList)
        {
            wordDisplayList.Add(new WordDisplayText(w));
        }  

@@ -54,10 +54,20 @@ public class Brain : MonoBehaviour
     public Vector2 SwapPosition;
     private BrainNode SwappingBrainNode;
 
+    public List<Texture2D> PossibleNodeIcons;
+
     BrainToolType Tool;
+
+    private bool bOnBrainScreen = false;
+    Rect CursorZone;
 
     private void Start()
     {
+        SetCameraViewport cameraViewport = Camera.main.GetComponent<SetCameraViewport>();
+
+        float zoneHeight = cameraViewport._viewportRect.size.y * Screen.height;
+        CursorZone = new Rect(cameraViewport._viewportRect.position.x * Screen.width, Screen.height - cameraViewport._viewportRect.position.y * Screen.height - zoneHeight, cameraViewport._viewportRect.size.x * Screen.width, zoneHeight);
+
         GatherBrainNodes(transform);
         foreach(BrainNode node in Nodes)
         {
@@ -88,6 +98,15 @@ public class Brain : MonoBehaviour
 
         Nodes.Clear();
         Nodes.AddRange(randomizeNodes);
+
+        foreach(BrainNode node in Nodes)
+        {
+            int rndIconIdx = UnityEngine.Random.Range(0, PossibleNodeIcons.Count);
+            Texture2D icon = PossibleNodeIcons[rndIconIdx];
+            node.IconRenderer.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
+
+            PossibleNodeIcons.RemoveAt(rndIconIdx);
+        }
     }
 
     void GatherBrainNodes(Transform itTransform)
@@ -125,13 +144,11 @@ public class Brain : MonoBehaviour
                 SwappingBrainNode = node;
                 SwappingBrainNode.SetReadyToSwap(true);
                 Tool = BrainToolType.SwapEnd;
-                Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
+                RefreshCursor();
                 break;
             case BrainToolType.SwapEnd:
-                object swapData = node.data;
-                node.data = SwappingBrainNode.data;
-                SwappingBrainNode.data = swapData;
-                Tool = BrainToolType.SwapEnd;
+                node.Swap(SwappingBrainNode);
+                Tool = BrainToolType.SwapStart;
                 Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
                 if (SwappingBrainNode != null)
                 {
@@ -213,6 +230,41 @@ public class Brain : MonoBehaviour
             myStyle.fontSize = 50;
             string nodeInfo = string.Format("{0} - {1}", ((BrainData)InspectBrainNode.data).ToString(), InspectBrainNode.BrainNodeEnabled ? "Enabled" : "Disabled");
             GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), nodeInfo, myStyle);
+        }
+
+        Vector2 mousePosition = new Vector2(Input.mousePosition.x, Screen.height - Input.mousePosition.y);
+        bool bIsCurrentlyOnScreen = CursorZone.Contains(mousePosition);
+        if(bIsCurrentlyOnScreen != bOnBrainScreen)
+        {
+            bOnBrainScreen = bIsCurrentlyOnScreen;
+
+            if(bOnBrainScreen)
+            {
+                RefreshCursor();
+            }
+            else
+            {
+                Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+            }
+        }
+    }
+
+    void RefreshCursor()
+    {
+        switch(Tool)
+        {
+            case BrainToolType.Cancel:
+                Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.Inspect:
+                Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.SwapEnd:
+                Cursor.SetCursor(SwapCursorEnd, Vector2.zero, CursorMode.ForceSoftware);
+                break;
+            case BrainToolType.SwapStart:
+                Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
+                break;
         }
     }
 }

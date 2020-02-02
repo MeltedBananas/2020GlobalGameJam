@@ -16,16 +16,12 @@ MonoBehaviour:
     to you.
   sperator:
   - ' '
-  - ','
-  - '!'
-  - '?'
-  - .
   wordList:
   - Text: You
     Label: 
     Prefix: 
     Suffix: 
-  - Text: know
+  - Text: know,
     Label: 
     Prefix: 
     Suffix: 
@@ -61,7 +57,7 @@ MonoBehaviour:
     Label: color-1
     Prefix: <color="blue">
     Suffix: </color>
-  - Text: shirt
+  - Text: shirt,
     Label: 
     Prefix: 
     Suffix: 
@@ -85,7 +81,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: you
+  - Text: you.
     Label: 
     Prefix: 
     Suffix: 

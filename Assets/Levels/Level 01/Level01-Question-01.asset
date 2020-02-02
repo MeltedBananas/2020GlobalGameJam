@@ -15,10 +15,6 @@ MonoBehaviour:
   Phrase: What about my [color-1] shirt? I swear, i did not steal it.
   sperator:
   - ' '
-  - ','
-  - '!'
-  - '?'
-  - .
   wordList:
   - Text: What
     Label: 
@@ -34,9 +30,9 @@ MonoBehaviour:
     Suffix: 
   - Text: blue
     Label: color-1
-    Prefix: <color=blue>
+    Prefix: <color="blue">
     Suffix: </color>
-  - Text: shirt
+  - Text: shirt?
     Label: 
     Prefix: 
     Suffix: 
@@ -44,7 +40,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: swear
+  - Text: swear,
     Label: 
     Prefix: 
     Suffix: 
@@ -64,7 +60,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: it
+  - Text: it.
     Label: 
     Prefix: 
     Suffix: 

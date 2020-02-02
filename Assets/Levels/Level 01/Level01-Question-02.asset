@@ -55,7 +55,7 @@ MonoBehaviour:
   - Text: blue
     Label: color-1
     Prefix: <color="blue">
-    Suffix: </blue>
+    Suffix: </color>
   - Text: really
     Label: 
     Prefix: 

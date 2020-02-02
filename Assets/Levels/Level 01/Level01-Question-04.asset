@@ -16,10 +16,6 @@ MonoBehaviour:
     dont wear pants anymore.
   sperator:
   - ' '
-  - ','
-  - '!'
-  - '?'
-  - .
   wordList:
   - Text: I
     Label: 

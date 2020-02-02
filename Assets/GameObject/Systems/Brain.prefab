@@ -60,6 +60,44 @@ MonoBehaviour:
   SwapCursorEnd: {fileID: 2800000, guid: cc21b844e220127459bd716a51485c63, type: 3}
   SwapButtonUI: {fileID: 2800000, guid: ea581f61cb3352545a1d7f3bd0e7f402, type: 3}
   SwapPosition: {x: 1750, y: 660}
+  PossibleNodeIcons:
+  - {fileID: 2800000, guid: b7a8d9810c460fc4c93847dd4548fda5, type: 3}
+  - {fileID: 2800000, guid: 974d1b8c61e6e8045b5e86a3baec0739, type: 3}
+  - {fileID: 2800000, guid: d2c650b8ef458df4f93dc6d3af25b21b, type: 3}
+  - {fileID: 2800000, guid: fa5803d536c639c4fa153856dcb46c92, type: 3}
+  - {fileID: 2800000, guid: ec50b727999f0fe4ab6d11c11f6bec5f, type: 3}
+  - {fileID: 2800000, guid: c3a7064f117759d4bbbe4a36a86124de, type: 3}
+  - {fileID: 2800000, guid: 96b37d23794299c4cbc07b5f111aa0bf, type: 3}
+  - {fileID: 2800000, guid: 19db411121319264aaeb25e3a0514617, type: 3}
+  - {fileID: 2800000, guid: f52fdad5abf599b41b14db826a3f885c, type: 3}
+  - {fileID: 2800000, guid: 34c788fcf6ecba74484a3ed3da69f5e1, type: 3}
+  - {fileID: 2800000, guid: 531d5f3638bf3164198b11391e7f86dd, type: 3}
+  - {fileID: 2800000, guid: 1ca4a5a22143f5f4b85e3ae429460e52, type: 3}
+  - {fileID: 2800000, guid: d0e292ebb7a6a594abbae2ed1613db3e, type: 3}
+  - {fileID: 2800000, guid: eaac913216180944dbe35ebb2c8aefe6, type: 3}
+  - {fileID: 2800000, guid: f0baecee444b9cd44a9572d25fca0c3d, type: 3}
+  - {fileID: 2800000, guid: 6a697e97b4ba0a04ca4932be7d4fd1a3, type: 3}
+  - {fileID: 2800000, guid: a03d47e0fc17b0f46b038164ce69c597, type: 3}
+  - {fileID: 2800000, guid: 3e208ad7ba3ae774e8cd0fc025bd2ed8, type: 3}
+  - {fileID: 2800000, guid: 2985973fad3c75842ad93035776967c7, type: 3}
+  - {fileID: 2800000, guid: b3540fe3b46ccc14ea589c5fdc17e8db, type: 3}
+  - {fileID: 2800000, guid: 3f5f41d06c64c5947a93a2d62bfc7635, type: 3}
+  - {fileID: 2800000, guid: fc9a6d7ae41a5d04e962dae193bbeecf, type: 3}
+  - {fileID: 2800000, guid: a19aa66a7c446c6439a3004265d42d7c, type: 3}
+  - {fileID: 2800000, guid: 646efdb872a367d448db25f8ef81c841, type: 3}
+  - {fileID: 2800000, guid: 8fbb9a3ca2ecf6746851f100f25c2487, type: 3}
+  - {fileID: 2800000, guid: b8b42bf5037b00d43b169cbd57c3da07, type: 3}
+  - {fileID: 2800000, guid: 7103f0a0de7b33e4e89eab40a4fe541f, type: 3}
+  - {fileID: 2800000, guid: 7f3be757e3135044ea341bc5157c8026, type: 3}
+  - {fileID: 2800000, guid: dea42c64787c934489c9d244a10962ce, type: 3}
+  - {fileID: 2800000, guid: 36bcb24a3b5261e4f8849f27319182ab, type: 3}
+  - {fileID: 2800000, guid: 1118bb007556bcd49bf60f78e551c5b2, type: 3}
+  - {fileID: 2800000, guid: cd112bf5608980245a4448d2579f63c9, type: 3}
+  - {fileID: 2800000, guid: 71235027020dbd042938fcd00a2d6d05, type: 3}
+  - {fileID: 2800000, guid: acb295321bff8394d9f919e3c0321d45, type: 3}
+  - {fileID: 2800000, guid: 83d9a96ee61a6804eb1f96b2c0f19736, type: 3}
+  - {fileID: 2800000, guid: af022b0406124794eb41d608999f3aa0, type: 3}
+  - {fileID: 2800000, guid: bf05b68b02d77534cadbfd937fe54ab0, type: 3}
 --- !u!1001 &1851686411835532696
 PrefabInstance:
   m_ObjectHideFlags: 0
