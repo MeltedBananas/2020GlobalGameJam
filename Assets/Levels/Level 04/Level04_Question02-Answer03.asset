@@ -12,55 +12,108 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_Question02-Answer03
   m_EditorClassIdentifier: 
-  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
+  Phrase: Our country [bark-2] is in serious trouble. We don't [bark-2]have any [jobs]
+    anymore. We used to have [jobs], but we don't have [bark-2] them anymore.
   sperator:
   - ' '
   wordList:
-  - Text: I've
+  - Text: Our
     Label: 
     Prefix: 
     Suffix: 
-  - Text: never
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: been
+  - Text: country
     Label: 
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
+    Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
-  - Text: humiliated
+  - Text: is
     Label: 
     Prefix: 
     Suffix: 
-  - Text: like
+  - Text: in
     Label: 
     Prefix: 
     Suffix: 
-  - Text: this
+  - Text: serious
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: trouble.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: We
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: don't
     Label: 
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
+    Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
-  - Text: before,
+  - Text: any
     Label: 
     Prefix: 
     Suffix: 
-  - Text: please
+  - Text: jobs
+    Label: jobs
+    Prefix: 
+    Suffix: 
+  - Text: anymore.
     Label: 
     Prefix: 
     Suffix: 
-  - Text: fix
+  - Text: We
     Label: 
     Prefix: 
     Suffix: 
-  - Text: this!
+  - Text: used
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: jobs
+    Label: jobs
+    Prefix: 
+    Suffix: 
+  - Text: but
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: we
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: don't
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-2
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: them
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: anymore.
     Label: 
     Prefix: 
     Suffix: 

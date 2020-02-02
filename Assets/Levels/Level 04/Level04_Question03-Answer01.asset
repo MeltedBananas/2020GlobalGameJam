@@ -12,68 +12,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_Question03-Answer01
   m_EditorClassIdentifier: 
-  Phrase: Our country [bark-2] is in serious trouble. We don't [bark-2]have any [jobs]
-    anymore. We used to have [jobs], but we don't have [bark-2] them anymore.
+  Phrase: I also [bark-3] talk about building a [wall] and oftentimes I'll say [bark-3],
+    and there's going to be a big beautiful door in that [wall] and people are going
+    to come into our [bark-3] country because we want people to come in.
   sperator:
   - ' '
   wordList:
-  - Text: Our
+  - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: country
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: bark-2
-    Prefix: <b><i>
-    Suffix: </b></i>
-  - Text: is
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: in
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: serious
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: trouble.
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: We
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: don't
+  - Text: also
     Label: 
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: bark-2
-    Prefix: <b><i>
+    Label: bark-3
+    Prefix: <i><b>
     Suffix: </b></i>
-  - Text: any
+  - Text: talk
     Label: 
     Prefix: 
     Suffix: 
-  - Text: job
-    Label: jobs
-    Prefix: 
-    Suffix: 
-  - Text: anymore.
+  - Text: about
     Label: 
     Prefix: 
     Suffix: 
-  - Text: We
+  - Text: building
     Label: 
     Prefix: 
     Suffix: 
-  - Text: used
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wall
+    Label: wall
+    Prefix: 
+    Suffix: 
+  - Text: and
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: oftentimes
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I'll
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: say
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-3
+    Prefix: <i><b>
+    Suffix: </i><b>
+  - Text: and
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: there's
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: going
     Label: 
     Prefix: 
     Suffix: 
@@ -81,15 +86,79 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: have
+  - Text: be
     Label: 
     Prefix: 
     Suffix: 
-  - Text: jobs
-    Label: jobs
+  - Text: a
+    Label: 
     Prefix: 
     Suffix: 
-  - Text: but
+  - Text: big
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: beautiful
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: door
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: in
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: that
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wall
+    Label: wall
+    Prefix: 
+    Suffix: 
+  - Text: and
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: people
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: are
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: going
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: come
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: into
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: our
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-3
+    Prefix: <i><b>
+    Suffix: </i></b>
+  - Text: country
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: because
     Label: 
     Prefix: 
     Suffix: 
@@ -97,23 +166,23 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: don't
+  - Text: want
     Label: 
     Prefix: 
     Suffix: 
-  - Text: have
+  - Text: people
     Label: 
     Prefix: 
     Suffix: 
-  - Text: '!*!*undefined*!*!'
-    Label: bark-2
-    Prefix: 
-    Suffix: 
-  - Text: them
+  - Text: to
     Label: 
     Prefix: 
     Suffix: 
-  - Text: anymore.
+  - Text: come
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: in.
     Label: 
     Prefix: 
     Suffix: 

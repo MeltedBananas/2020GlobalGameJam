@@ -23,16 +23,34 @@ MonoBehaviour:
     type: 3}
   ItemSprite: {fileID: 0}
   Questions:
-  - QuestionIcon: {fileID: 0}
+  - QuestionIcon: {fileID: 21300000, guid: 4691ad38334ca624d9c36005eefeae0d, type: 3}
     QuestionLabel: 
-    Answers: []
-  - QuestionIcon: {fileID: 0}
+    Answers:
+    - {fileID: 11400000, guid: 222fefd5fe14fcb43bf0cd766f8fa3ce, type: 2}
+    - {fileID: 11400000, guid: d8edeb6c75312c840976f3fe6d4b7eab, type: 2}
+    - {fileID: 11400000, guid: 469d9afccfc87f64fa82e727673c4493, type: 2}
+  - QuestionIcon: {fileID: 21300000, guid: 6bb521ce898cf834a9829283142dcca2, type: 3}
     QuestionLabel: 
-    Answers: []
-  - QuestionIcon: {fileID: 0}
+    Answers:
+    - {fileID: 11400000, guid: f0e76dbb7e6654f498c2e5a24fc71a09, type: 2}
+    - {fileID: 11400000, guid: b866a7a1081b64d40b9bf69a7cbcff48, type: 2}
+    - {fileID: 11400000, guid: 88ec515cf4a58a64c81db0cb558f5277, type: 2}
+  - QuestionIcon: {fileID: 21300000, guid: bd15a03bf09cdf04bb89b04f01e2083f, type: 3}
     QuestionLabel: 
-    Answers: []
+    Answers:
+    - {fileID: 11400000, guid: 92b144bda9218984fa5e843ee5c47294, type: 2}
+    - {fileID: 11400000, guid: a5caf7bb75a6f7948ac4002799290ce7, type: 2}
+    - {fileID: 11400000, guid: 76e949f5f0c794e4bbc18b0ea81deb08, type: 2}
   BrainNodes: []
   Problems: []
-  Solutions: []
-  AvailableTools: 02000000
+  Solutions:
+  - IsEnabled: 0
+    Text: '*BARK*'
+    Label: bark-1
+  - IsEnabled: 0
+    Text: '*BARK*'
+    Label: bark-2
+  - IsEnabled: 0
+    Text: '*BARK*'
+    Label: bark-3
+  AvailableTools: 04000000

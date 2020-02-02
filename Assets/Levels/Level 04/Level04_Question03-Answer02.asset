@@ -12,55 +12,67 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_Question03-Answer02
   m_EditorClassIdentifier: 
-  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
+  Phrase: I want a [bark-3] strong [border]. I do want a [wall]. Walls do work [bark-3].
   sperator:
   - ' '
   wordList:
-  - Text: I've
+  - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: never
+  - Text: want
     Label: 
     Prefix: 
     Suffix: 
-  - Text: been
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: BARK
-    Prefix: <b><i>
-    Suffix: </i></b>
-  - Text: humiliated
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: like
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: this
+  - Text: a
     Label: 
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
+    Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
-  - Text: before,
+  - Text: strong
     Label: 
     Prefix: 
     Suffix: 
-  - Text: please
+  - Text: border
+    Label: border
+    Prefix: 
+    Suffix: 
+  - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: fix
+  - Text: do
     Label: 
     Prefix: 
     Suffix: 
-  - Text: this!
+  - Text: want
     Label: 
     Prefix: 
     Suffix: 
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wall
+    Label: wall
+    Prefix: 
+    Suffix: 
+  - Text: Walls
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: do
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: work.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-3
+    Prefix: <b><i>
+    Suffix: </b></i>

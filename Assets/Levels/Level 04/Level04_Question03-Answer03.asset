@@ -12,55 +12,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_Question03-Answer03
   m_EditorClassIdentifier: 
-  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
+  Phrase: 'Someday, when I''m [bark-3] no longer around, they will call it: the Trump
+    [wall]. Its got to be [bark-3] the greatest [wall].'
   sperator:
   - ' '
   wordList:
-  - Text: I've
+  - Text: Someday,
     Label: 
     Prefix: 
     Suffix: 
-  - Text: never
+  - Text: when
     Label: 
     Prefix: 
     Suffix: 
-  - Text: been
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: BARK
-    Prefix: <b><i>
-    Suffix: </i></b>
-  - Text: humiliated
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: like
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: this
+  - Text: I'm
     Label: 
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
+    Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
-  - Text: before,
+  - Text: no
     Label: 
     Prefix: 
     Suffix: 
-  - Text: please
+  - Text: longer
     Label: 
     Prefix: 
     Suffix: 
-  - Text: fix
+  - Text: around,
     Label: 
     Prefix: 
     Suffix: 
-  - Text: this!
+  - Text: they
     Label: 
+    Prefix: 
+    Suffix: 
+  - Text: will
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: call
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: 'it:'
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Trump
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wall
+    Label: wall
+    Prefix: 
+    Suffix: 
+  - Text: Its
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: got
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: be
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-3
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: greatest
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wall
+    Label: wall
     Prefix: 
     Suffix: 
