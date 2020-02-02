@@ -27,6 +27,7 @@ public class BootLoader : MonoBehaviour
 
     [Header("Question Buttons")]
     public List<QuestionButton> QuestionButtons;
+    public GameObject ContextualMenu;
 
     [Header("Menu Disappear")]
     public float _disappearSeconds = 0.85f;
@@ -149,6 +150,7 @@ public class BootLoader : MonoBehaviour
         {
             _brainCamera.gameObject.SetActive(true);
             _brain.Show(true);
+            
             StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
         });
     }
@@ -172,6 +174,7 @@ public class BootLoader : MonoBehaviour
         if (!_firstTimeShown)
         {
             QuestionButtons.ForEach(x => x.ScaleUp());
+
             _firstTimeShown = true;
         }
     }
@@ -197,11 +200,16 @@ public class BootLoader : MonoBehaviour
     public void UI_AskQuestion(int index)
     {
         _currentClient.AskQuestion(index);
+        
+        
+    }
+    public void UI_TestSolution()
+    {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            Debug.Log("WIN!!!!");
+            ContextualMenu.SetActive(false);
+            NextLevel(true);
         }
-        
     }
 
     public void UI_CloseScreen()

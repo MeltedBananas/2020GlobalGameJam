@@ -1542,6 +1542,11 @@ PrefabInstance:
       propertyPath: _inputManager
       value: 
       objectReference: {fileID: 2073892503}
+    - target: {fileID: 1477005337848506008, guid: 32fabf6b56d8a3349a0c317f32908db8,
+        type: 3}
+      propertyPath: Bootloader
+      value: 
+      objectReference: {fileID: 635197359}
     - target: {fileID: 1615411742831882188, guid: 32fabf6b56d8a3349a0c317f32908db8,
         type: 3}
       propertyPath: m_textInfo.characterCount
