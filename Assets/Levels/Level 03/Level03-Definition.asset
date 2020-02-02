@@ -17,7 +17,8 @@ MonoBehaviour:
   FailSpeech: {fileID: 11400000, guid: 84358244192b4a346b5faa7f2e9da352, type: 2}
   SuccessSpeech: {fileID: 11400000, guid: 4d0d73b8424b03f4488e3e8294293df4, type: 2}
   SetupDescription: This young lady needs your help. She doesnt look too good.
-  ItemPrefab: {fileID: 0}
+  ItemPrefab: {fileID: 903715349595367694, guid: b416369ced851cc4abe3de9316f9b75d,
+    type: 3}
   SubmitAnswerTexture: {fileID: 0}
   ItemSprite: {fileID: 0}
   Questions: []
