@@ -40,6 +40,7 @@ public class BootLoader : MonoBehaviour
         PickRandomLevel();
 
         _speachBubble.enabled = false;
+        _speachBubble.OnTextComplete += OnTextComplete;
         _speechBubbleImage.SetActive(false);
         _speechBubbleInitialScale = _speechBubbleImage.transform.localScale;
         _speechBubbleImage.transform.localScale = Vector3.zero;
@@ -71,15 +72,7 @@ public class BootLoader : MonoBehaviour
         if (_currentLevel != null)
         {
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
-            _speachBubble.SetupLine(_currentLevel.ClientDescription);
         }
-    }
-
-    private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
-    {
-        yield return new WaitForSeconds(seconds);
-        _speechBubbleImage.SetActive(true);
-        LeanTween.scale(_speechBubbleImage, _speechBubbleInitialScale, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() => _speachBubble.enabled = true);
     }
 
     public void UI_StartGame()
@@ -89,6 +82,23 @@ public class BootLoader : MonoBehaviour
             _brainSceneRootGameObjects.ForEach(x => x.SetActive(true));
             StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
         });
+    }
+    
+    private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        _speechBubbleImage.SetActive(true);
+        LeanTween.scale(_speechBubbleImage, _speechBubbleInitialScale, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() =>
+        {
+            _speachBubble.enabled = true;
+            _currentClient.Talk();
+            _speachBubble.SetupLine(_currentLevel.ClientDescription);
+        });
+    }
+    
+    private void OnTextComplete()
+    {
+        _currentClient.Shutup();
     }
 
     public void UI_ShowMenu()
