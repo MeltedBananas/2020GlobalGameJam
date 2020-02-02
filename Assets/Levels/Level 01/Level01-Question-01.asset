@@ -28,9 +28,9 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: blue
+  - Text: red
     Label: color-1
-    Prefix: <color="blue">
+    Prefix: <color="red">
     Suffix: </color>
   - Text: shirt?
     Label: 
