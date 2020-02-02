@@ -21,6 +21,20 @@ public class BrainData
         Word = word;
     }
 
+    public void Swap(BrainData other)
+    {
+        string label = Word.Label;
+        string labelOther = other.Word.Label;
+
+        Word swapWord = new Word(other.Word);
+
+        other.Word = Word;
+        Word = swapWord;
+
+        Word.Label = label;
+        other.Word.Label = labelOther;
+    }
+
     public override string ToString()
     {
         return Word.ToString();
@@ -29,7 +43,7 @@ public class BrainData
 
 public class Brain : MonoBehaviour
 {
-    List<BrainNode> Nodes = new List<BrainNode>();
+    public List<BrainNode> Nodes = new List<BrainNode>();
 
     public Texture2D BarUI;
     public Vector2 BarPosition;
@@ -303,5 +317,22 @@ public class Brain : MonoBehaviour
             result &= solutionFound;
         }
         return result;
+    }
+    public BrainNode GetFromLabel(string label)
+    {
+        foreach(BrainNode node in Nodes)
+        {
+            if(node.data.Word.Label == label)
+            {
+                return node;
+            }
+        }
+
+        return null;
+    }
+
+    public void RefreshFromLabel(string label, out Word word)
+    {
+        word = GetFromLabel(label).data.Word;
     }
 }

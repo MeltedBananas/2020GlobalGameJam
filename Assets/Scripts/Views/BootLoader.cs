@@ -38,7 +38,7 @@ public class BootLoader : MonoBehaviour
     private Vector3 _speechBubbleInitialScale = Vector3.one;
     private readonly List<GameObject> _brainSceneRootGameObjects = new List<GameObject>();
     private bool _firstTimeShown = false;
-    private Brain _brain = null;
+    public Brain _brain = null;
     private Camera _brainCamera = null;
 
     private void Awake()
@@ -81,6 +81,7 @@ public class BootLoader : MonoBehaviour
             _brain.OnLoaded += () =>
             {
                 _brain.Setup(_currentLevel.GenerateBrainDataList());
+                _currentLevel.FuckUp(_brain);
             };
 
 

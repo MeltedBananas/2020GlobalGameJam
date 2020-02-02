@@ -8,11 +8,13 @@ public class WordDisplayText
     Word word;
     string result;
     private int letterIndex = 0;
+    private BootLoader BootLoader;
     // Start is called before the first frame update
-    public WordDisplayText(Word w, int fontSize  )
+    public WordDisplayText(Word w, int fontSize, BootLoader BootLoader)
     {
         word = w;
         lastLetterfontSize = fontSize;
+        this.BootLoader = BootLoader;
     }
     public bool IsFullyDisplayed()
     {
@@ -51,5 +53,13 @@ public class WordDisplayText
     {
         return  "<color="+ColorFromPrefix()+">" + word.Text.Substring(0,letterIndex )+ ShowLastLetter() + "</color>"+
         "<color=white>"+ word.Text.Substring(letterIndex,word.Text.Length-letterIndex) + "</color>";
+    }
+
+    public void Refresh()
+    {
+        if(word.Label.Length > 0)
+        {
+            BootLoader._brain.RefreshFromLabel(word.Label, out word);
+        }
     }
 }

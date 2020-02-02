@@ -81,7 +81,7 @@ public class LevelDefinition  : ScriptableObject
                     if (!labels.Contains(braindData.Word.Label))
                     {
                         labels.Add(braindData.Word.Label);
-                        brainDataList.Add(new BrainData(braindData.Word));
+                        brainDataList.Add(new BrainData(new Word(braindData.Word)));
                     }
                 }
             }
@@ -114,5 +114,23 @@ public class LevelDefinition  : ScriptableObject
         }
 
         return brainDataList;
+    }
+
+    public void FuckUp(Brain brain)
+    {
+        foreach(LevelProblem problem in Problems)
+        {
+            if (problem.WordSwap)
+            {
+                BrainNode swapA = brain.GetFromLabel(problem.WordSwapLabel);
+                int rndIdx = UnityEngine.Random.Range(0, problem.WordSwapPossibilities.Count);
+                BrainNode swapB = brain.GetFromLabel(problem.WordSwapPossibilities[rndIdx].Label);
+                
+                if(swapA != null && swapB != null)
+                {
+                    swapA.Swap(swapB);
+                }
+            }
+        }
     }
 }
