@@ -465,6 +465,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &2302455155615325200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -912,6 +916,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &4590455613969344534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1045,6 +1053,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &6899762488552895069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1178,6 +1190,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &6875756582792963787
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -30,6 +30,12 @@ public class QuestionButton : MonoBehaviour
             Label = definition.Questions[QuestionIndex].QuestionLabel;
         }
 
+        WorldButton button = GetComponent<WorldButton>();
+        if(button != null)
+        {
+            button.enabled = false;
+        }
+
         TextMeshPro.SetText(Label);
 
         gameObject.SetActive(false);

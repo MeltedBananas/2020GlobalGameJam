@@ -99,6 +99,12 @@ public class Brain : MonoBehaviour
         OnLoaded?.Invoke();
     }
 
+    public void Reset()
+    {
+        Cursor.SetCursor(null, Vector2.zero, CursorMode.Auto);
+        Tool = BrainToolType.None;
+    }
+
     public void Setup(LevelDefinition currentLevel)
     {
         CurrentLevel = currentLevel;

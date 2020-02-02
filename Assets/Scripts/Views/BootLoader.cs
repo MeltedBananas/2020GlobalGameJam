@@ -52,6 +52,9 @@ public class BootLoader : MonoBehaviour
     private bool bWaitingForSpawn = false;
     private GameObject item;
     private bool bStartNextLevelAfterSpeech = false;
+    private bool bFirstStart = true;
+    private bool bSkipNextStartGame = false;
+    public bool bInCredits = false;
 
 
     private void Start()
@@ -91,16 +94,11 @@ public class BootLoader : MonoBehaviour
                 if (_brain != null)
                     break;
             }
-            
-            
 
-            /*_brain.OnLoaded += () =>
+            if (_brain != null)
             {
-
-            };*/
-
-
-            //NextLevel();
+                _brain.Reset();
+            }
         }
     }
 
@@ -141,7 +139,12 @@ public class BootLoader : MonoBehaviour
     
     private void EndOfGame()
     {
+        CurrentLevelIndex = _levelDefinitions.Count;
+
+        _brain.Reset();
+        _brainCamera.gameObject.SetActive(false);
         _clipboard.UI_EndofGame();
+        _startGameButton.enabled = true;
     }
 
     private void InstantiateLevelObjects()
@@ -150,13 +153,13 @@ public class BootLoader : MonoBehaviour
         {
             if(_currentClient != null)
             {
-                Destroy(_currentClient);
+                Destroy(_currentClient.gameObject);
                 _currentClient = null;
             }
 
              if(item != null)
             {
-                Destroy(item);
+                Destroy(item.gameObject);
                 item = null;
             } 
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
@@ -175,13 +178,46 @@ public class BootLoader : MonoBehaviour
 
     public void UI_StartGame()
     {
-        LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        if (bInCredits)
         {
-            _brainCamera.gameObject.SetActive(true);
-            _brain.Show(true);
+            CurrentLevelIndex = -1;
+            bInCredits = false;
+
+            LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+            {
+                _clipboard.UI_MainMenu();
+            });
             
-            StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
-        });
+        }
+        else
+        {
+            if (CurrentLevelIndex < _levelDefinitions.Count)
+            {
+                LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+                {
+                    _brainCamera.gameObject.SetActive(true);
+                    _brain.Show(true);
+
+                    StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
+                });
+            }
+            else
+            {
+                if (_currentClient != null)
+                {
+                    Destroy(_currentClient.gameObject);
+                    _currentClient = null;
+                }
+
+                if (item != null)
+                {
+                    Destroy(item.gameObject);
+                    item = null;
+                }
+
+                _clipboard.UI_Credits();
+            }
+        }
     }
     
     private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
@@ -198,7 +234,10 @@ public class BootLoader : MonoBehaviour
     
     private void OnTextComplete()
     {
-        _currentClient.Shutup();
+        if (_currentClient != null)
+        {
+            _currentClient.Shutup();
+        }
 
         if (!_firstTimeShown)
         {
@@ -219,6 +258,7 @@ public class BootLoader : MonoBehaviour
     {
         if (_brainCamera != null)
         {
+            _brain.Reset();
             _brainCamera.gameObject.SetActive(false);
         }
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
