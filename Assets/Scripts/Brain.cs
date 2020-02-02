@@ -203,7 +203,11 @@ public class Brain : MonoBehaviour
 
         GUI.DrawTexture(new Rect(BarPosition, BarWidth), BarUI);
 
-        if (CurrentLevel.AvailableTools.Contains(BrainToolType.Inspect))
+        bool bCanShowInspectTool = CurrentLevel.AvailableTools.Contains(BrainToolType.Inspect);
+#if UNITY_EDITOR
+        bCanShowInspectTool = true;
+#endif
+        if (bCanShowInspectTool)
         {
             if (Tool != BrainToolType.Inspect)
             {

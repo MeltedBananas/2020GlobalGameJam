@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class Menu : MonoBehaviour
@@ -12,7 +13,8 @@ public class Menu : MonoBehaviour
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.25f;
     public BootLoader Bootloader;
-    
+    public TMP_Text _levelDescription = null;
+
     public void UI_StartGame()
     {
         Bootloader.StartGame(false);
@@ -23,6 +25,12 @@ public class Menu : MonoBehaviour
 
             Bootloader.StartGame(true);
         });
+    }
+
+    public void UI_EndofGame()
+    {
+        _levelDescription.SetText("GOOD JOB!");
+        LeanTween.moveY(gameObject, 0f, _appearSeconds).setEase(_disappearEaseType);
     }
 
     public void UI_Credits()

@@ -14,8 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Client: {fileID: 2124898037925491123, guid: 0e1c27ac265ef554589e02466bfc63d9, type: 3}
   ClientDescription: {fileID: 11400000, guid: 524a0516b216718409e0052f2f19d18d, type: 2}
+  FailSpeech: {fileID: 11400000, guid: b492b13b6c23e7643853c6ea9b3b83e0, type: 2}
+  SuccessSpeech: {fileID: 11400000, guid: c6e2cea333425bd43a166a65ca251253, type: 2}
   SetupDescription: This young lady needs your help. She doesnt look too good.
-  InventoryTexture: {fileID: 0}
+  ItemPrefab: {fileID: 0}
   Questions:
   - QuestionIcon: {fileID: 0}
     QuestionLabel: Hair
@@ -81,3 +83,11 @@ MonoBehaviour:
       Label: color-1
       Prefix: 
       Suffix: 
+  Solutions:
+  - IsEnabled: 1
+    Text: black
+    Label: color-1
+  - IsEnabled: 1
+    Text: red
+    Label: color-2
+  AvailableTools: 02000000

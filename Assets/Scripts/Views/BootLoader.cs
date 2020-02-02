@@ -14,6 +14,7 @@ public class BootLoader : MonoBehaviour
 
     [Header("References")]
     public GameObject _menu = null;
+    public Menu _clipboard = null;
     public Transform _clientsParent = null;
     public Transform _inventoryParent = null;
     public TextSpeachAnimation _speachBubble = null;
@@ -50,6 +51,9 @@ public class BootLoader : MonoBehaviour
     private int CurrentLevelIndex = -1;
     private bool bWaitingForSpawn = false;
     private GameObject item;
+    private bool bStartNextLevelAfterSpeech = false;
+
+
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -102,33 +106,44 @@ public class BootLoader : MonoBehaviour
 
     private void NextLevel(bool bShowLevel)
     {
-        _currentLevel = _levelDefinitions[++CurrentLevelIndex];
-        _levelDescription.SetText(_currentLevel.SetupDescription);
-        _firstTimeShown = false;
+        _speachBubble.ClearLine();
 
-#if UNITY_EDITOR
-        _currentLevel.AvailableTools.Add(BrainToolType.Inspect);
-#endif
-
-        if (_brain != null)
+        if (CurrentLevelIndex < _levelDefinitions.Count - 1)
         {
-            _brain.bShow = false;
-            _brain.Setup(_currentLevel);
-            _currentLevel.FuckUp(_brain);
-        }
+            _currentLevel = _levelDefinitions[++CurrentLevelIndex];
+            _levelDescription.SetText(_currentLevel.SetupDescription);
+            _firstTimeShown = false;
 
-        if (bShowLevel)
-        {
-            UI_ShowMenu();
-            bWaitingForSpawn = true;
+            if (_brain != null)
+            {
+                _brain.bShow = false;
+                _brain.Setup(_currentLevel);
+                _currentLevel.FuckUp(_brain);
+            }
+
+            if (bShowLevel)
+            {
+                UI_ShowMenu();
+                bWaitingForSpawn = true;
+            }
+            else
+            {
+                bWaitingForSpawn = false;
+                InstantiateLevelObjects();
+            }
         }
         else
         {
-            bWaitingForSpawn = false;
-            InstantiateLevelObjects();
+            EndOfGame();
         }
+        
     }
     
+    private void EndOfGame()
+    {
+        _clipboard.UI_EndofGame();
+    }
+
     private void InstantiateLevelObjects()
     {
         if (_currentLevel != null)
@@ -189,6 +204,12 @@ public class BootLoader : MonoBehaviour
             ContextualMenuButtons.ForEach(x => x.ScaleUp());
             _firstTimeShown = true;
         }
+
+        if(bStartNextLevelAfterSpeech)
+        {
+            NextLevel(true);
+            bStartNextLevelAfterSpeech = false;
+        }
     }
 
     public void UI_ShowMenu()
@@ -221,8 +242,15 @@ public class BootLoader : MonoBehaviour
     {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            
-            NextLevel(true);
+            _currentClient.Talk();
+            _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
+
+            bStartNextLevelAfterSpeech = true;
+        }
+        else
+        {
+            _currentClient.Talk();
+            _speachBubble.SetupLine(_currentLevel.FailSpeech);
         }
     }
 
