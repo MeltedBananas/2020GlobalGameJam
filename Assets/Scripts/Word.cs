@@ -22,7 +22,7 @@ public class Word
         if (Text.Contains("[") || Text.Contains("]"))
         {
            Label = Text.Substring(Text.IndexOf('[')+1,Text.IndexOf(']')-1);
-           Text = "undefined";
+           Text = "!*!*undefined*!*!";
         }
 
     }

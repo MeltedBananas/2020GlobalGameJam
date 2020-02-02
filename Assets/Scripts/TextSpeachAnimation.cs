@@ -6,6 +6,7 @@ using Unity.Collections;
 
 public class TextSpeachAnimation : MonoBehaviour
 {
+    public int lastLetterfontSize = 50;
     public float delayBetweenLetters = 0.5f;
     private float _letterTimer = 0.0f;
     public TextDiagnostic TextDiagnostic;
@@ -30,10 +31,11 @@ public class TextSpeachAnimation : MonoBehaviour
     }
     public void SetupLine(TextDiagnostic td)
     {
+        _currentWordIndex = 0;
        wordDisplayList.Clear();
        foreach(Word w in td.wordList)
        {
-           wordDisplayList.Add(new WordDisplayText(w));
+           wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize));
        }  
     }
     // Update is called once per frame
