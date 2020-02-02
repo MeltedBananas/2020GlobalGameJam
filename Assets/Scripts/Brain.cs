@@ -311,4 +311,9 @@ public class Brain : MonoBehaviour
 
         return null;
     }
+
+    public void RefreshFromLabel(string label, out Word word)
+    {
+        word = GetFromLabel(label).data.Word;
+    }
 }

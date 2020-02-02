@@ -15,7 +15,9 @@ public class TextSpeachAnimation : MonoBehaviour
 
     string result = "";
     private int _currentWordIndex = 0;
-    public Action OnTextComplete = null; 
+    public Action OnTextComplete = null;
+
+    public BootLoader BootLoader;
 
     private void Awake()
     {
@@ -35,7 +37,7 @@ public class TextSpeachAnimation : MonoBehaviour
        wordDisplayList.Clear();
        foreach(Word w in td.wordList)
        {
-           wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize));
+           wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize, BootLoader));
        }  
     }
     // Update is called once per frame
@@ -63,6 +65,11 @@ public class TextSpeachAnimation : MonoBehaviour
             if (_currentWordIndex < wordDisplayList.Count && wordDisplayList[_currentWordIndex].IsFullyDisplayed() )
             {
                 ++_currentWordIndex;
+
+                if (_currentWordIndex < wordDisplayList.Count)
+                {
+                    wordDisplayList[_currentWordIndex].Refresh();
+                }
             }
 
             _letterTimer = delayBetweenLetters;

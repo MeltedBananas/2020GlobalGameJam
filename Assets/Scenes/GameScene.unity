@@ -1467,6 +1467,11 @@ PrefabInstance:
       propertyPath: lastLetterfontSize
       value: 42
       objectReference: {fileID: 0}
+    - target: {fileID: 6621070375181499963, guid: 9a02a40533a5dab40ad0e5b81dd3c393,
+        type: 3}
+      propertyPath: BootLoader
+      value: 
+      objectReference: {fileID: 635197359}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a02a40533a5dab40ad0e5b81dd3c393, type: 3}
 --- !u!114 &6621070376089368858 stripped
