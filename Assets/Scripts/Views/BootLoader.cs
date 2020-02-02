@@ -31,13 +31,17 @@ public class BootLoader : MonoBehaviour
 
     [Header("Question Buttons")]
     public List<QuestionButton> QuestionButtons;
-    public List<QuestionButton> ContextualMenuButtons;
+    public QuestionButton QuestionMenuButton;
+    public QuestionButton InventoryMenuButton;
 
     [Header("Menu Disappear")]
     public float _disappearSeconds = 0.85f;
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.85f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager _audioManager = null;
+    
     private LevelDefinition _currentLevel = null;
     private Client _currentClient = null;
     private Vector3 _speechBubbleInitialScale = Vector3.one;
@@ -166,8 +170,10 @@ public class BootLoader : MonoBehaviour
             _currentClient.Init(_currentLevel, _speachBubble);
             if (_currentLevel.ItemPrefab != null)
             {
+                
                 item = Instantiate(_currentLevel.ItemPrefab.gameObject, _inventoryParent);
             }
+
            
             foreach(QuestionButton questionButton in QuestionButtons)
             {
@@ -228,6 +234,7 @@ public class BootLoader : MonoBehaviour
         {
             _speachBubble.enabled = true;
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
         });
     }
@@ -238,12 +245,18 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient.Shutup();
         }
+        _audioManager.StopSound();
 
         if (!_firstTimeShown)
         {
             QuestionButtons.ForEach(x => x.ScaleUp());
-            ContextualMenuButtons.ForEach(x => x.gameObject.SetActive(true));
-            ContextualMenuButtons.ForEach(x => x.ScaleUp());
+            QuestionMenuButton.gameObject.SetActive(true);
+            QuestionMenuButton.ScaleUp();
+            if (_currentLevel.ItemPrefab != null)
+            {
+                InventoryMenuButton.gameObject.SetActive(true);
+                InventoryMenuButton.ScaleUp();
+            }
             _firstTimeShown = true;
         }
 
@@ -262,8 +275,8 @@ public class BootLoader : MonoBehaviour
             _brainCamera.gameObject.SetActive(false);
         }
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
-        ContextualMenuButtons.ForEach(x => x.gameObject.SetActive(false));
-
+        QuestionMenuButton.gameObject.SetActive(false);
+        InventoryMenuButton.gameObject.SetActive(false);
         LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _startGameButton.enabled = true;
@@ -277,8 +290,16 @@ public class BootLoader : MonoBehaviour
 
     public void UI_AskQuestion(int index)
     {
-        _currentClient.AskQuestion(index);
-        
+        if (index >= _currentLevel.Questions.Count)
+        {
+            UI_TestSolution();
+        }
+        else
+        {
+            _currentClient.AskQuestion(index);
+            _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
+        }
         
     }
     public void UI_TestSolution()
