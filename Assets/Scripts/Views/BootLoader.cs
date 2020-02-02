@@ -56,8 +56,6 @@ public class BootLoader : MonoBehaviour
     private bool bWaitingForSpawn = false;
     private GameObject item;
     private bool bStartNextLevelAfterSpeech = false;
-    private bool bFirstStart = true;
-    private bool bSkipNextStartGame = false;
     public bool bInCredits = false;
 
 
