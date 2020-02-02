@@ -58,7 +58,6 @@ public class BootLoader : MonoBehaviour
     private bool bStartNextLevelAfterSpeech = false;
     public bool bInCredits = false;
 
-
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -228,6 +227,11 @@ public class BootLoader : MonoBehaviour
     private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
     {
         yield return new WaitForSeconds(seconds);
+        ShowSpeech();
+    }
+
+    public void ShowSpeech()
+    {
         _speechBubbleImage.SetActive(true);
         LeanTween.scale(_speechBubbleImage, _speechBubbleInitialScale, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() =>
         {
@@ -235,6 +239,16 @@ public class BootLoader : MonoBehaviour
             _currentClient.Talk();
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
+        });
+    }
+
+    public void HideSpeech()
+    {
+        LeanTween.scale(_speechBubbleImage, Vector3.zero, _scaleUpTime).setEase(_scaleUpEaseType).setOnComplete(() =>
+        {
+            _speachBubble.enabled = false;
+            _currentClient.Shutup();
+            _speachBubble.ClearLine();
         });
     }
     
@@ -264,6 +278,7 @@ public class BootLoader : MonoBehaviour
         {
             NextLevel(true);
             bStartNextLevelAfterSpeech = false;
+            HideSpeech();
         }
     }
 

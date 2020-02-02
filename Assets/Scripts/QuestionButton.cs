@@ -41,6 +41,7 @@ public class QuestionButton : MonoBehaviour
             }
             else
             {
+                image.sprite = DefaultButtonSprite;
                 Label = definition.Questions[QuestionIndex].QuestionLabel;
                 var rt = (RectTransform)transform;
                 rt.sizeDelta = new Vector2(256, 128);
@@ -65,6 +66,7 @@ public class QuestionButton : MonoBehaviour
             }
             else
             {
+                image.sprite = DefaultButtonSprite;
                 TextMeshPro.SetText(Label);
                 var rt = (RectTransform)transform;
                 rt.sizeDelta = new Vector2(256, 128);

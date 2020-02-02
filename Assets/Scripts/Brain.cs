@@ -80,9 +80,11 @@ public class Brain : MonoBehaviour
     [SerializeField] private GameObject _infoBox = null;
     [SerializeField] private GameObject _swapInfo = null;
     [SerializeField] private GameObject _cancelInfo = null;
+    [SerializeField] private GameObject _rotateInfo = null;
 
     private bool _swapInfoShown = false;
     private bool _cancelInfoShown = false;
+    private bool _rotateInfoShown = false;
 
     public Action OnLoaded = null;
 
@@ -94,6 +96,11 @@ public class Brain : MonoBehaviour
     Rect CursorZone;
 
     public bool bShow = false;
+
+    private void Awake()
+    {
+        _infoBox.gameObject.SetActive(false);
+    }
 
     private void Start()
     {
@@ -215,7 +222,7 @@ public class Brain : MonoBehaviour
     {
         this.bShow = bShow;
     }
-
+    
     private void OnGUI()
     {
 #if UNITY_EDITOR
@@ -270,7 +277,7 @@ public class Brain : MonoBehaviour
                     {
                         _cancelInfoShown = true;
                         // show info on first click!
-                        ShowInfoBox(true, false);
+                        ShowInfoBox(true, false, false);
                     }
                     
                     Tool = BrainToolType.Cancel;
@@ -299,7 +306,7 @@ public class Brain : MonoBehaviour
                     {
                         _swapInfoShown = true;
                         // show swap on first click!
-                        ShowInfoBox(false, true);
+                        ShowInfoBox(false, true, false);
                     }
                     
                     Tool = BrainToolType.SwapStart;
@@ -408,7 +415,7 @@ public class Brain : MonoBehaviour
         }
     }
 
-    private void ShowInfoBox(bool isCancel, bool isSwap)
+    private void ShowInfoBox(bool isCancel, bool isSwap, bool isRotate)
     {
         Vector3 localScale = _infoBox.transform.localScale;
         _infoBox.transform.localScale = Vector3.zero;
@@ -416,7 +423,17 @@ public class Brain : MonoBehaviour
         
         _cancelInfo.SetActive(isCancel);
         _swapInfo.SetActive(isSwap);
+        _rotateInfo.SetActive(isRotate);
         
         LeanTween.scale(_infoBox, localScale, 1f).setEase(LeanTweenType.easeOutBack);
+    }
+
+    public void ShowRotateInfo()
+    {
+        if (bShow && !_rotateInfoShown)
+        {
+            _rotateInfoShown = true;
+            ShowInfoBox(false, false, true);
+        }
     }
 }
