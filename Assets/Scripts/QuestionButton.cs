@@ -80,7 +80,7 @@ public class QuestionButton : MonoBehaviour
         }
         
 
-        TextMeshPro.SetText(Label);
+        
 
         gameObject.SetActive(false);
         transform.localScale = Vector3.one * Mathf.Epsilon;
