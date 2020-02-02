@@ -26,6 +26,11 @@ public class LoadingScreen : MonoBehaviour
     [SerializeField] private TMP_Text _titleTxt = null;
     [SerializeField] private TMP_Text _presentsTxt = null;
 
+    [Header("Brain")]
+    [SerializeField] private GameObject _titleScreen = null;
+    [SerializeField] private Image _brainImage = null;
+    [SerializeField] private TMP_Text _brainText = null;
+
     private float _deltaTime = 0f, _colorDelta = 0f;
     private Vector3 _logoInitialScale = Vector3.one;
     private Vector3 _twiceSize = Vector3.one;
@@ -33,7 +38,11 @@ public class LoadingScreen : MonoBehaviour
     private bool _hasSequenceStarted = false;
     private static readonly Color QuarterTransparent = new Color(1f, 1f, 1f, 0.25f);
     private static readonly Color Transparent = new Color(1f, 1f, 1f, 0f);
-    private bool _isFadingOut = false;
+    private Color _titleTextColor = Color.white;
+    private Color _transparentTitleTextColor = Transparent;
+    
+    private enum FadeOut { FadeIn, FadeOut, BrainFadeIn, BrainFadeOut, Idle }
+    private FadeOut _fadeOut = FadeOut.FadeIn;
 
     private void Awake()
     {
@@ -41,6 +50,10 @@ public class LoadingScreen : MonoBehaviour
         _halfSize = _logoInitialScale / 2f;
         _twiceSize = _logoInitialScale * 2f;
         _logo.localScale = _halfSize;
+
+        _titleTextColor = _titleTxt.color;
+        _transparentTitleTextColor = _titleTextColor;
+        _transparentTitleTextColor.a = 0f;
         
         _logoImage.color = QuarterTransparent;
 
@@ -58,33 +71,68 @@ public class LoadingScreen : MonoBehaviour
             SceneManager.LoadScene("GameScene");
         }
 #endif
-        
-        if (!_isFadingOut)
-        {
-            _colorDelta += Time.deltaTime;
-            float progress = _colorDelta / _fadeInTime;
-            _logoImage.color = Color.Lerp(QuarterTransparent, Color.white, progress);
 
-            if (progress > _startSequenceAfterPercentage && !_hasSequenceStarted)
-            {
-                StartSequences();
-                _hasSequenceStarted = true;
-            }
-        }
-        else
+        switch (_fadeOut)
         {
-            _colorDelta += Time.deltaTime;
-            Color c = Color.Lerp(Color.white, Transparent, _colorDelta / _fadeOutTime);
-            _bg.color = c;
-            _logoImage.color = c;
-            _titleTxt.color = c;
-            _presentsTxt.color = c;
-
-            if (_colorDelta >= _fadeOutTime)
+            case FadeOut.FadeIn:
             {
-                gameObject.SetActive(false);
-                SceneManager.UnloadSceneAsync("Loading");
-            }
+                _colorDelta += Time.deltaTime;
+                float progress = _colorDelta / _fadeInTime;
+                _logoImage.color = Color.Lerp(QuarterTransparent, Color.white, progress);
+
+                if (progress > _startSequenceAfterPercentage && !_hasSequenceStarted)
+                {
+                    StartSequences();
+                    _hasSequenceStarted = true;
+                }
+            } break;
+            case FadeOut.FadeOut:
+            {
+                _colorDelta += Time.deltaTime;
+                Color c = Color.Lerp(Color.white, Transparent, _colorDelta / _fadeOutTime);
+                Color ctxt = Color.Lerp(_titleTextColor, _transparentTitleTextColor, _colorDelta / _fadeOutTime);
+                _logoImage.color = c;
+                _titleTxt.color = ctxt;
+                _presentsTxt.color = c;
+
+                if (_colorDelta >= _fadeOutTime)
+                {
+                    _colorDelta = 0f;
+                    _titleScreen.SetActive(true);
+                    _fadeOut = FadeOut.BrainFadeIn;
+                    _brainImage.color = Transparent;
+                    _brainText.color = Transparent;
+                }
+            } break;
+            case FadeOut.BrainFadeIn:
+            {
+                _colorDelta += Time.deltaTime;
+                Color c = Color.Lerp(Transparent, Color.white, _colorDelta / _fadeOutTime);
+                _brainImage.color = c;
+                _brainText.color = c;
+
+                if (_colorDelta >= _fadeOutTime)
+                {
+                    _fadeOut = FadeOut.Idle;
+                    // Go To Next
+                    var asyncOp = SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Additive);
+                    asyncOp.completed += FadeOutThisScene;
+                }
+            } break;
+            case FadeOut.BrainFadeOut:
+            {
+                _colorDelta += Time.deltaTime;
+                Color c = Color.Lerp(Color.white, Transparent, _colorDelta / _fadeOutTime);
+                _bg.color = c;
+                _brainImage.color = c;
+                _brainText.color = c;
+                
+                if (_colorDelta >= _fadeOutTime)
+                {
+                    gameObject.SetActive(false);
+                    SceneManager.UnloadSceneAsync("Loading");
+                }
+            } break;
         }
     }
 
@@ -124,16 +172,19 @@ public class LoadingScreen : MonoBehaviour
         yield return new WaitUntil(() => !_presents.IsAnimated);
         
         yield return new WaitForSeconds(_beforeFadeOut);
-
-        // Go To Next
-        var asyncOp = SceneManager.LoadSceneAsync("GameScene", LoadSceneMode.Additive);
-        asyncOp.completed += FadeOutThisScene;
+        _colorDelta = 0f;
+        _fadeOut = FadeOut.FadeOut;
     }
 
     private void FadeOutThisScene(AsyncOperation asyncOp)
     {
+        Invoke(nameof(FadeOutInSeconds), _beforeFadeOut);
+    }
+
+    private void FadeOutInSeconds()
+    {
         // fade out !
         _colorDelta = 0f;
-        _isFadingOut = true;
+        _fadeOut = FadeOut.BrainFadeOut;
     }
 }
