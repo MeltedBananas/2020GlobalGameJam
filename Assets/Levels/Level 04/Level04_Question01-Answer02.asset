@@ -17,7 +17,7 @@ MonoBehaviour:
   sperator:
   - ' '
   wordList:
-  - Text: idn't
+  - Text: Didn't
     Label: 
     Prefix: 
     Suffix: 

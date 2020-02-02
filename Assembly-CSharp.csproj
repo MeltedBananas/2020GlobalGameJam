@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\Billboard.cs" />
     <Compile Include="Assets\Scripts\Brain.cs" />
     <Compile Include="Assets\Scripts\BrainNode.cs" />
+    <Compile Include="Assets\Scripts\BrainPart.cs" />
     <Compile Include="Assets\Scripts\LevelDefinition.cs" />
     <Compile Include="Assets\Scripts\OrbitCamera.cs" />
     <Compile Include="Assets\Scripts\QuestionButton.cs" />
@@ -81,6 +82,7 @@
     <Compile Include="Assets\Scripts\Views\InputManager.cs" />
     <Compile Include="Assets\Scripts\Views\LoadingScreen.cs" />
     <Compile Include="Assets\Scripts\Views\Menu.cs" />
+    <Compile Include="Assets\Scripts\Views\OnClickOutside.cs" />
     <Compile Include="Assets\Scripts\Views\SetCameraViewport.cs" />
     <Compile Include="Assets\Scripts\Views\TextAnimate.cs" />
     <Compile Include="Assets\Scripts\Views\Upscale.cs" />

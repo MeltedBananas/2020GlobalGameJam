@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Level04_Question03-Answer01
   m_EditorClassIdentifier: 
   Phrase: I also [bark-3] talk about building a [wall] and oftentimes I'll say [bark-3],
-    and there's going to be a big beautiful door in that [wall] and people are going
-    to come into our [bark-3] country because we want people to come in.
+    and there's going to be a big beautiful door.
   sperator:
   - ' '
   wordList:
@@ -28,8 +27,8 @@ MonoBehaviour:
     Suffix: 
   - Text: '*BARK*'
     Label: bark-3
-    Prefix: <i><b>
-    Suffix: </b></i>
+    Prefix: <b><i>
+    Suffix: </i></b>
   - Text: talk
     Label: 
     Prefix: 
@@ -68,8 +67,8 @@ MonoBehaviour:
     Suffix: 
   - Text: '*BARK*'
     Label: bark-3
-    Prefix: <i><b>
-    Suffix: </i><b>
+    Prefix: <b><i>
+    Suffix: </i></b>
   - Text: and
     Label: 
     Prefix: 
@@ -102,87 +101,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: door
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: in
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: that
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: wall
-    Label: wall
-    Prefix: 
-    Suffix: 
-  - Text: and
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: people
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: are
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: going
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: to
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: come
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: into
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: our
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: bark-3
-    Prefix: <i><b>
-    Suffix: </i></b>
-  - Text: country
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: because
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: we
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: want
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: people
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: to
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: come
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: in.
+  - Text: door.
     Label: 
     Prefix: 
     Suffix: 

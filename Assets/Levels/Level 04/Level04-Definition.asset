@@ -44,7 +44,7 @@ MonoBehaviour:
   BrainNodes: []
   Problems: []
   Solutions:
-  - IsEnabled: 1
+  - IsEnabled: 0
     Text: '*BARK*'
     Label: bark-1
   - IsEnabled: 0
@@ -53,4 +53,16 @@ MonoBehaviour:
   - IsEnabled: 0
     Text: '*BARK*'
     Label: bark-3
+  - IsEnabled: 1
+    Text: President
+    Label: President
+  - IsEnabled: 1
+    Text: jobs
+    Label: jobs
+  - IsEnabled: 1
+    Text: wall
+    Label: wall
+  - IsEnabled: 1
+    Text: billion
+    Label: billion
   AvailableTools: 04000000

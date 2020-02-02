@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_Question02-Answer03
   m_EditorClassIdentifier: 
-  Phrase: Our country [bark-2] is in serious trouble. We don't [bark-2]have any [jobs]
-    anymore. We used to have [jobs], but we don't have [bark-2] them anymore.
+  Phrase: Our country [bark-2] is in serious trouble. We don't [bark-2] have any
+    [jobs] anymore. We used to have [jobs]
   sperator:
   - ' '
   wordList:
@@ -57,6 +57,10 @@ MonoBehaviour:
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
   - Text: any
     Label: 
     Prefix: 
@@ -87,33 +91,5 @@ MonoBehaviour:
     Suffix: 
   - Text: jobs
     Label: jobs
-    Prefix: 
-    Suffix: 
-  - Text: but
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: we
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: don't
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: have
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: bark-2
-    Prefix: <b><i>
-    Suffix: </i></b>
-  - Text: them
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: anymore.
-    Label: 
     Prefix: 
     Suffix: 

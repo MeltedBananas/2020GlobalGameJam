@@ -13,8 +13,7 @@ MonoBehaviour:
   m_Name: Level04_Question02-Answer02
   m_EditorClassIdentifier: 
   Phrase: We have [bark-2] a 5 [billion] [dollars] website. I [bark-2] have so many
-    websites. I have them [bark-2] all over the place... I hire [bark-2] people...
-    it costs me three [dollars].
+    websites. it costs me three [dollars].
   sperator:
   - ' '
   wordList:
@@ -54,10 +53,10 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: '!*!*undefined*!*!'
+  - Text: '*BARK*'
     Label: bark-2
-    Prefix: 
-    Suffix: 
+    Prefix: <b><i>
+    Suffix: </i></b>
   - Text: have
     Label: 
     Prefix: 
@@ -71,54 +70,6 @@ MonoBehaviour:
     Prefix: 
     Suffix: 
   - Text: websites.
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: I
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: have
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: them
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: bark-2
-    Prefix: <b><i>
-    Suffix: </i></b>
-  - Text: all
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: over
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: the
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: place...
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: I
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: hire
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: '*BARK*'
-    Label: bark-2
-    Prefix: <b><i>
-    Suffix: </i></b>
-  - Text: people...
     Label: 
     Prefix: 
     Suffix: 
