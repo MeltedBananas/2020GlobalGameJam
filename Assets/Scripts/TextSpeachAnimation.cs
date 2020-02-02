@@ -56,7 +56,7 @@ public class TextSpeachAnimation : MonoBehaviour
             for (int i = 0; i <= _currentWordIndex && i < wordDisplayList.Count;++i )
             {
                 result += wordDisplayList[i].Animate();
-                if (wordDisplayList[i].IsFullyDisplayed())
+                if (wordDisplayList[i].IsFullyDisplayed() && wordDisplayList[i].word.Text.Length > 0)
                 {
                     result += " ";
                 }
@@ -66,9 +66,19 @@ public class TextSpeachAnimation : MonoBehaviour
             {
                 ++_currentWordIndex;
 
-                if (_currentWordIndex < wordDisplayList.Count)
+                bool bDone = false;
+                if (_currentWordIndex < wordDisplayList.Count && !bDone)
                 {
                     wordDisplayList[_currentWordIndex].Refresh();
+                    if(wordDisplayList[_currentWordIndex].word.Text.Length == 0)
+                    {
+                        // Disabled
+                        ++_currentWordIndex;
+                    }
+                    else
+                    {
+                        bDone = true;
+                    }
                 }
             }
 

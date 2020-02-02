@@ -351,7 +351,15 @@ public class Brain : MonoBehaviour
         BrainNode node = GetFromLabel(label);
         if (node != null)
         {
-            word = node.data.Word;
+            if (node.BrainNodeEnabled)
+            {
+                word = node.data.Word;
+            }
+            else
+            {
+                word = new Word("");
+                word.Label = node.data.Word.Label;
+            }
             node.Ping();
         }
         else
