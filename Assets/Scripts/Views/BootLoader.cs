@@ -17,6 +17,7 @@ public class BootLoader : MonoBehaviour
     public Transform _clientsParent = null;
     public TextSpeachAnimation _speachBubble = null;
     public TMP_Text _levelDescription = null;
+    public WorldButton _startGameButton = null;
 
     [Header("Speech Bubble Appear")]
     public float _appearAfterSeconds = 0.25f;
@@ -44,7 +45,7 @@ public class BootLoader : MonoBehaviour
         _speechBubbleImage.transform.localScale = Vector3.zero;
         
         SceneManager.sceneLoaded += OnSceneLoaded;
-        //SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
+        SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
@@ -88,6 +89,6 @@ public class BootLoader : MonoBehaviour
 
     public void UI_ShowMenu()
     {
-        LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType);
+        LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() => _startGameButton.enabled = true);
     }
 }

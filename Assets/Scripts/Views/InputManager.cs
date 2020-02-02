@@ -36,11 +36,9 @@ public class InputManager : MonoBehaviour
 
             for (int i = 0; i < _buttonHits.Count; ++i)
             {
-                if (_buttonHits[i].Action != null)
-                {
-                    _buttonHits[i].Action.Invoke();
+                // if button consumes the event, break and ignore the rest
+                if (_buttonHits[i].Click())
                     break;
-                }
             }
         }
     }

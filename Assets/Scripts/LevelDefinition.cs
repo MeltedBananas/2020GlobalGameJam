@@ -29,6 +29,7 @@ public class LevelProblem
 public class LevelDefinition  : ScriptableObject
 {
     public Client Client;
+    public TextDiagnostic ClientDescription;
     public string SetupDescription = "This is your assignment - please fix the issue";
     public Texture2D InventoryTexture;
     public List<LevelQuestion> Questions;

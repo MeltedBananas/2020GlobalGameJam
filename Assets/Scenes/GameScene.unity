@@ -791,19 +791,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 8985440596337186678}
   m_PrefabAsset: {fileID: 0}
---- !u!65 &2074633945
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2074633944}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 256, y: 128, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &2074633946
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -816,7 +803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 43b956d7490349848c32f9d820c61625, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Action:
+  _disableOnClick: 1
+  _action:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 635197359}
@@ -830,6 +818,19 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!65 &2074633949
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2074633944}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 256, y: 128, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &4642441813863253014
 PrefabInstance:
   m_ObjectHideFlags: 0
