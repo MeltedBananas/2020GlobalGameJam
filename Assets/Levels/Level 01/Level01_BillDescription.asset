@@ -15,12 +15,8 @@ MonoBehaviour:
   Phrase: Hi, my name is Bill Fates, I was in a car crash. Please help!
   sperator:
   - ' '
-  - ','
-  - '!'
-  - '?'
-  - .
   wordList:
-  - Text: Hi
+  - Text: Hi,
     Label: 
     Prefix: 
     Suffix: 
@@ -40,7 +36,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: Fates
+  - Text: Fates,
     Label: 
     Prefix: 
     Suffix: 
@@ -64,7 +60,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: crash
+  - Text: crash.
     Label: 
     Prefix: 
     Suffix: 
@@ -72,7 +68,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: help
+  - Text: help!
     Label: 
     Prefix: 
     Suffix: 
