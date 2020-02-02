@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level03-Question01-Answer03
+  m_EditorClassIdentifier: 
+  Phrase: We would always tell the pizza delivery guy, its the only [color-1] house
+    on Pine steet.
+  sperator:
+  - ' '
+  wordList:
+  - Text: We
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: would
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: always
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: tell
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: pizza
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: delivery
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: guy,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: its
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: only
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: blue
+    Label: color-1
+    Prefix: <color="blue">
+    Suffix: </color>
+  - Text: house
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: on
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Pine
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: steet.
+    Label: 
+    Prefix: 
+    Suffix: 

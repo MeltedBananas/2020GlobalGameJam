@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level03-Question02-Answer01
+  m_EditorClassIdentifier: 
+  Phrase: One time, I was able to get it up to 88 mph. Not bad for an old [color-2]
+    car.
+  sperator:
+  - ' '
+  wordList:
+  - Text: One
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: time,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: able
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: get
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: up
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: 88
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: mph.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Not
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: bad
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: for
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: an
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: old
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: pink
+    Label: color-2
+    Prefix: <color=#FC46AA>
+    Suffix: </color>
+  - Text: car.
+    Label: 
+    Prefix: 
+    Suffix: 

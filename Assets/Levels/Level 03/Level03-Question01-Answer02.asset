@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level03-Question01-Answer02
+  m_EditorClassIdentifier: 
+  Phrase: I remember when we painted the house [color-1]. It was in 1985.
+  sperator:
+  - ' '
+  wordList:
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: remember
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: when
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: we
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: painted
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: house
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: blue
+    Label: color-1
+    Prefix: <color="blue">
+    Suffix: </color>
+  - Text: It
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: in
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: 1985.
+    Label: 
+    Prefix: 
+    Suffix: 

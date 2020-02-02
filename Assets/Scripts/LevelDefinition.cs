@@ -106,18 +106,18 @@ public class LevelDefinition  : ScriptableObject
 
         foreach(LevelBrainNode levelBrainNode in BrainNodes)
         {
-            for(int i = 0; i < levelBrainNode.NumberOfNode; ++i)
+            List<Word> possibleNames = new List<Word>(levelBrainNode.PossibleNames);
+            for (int i = 0; i < levelBrainNode.NumberOfNode; ++i)
             {
                 Word newWord = new Word("");
                 newWord.Label = string.Format("{0}{1}", levelBrainNode.Label, (levelBrainNode.StartingIndex + i));
 
                 if (levelBrainNode.PossibleNames.Count > 0)
                 {
-                    List<Word> possibleNames = new List<Word>(levelBrainNode.PossibleNames);
-                    int randomIdx = UnityEngine.Random.Range(0, levelBrainNode.PossibleNames.Count);
-                    newWord.Text = levelBrainNode.PossibleNames[randomIdx].Text;
-                    newWord.Prefix = levelBrainNode.PossibleNames[randomIdx].Prefix;
-                    newWord.Suffix = levelBrainNode.PossibleNames[randomIdx].Suffix;
+                    int randomIdx = UnityEngine.Random.Range(0, possibleNames.Count);
+                    newWord.Text = possibleNames[randomIdx].Text;
+                    newWord.Prefix = possibleNames[randomIdx].Prefix;
+                    newWord.Suffix = possibleNames[randomIdx].Suffix;
                     possibleNames.RemoveAt(randomIdx);
                 }
                 else
