@@ -63,7 +63,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 114578005e5068a4485abab9869fb2b5, type: 3}
+  m_Sprite: {fileID: 21300000, guid: f61cb56cbc388194194d91d91a602cde, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -163,6 +163,8 @@ MonoBehaviour:
   _image: {fileID: 258838520744565908}
   _spriteSheet: {fileID: 2800000, guid: ca44e29eb64b5a9468d1fdb9acd215ac, type: 3}
   _secondsPerSheet: 0.15
+  _usesRandomTimer: 0
+  _randomBetweenSprite: {x: 0.025, y: 0.05}
 --- !u!1 &258838520859361740
 GameObject:
   m_ObjectHideFlags: 0
@@ -174,7 +176,7 @@ GameObject:
   - component: {fileID: 258838520859361779}
   - component: {fileID: 2124898037925491123}
   m_Layer: 5
-  m_Name: Client
+  m_Name: Bill
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -216,6 +218,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _eyes: {fileID: 5377928607562836380}
   _mouth: {fileID: 1369519213616267613}
+  CurrentLevelDefinition: {fileID: 0}
+  CurrentSpeachBubble: {fileID: 0}
 --- !u!1 &1294531857121702652
 GameObject:
   m_ObjectHideFlags: 0
@@ -306,3 +310,5 @@ MonoBehaviour:
   _image: {fileID: 6435549675380043925}
   _spriteSheet: {fileID: 2800000, guid: 0aaf49018efd2984f844ff35ae300718, type: 3}
   _secondsPerSheet: 0.15
+  _usesRandomTimer: 0
+  _randomBetweenSprite: {x: 0.025, y: 0.05}
