@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -11,6 +12,21 @@ public class Inventory : MonoBehaviour
     public float _disappearSeconds = 0.85f;
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.25f;
+
+    private OnClickOutside _onClickOutside = null;
+    private OnClickOutside OnClickOutside
+    {
+        get
+        {
+            if (_onClickOutside == null)
+            {
+                _onClickOutside = GetComponentInChildren<OnClickOutside>(true);
+            }
+
+            return _onClickOutside;
+        }
+    }
+
     public void Start()
     {
         isActive = false;
@@ -59,14 +75,17 @@ public class Inventory : MonoBehaviour
         }
         
     }
+    
     public void UI_ShowQuestions()
     {
         if (isMoving)
         {
             return;
         }
+        
         if (!isActive)
         {
+            //OnClickOutside.gameObject.SetActive(true);
             isActive = true;
             isMoving = true;
             Item.SetActive(true);
@@ -75,16 +94,17 @@ public class Inventory : MonoBehaviour
                 isMoving = false;
             });
         }
-        else
+    }
+
+    public void UI_HideQuestions()
+    {
+        //OnClickOutside.gameObject.SetActive(false);
+        isActive = false;
+        isMoving = true;
+        LeanTween.moveX(gameObject, -Screen.width, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
-            isActive = false;
-            isMoving = true;
-            LeanTween.moveX(gameObject, -Screen.width, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
-            {
-                Item.SetActive(false);
-                isMoving = false;
-            });
-        }
-        
+            Item.SetActive(false);
+            isMoving = false;
+        });
     }
 }
