@@ -146,8 +146,11 @@ public class BootLoader : MonoBehaviour
             } 
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
             _currentClient.Init(_currentLevel, _speachBubble);
-
-            item = Instantiate(_currentLevel.ItemPrefab.gameObject, _inventoryParent);
+            if (_currentLevel.ItemPrefab != null)
+            {
+                item = Instantiate(_currentLevel.ItemPrefab.gameObject, _inventoryParent);
+            }
+           
             foreach(QuestionButton questionButton in QuestionButtons)
             {
                 questionButton.Initialized(_currentLevel);
