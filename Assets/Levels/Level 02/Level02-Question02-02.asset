@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level02-Question02-02
+  m_EditorClassIdentifier: 
+  Phrase: Whats more sexy than fireman in their [color-2] fire truck? You tell me.
+  sperator:
+  - ' '
+  wordList:
+  - Text: Whats
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: more
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: sexy
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: than
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: fireman
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: in
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: their
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: red
+    Label: color-2
+    Prefix: <color="red">
+    Suffix: </color>
+  - Text: fire
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: truck?
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: You
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: tell
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: me.
+    Label: 
+    Prefix: 
+    Suffix: 

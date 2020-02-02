@@ -7,7 +7,6 @@ public class BrainNode : MonoBehaviour
     public Color NormalColor;
     public Color MouseOverColor;
 
-    public string Label;
     public Vector2 Size = new Vector2(32.0f, 32.0f);
 
     public Camera MainCamera;
@@ -37,9 +36,12 @@ public class BrainNode : MonoBehaviour
         SetEnabled(BrainNodeEnabled);
     }
 
-    public void Init()
+    public void Init(Camera mainCamera)
     {
-        Billboard.MainCamera = MainCamera;
+        if (mainCamera != null)
+        {
+            Billboard.MainCamera = mainCamera;
+        }
     }
 
     void OnMouseDown()

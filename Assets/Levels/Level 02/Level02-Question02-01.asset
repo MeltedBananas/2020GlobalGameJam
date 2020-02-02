@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level02-Question02-01
+  m_EditorClassIdentifier: 
+  Phrase: When I was young and heard the sirens, I would run outside to watch the
+    [color-2] fire trucks drive by.
+  sperator:
+  - ' '
+  wordList:
+  - Text: When
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: young
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: and
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: heard
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: sirens,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: would
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: run
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: outside
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: watch
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: red
+    Label: color-2
+    Prefix: <color="red">
+    Suffix: </color>
+  - Text: fire
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: trucks
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: drive
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: by.
+    Label: 
+    Prefix: 
+    Suffix: 
