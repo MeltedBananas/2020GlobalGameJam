@@ -1,0 +1,70 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level03-Question03-Answer02
+  m_EditorClassIdentifier: 
+  Phrase: Me and my dad painted the door every summer. Always the same [color-3].
+  sperator:
+  - ' '
+  wordList:
+  - Text: Me
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: and
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: dad
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: painted
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: door
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: every
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: summer.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Always
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: same
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: red
+    Label: color-3
+    Prefix: <color=red>
+    Suffix: </color>

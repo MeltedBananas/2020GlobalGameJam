@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level03-Question02-Answer03
+  m_EditorClassIdentifier: 
+  Phrase: My first car. My mom gave it for me on my 16th birthday. Did not really
+    care that it was [color-2].
+  sperator:
+  - ' '
+  wordList:
+  - Text: My
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: first
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: car.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: My
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: mom
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: gave
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: for
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: me
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: on
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: 16th
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: birthday.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Did
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: not
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: really
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: care
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: that
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: pink
+    Label: color-2
+    Prefix: <color=#FC46AA>
+    Suffix: </color>
