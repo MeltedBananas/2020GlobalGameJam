@@ -1,0 +1,103 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level02-Question01-02
+  m_EditorClassIdentifier: 
+  Phrase: Can you believe that on the subway, someone made fun of my [color-1] hair.
+    At least I have hair, you... baldy.
+  sperator:
+  - ' '
+  wordList:
+  - Text: Can
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: you
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: believe
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: that
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: on
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: subway,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: someone
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: made
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: fun
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: of
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: black
+    Label: color-1
+    Prefix: 
+    Suffix: 
+  - Text: hair.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: At
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: least
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: hair,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: you...
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: baldy.
+    Label: 
+    Prefix: 
+    Suffix: 

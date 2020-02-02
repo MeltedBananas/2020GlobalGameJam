@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class BrainNode : MonoBehaviour
@@ -6,7 +7,6 @@ public class BrainNode : MonoBehaviour
     public Color NormalColor;
     public Color MouseOverColor;
 
-    public string Label;
     public Vector2 Size = new Vector2(32.0f, 32.0f);
 
     public Camera MainCamera;
@@ -23,6 +23,9 @@ public class BrainNode : MonoBehaviour
     public SpriteRenderer SwapIconRenderer;
     public SpriteRenderer CancelIconRenderer;
 
+    public ParticleSystem PingPS = null;
+    public float StopPingAfterSeconds = 2f;
+
     private void Start()
     {
         mySpriteRenderer = GetComponent<SpriteRenderer>();
@@ -33,9 +36,12 @@ public class BrainNode : MonoBehaviour
         SetEnabled(BrainNodeEnabled);
     }
 
-    public void Init()
+    public void Init(Camera mainCamera)
     {
-        Billboard.MainCamera = MainCamera;
+        if (mainCamera != null)
+        {
+            Billboard.MainCamera = mainCamera;
+        }
     }
 
     void OnMouseDown()
@@ -91,5 +97,21 @@ public class BrainNode : MonoBehaviour
         bool swapEnabled = BrainNodeEnabled;
         SetEnabled(otherNode.BrainNodeEnabled);
         otherNode.SetEnabled(swapEnabled);
+    }
+
+    private Coroutine _stopPingCoroutine = null;
+    public void Ping()
+    {
+        if (_stopPingCoroutine != null)
+            StopCoroutine(_stopPingCoroutine);
+        
+        PingPS.Play();
+        _stopPingCoroutine = StartCoroutine(DoStopPingAfterSeconds());
+    }
+
+    private IEnumerator DoStopPingAfterSeconds()
+    {
+        yield return new WaitForSeconds(StopPingAfterSeconds);
+        PingPS.Stop();
     }
 }

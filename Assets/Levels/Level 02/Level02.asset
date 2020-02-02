@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07e9d07720b462a41a76203ed1c88f7a, type: 3}
+  m_Name: Level02
+  m_EditorClassIdentifier: 
+  Client: {fileID: 2124898037925491123, guid: 0e1c27ac265ef554589e02466bfc63d9, type: 3}
+  ClientDescription: {fileID: 11400000, guid: 524a0516b216718409e0052f2f19d18d, type: 2}
+  SetupDescription: This young lady needs your help. She doesnt look too good.
+  InventoryTexture: {fileID: 0}
+  Questions:
+  - QuestionIcon: {fileID: 0}
+    QuestionLabel: Hair
+    Answers:
+    - {fileID: 11400000, guid: 6dd1808467e5e714ab14807da15ee6be, type: 2}
+    - {fileID: 11400000, guid: 60cf6aeac82d97741a96acad316ffacd, type: 2}
+    - {fileID: 11400000, guid: 8682db35da7ab9646b08b8274d19d21f, type: 2}
+  - QuestionIcon: {fileID: 0}
+    QuestionLabel: Fire Truck
+    Answers:
+    - {fileID: 11400000, guid: dfde673d7023f244887346add0309f20, type: 2}
+    - {fileID: 11400000, guid: 54bd0f1ac4286ca468fb1dd8ac97a7b2, type: 2}
+    - {fileID: 11400000, guid: 10d55cc9503c07f4488c4c9e8739e2bd, type: 2}
+  BrainNodes:
+  - Label: color-
+    StartingIndex: 3
+    NumberOfNode: 2
+    PossibleNames:
+    - Text: blue
+      Label: 
+      Prefix: <color="blue">
+      Suffix: </color>
+    - Text: green
+      Label: 
+      Prefix: <color="green">
+      Suffix: </color>
+    - Text: yellow
+      Label: 
+      Prefix: <color=#9b870c>
+      Suffix: </color>
+    - Text: cyan
+      Label: 
+      Prefix: <color=#00ffff>
+      Suffix: </color>
+  Problems:
+  - WordSwap: 1
+    WordSwapLabel: color-1
+    WordSwapPossibilities:
+    - Text: color-3
+      Label: color-3
+      Prefix: 
+      Suffix: 
+    - Text: color-4
+      Label: color-4
+      Prefix: 
+      Suffix: 
+    - Text: color-2
+      Label: color-2
+      Prefix: 
+      Suffix: 
+  - WordSwap: 1
+    WordSwapLabel: color-2
+    WordSwapPossibilities:
+    - Text: color-3
+      Label: color-3
+      Prefix: 
+      Suffix: 
+    - Text: color-4
+      Label: color-4
+      Prefix: 
+      Suffix: 
+    - Text: color-1
+      Label: color-1
+      Prefix: 
+      Suffix: 

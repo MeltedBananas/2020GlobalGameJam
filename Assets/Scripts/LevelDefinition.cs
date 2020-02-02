@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 [System.Serializable]
@@ -60,6 +61,7 @@ public class LevelDefinition  : ScriptableObject
     public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;
     public List<LevelSolution> Solutions;
+    public List<BrainToolType> AvailableTools = new List<BrainToolType>() { BrainToolType.SwapStart };
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Assets/Create/JAM2020/LevelDefinition", false, int.MinValue)]
@@ -128,17 +130,34 @@ public class LevelDefinition  : ScriptableObject
 
     public void FuckUp(Brain brain)
     {
+        HashSet<string> SwappedList = new HashSet<string>();
+
         foreach(LevelProblem problem in Problems)
         {
             if (problem.WordSwap)
             {
                 BrainNode swapA = brain.GetFromLabel(problem.WordSwapLabel);
-                int rndIdx = UnityEngine.Random.Range(0, problem.WordSwapPossibilities.Count);
-                BrainNode swapB = brain.GetFromLabel(problem.WordSwapPossibilities[rndIdx].Label);
-                
-                if(swapA != null && swapB != null)
+
+                List<Word> wordSwapPossibilities = new List<Word>(problem.WordSwapPossibilities);
+                for(int i = wordSwapPossibilities.Count - 1; i >= 0; --i)
                 {
-                    swapA.Swap(swapB);
+                    if(SwappedList.Contains(wordSwapPossibilities[i].Label))
+                    {
+                        wordSwapPossibilities.RemoveAt(i);
+                    }
+                }
+
+                if (wordSwapPossibilities.Count >= 0)
+                {
+                    int rndIdx = UnityEngine.Random.Range(0, wordSwapPossibilities.Count);
+                    BrainNode swapB = brain.GetFromLabel(wordSwapPossibilities[rndIdx].Label);
+
+                    if (swapA != null && swapB != null)
+                    {
+                        swapA.Swap(swapB);
+                        SwappedList.Add(swapA.data.Word.Label);
+                        SwappedList.Add(swapB.data.Word.Label);
+                    }
                 }
             }
         }

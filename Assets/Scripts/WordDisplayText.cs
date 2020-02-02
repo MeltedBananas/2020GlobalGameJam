@@ -5,7 +5,7 @@ using UnityEngine;
 public class WordDisplayText 
 {
     public int lastLetterfontSize;
-    Word word;
+    public Word word;
     string result;
     private int letterIndex = 0;
     private BootLoader BootLoader;

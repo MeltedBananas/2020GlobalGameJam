@@ -1,0 +1,87 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level02-Question01-03
+  m_EditorClassIdentifier: 
+  Phrase: Yesterday, I wore my [color-1] dress. It was very nice how it looked identical
+    to my hair.
+  sperator:
+  - ' '
+  wordList:
+  - Text: Yesterday,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: wore
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: black
+    Label: color-1
+    Prefix: 
+    Suffix: 
+  - Text: dress.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: It
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: very
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: nice
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: how
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: looked
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: identical
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: to
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: hair.
+    Label: 
+    Prefix: 
+    Suffix: 
