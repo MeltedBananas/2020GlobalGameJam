@@ -12,63 +12,39 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level03_ClientDescription
   m_EditorClassIdentifier: 
-  Phrase: Hello, I'm Natalia. My hair is silky smooth, do you want to touch it?
+  Phrase: My friend Bill recommanded me, you're the best
   sperator:
   - ' '
   wordList:
-  - Text: Hello,
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: I'm
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: Natalia.
-    Label: 
-    Prefix: 
-    Suffix: 
   - Text: My
     Label: 
     Prefix: 
     Suffix: 
-  - Text: hair
+  - Text: friend
     Label: 
     Prefix: 
     Suffix: 
-  - Text: is
+  - Text: Bill
     Label: 
     Prefix: 
     Suffix: 
-  - Text: silky
-    Label: 
-    Prefix: <i>
-    Suffix: 
-  - Text: smooth,
-    Label: 
-    Prefix: 
-    Suffix: </i>
-  - Text: do
+  - Text: recommanded
     Label: 
     Prefix: 
     Suffix: 
-  - Text: you
+  - Text: me,
     Label: 
     Prefix: 
     Suffix: 
-  - Text: want
+  - Text: you're
     Label: 
     Prefix: 
     Suffix: 
-  - Text: to
+  - Text: the
     Label: 
     Prefix: 
     Suffix: 
-  - Text: touch
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: it?
+  - Text: best
     Label: 
     Prefix: 
     Suffix: 

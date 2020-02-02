@@ -12,63 +12,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_ClientDescription
   m_EditorClassIdentifier: 
-  Phrase: Hello, I'm Natalia. My hair is silky smooth, do you want to touch it?
+  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
   sperator:
   - ' '
   wordList:
-  - Text: Hello,
+  - Text: I've
     Label: 
     Prefix: 
     Suffix: 
-  - Text: I'm
+  - Text: never
     Label: 
     Prefix: 
     Suffix: 
-  - Text: Natalia.
+  - Text: been
     Label: 
     Prefix: 
     Suffix: 
-  - Text: My
+  - Text: '*BARK*'
+    Label: BARK
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: humiliated
     Label: 
     Prefix: 
     Suffix: 
-  - Text: hair
+  - Text: like
     Label: 
     Prefix: 
     Suffix: 
-  - Text: is
+  - Text: this
     Label: 
     Prefix: 
     Suffix: 
-  - Text: silky
-    Label: 
-    Prefix: <i>
-    Suffix: 
-  - Text: smooth,
-    Label: 
-    Prefix: 
-    Suffix: </i>
-  - Text: do
+  - Text: '*BARK*'
+    Label: BARK
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: before,
     Label: 
     Prefix: 
     Suffix: 
-  - Text: you
+  - Text: please
     Label: 
     Prefix: 
     Suffix: 
-  - Text: want
+  - Text: fix
     Label: 
     Prefix: 
     Suffix: 
-  - Text: to
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: touch
-    Label: 
-    Prefix: 
-    Suffix: 
-  - Text: it?
+  - Text: this!
     Label: 
     Prefix: 
     Suffix: 

@@ -12,47 +12,47 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level03-SuccessSpeech
   m_EditorClassIdentifier: 
-  Phrase: Amazing! You're the best around, no one can say otherwise
+  Phrase: Ah! I remeber everything now, I can't thank you enough!
   sperator:
   - ' '
   wordList:
-  - Text: Amazing!
+  - Text: Ah!
     Label: 
     Prefix: 
     Suffix: 
-  - Text: You're
+  - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: the
+  - Text: remeber
     Label: 
     Prefix: 
     Suffix: 
-  - Text: best
+  - Text: everything
     Label: 
     Prefix: 
     Suffix: 
-  - Text: around,
+  - Text: now,
     Label: 
     Prefix: 
     Suffix: 
-  - Text: no
+  - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: one
+  - Text: can't
     Label: 
     Prefix: 
     Suffix: 
-  - Text: can
+  - Text: thank
     Label: 
     Prefix: 
     Suffix: 
-  - Text: say
+  - Text: you
     Label: 
     Prefix: 
     Suffix: 
-  - Text: otherwise
+  - Text: enough!
     Label: 
     Prefix: 
     Suffix: 
