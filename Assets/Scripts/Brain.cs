@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-enum BrainToolType
+public enum BrainToolType
 {
     None,
     Inspect,
@@ -75,6 +75,8 @@ public class Brain : MonoBehaviour
 
     public Action OnLoaded = null;
 
+    private LevelDefinition CurrentLevel;
+
     BrainToolType Tool;
 
     private bool bOnBrainScreen = false;
@@ -98,8 +100,12 @@ public class Brain : MonoBehaviour
         OnLoaded?.Invoke();
     }
 
-    public void Setup(List<BrainData> dataList)
+    public void Setup(LevelDefinition currentLevel)
     {
+        CurrentLevel = currentLevel;
+
+        List<BrainData> dataList = CurrentLevel.GenerateBrainDataList();
+
         List<BrainNode> randomizeNodes = new List<BrainNode>();
         for(int i = 0; i < dataList.Count; ++i)
         {
@@ -194,64 +200,73 @@ public class Brain : MonoBehaviour
 
         GUI.DrawTexture(new Rect(BarPosition, BarWidth), BarUI);
 
-        if (Tool != BrainToolType.Inspect)
+        if (CurrentLevel.AvailableTools.Contains(BrainToolType.Inspect))
         {
-            if (GUI.Button(new Rect(InspectPosition, ButtonWidth), InspectButtonUI))
+            if (Tool != BrainToolType.Inspect)
             {
-
-                Tool = BrainToolType.Inspect;
-                Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
-                InspectBrainNode = null;
-                if (SwappingBrainNode != null)
+                if (GUI.Button(new Rect(InspectPosition, ButtonWidth), InspectButtonUI))
                 {
-                    SwappingBrainNode.SetReadyToSwap(false);
-                    SwappingBrainNode = null;
+
+                    Tool = BrainToolType.Inspect;
+                    Cursor.SetCursor(InspectCursor, Vector2.zero, CursorMode.ForceSoftware);
+                    InspectBrainNode = null;
+                    if (SwappingBrainNode != null)
+                    {
+                        SwappingBrainNode.SetReadyToSwap(false);
+                        SwappingBrainNode = null;
+                    }
                 }
             }
-        }
-        else
-        {
-            GUI.DrawTexture(new Rect(InspectPosition, ButtonWidth), InspectButtonUI);
-        }
-
-        if (Tool != BrainToolType.Cancel)
-        {
-            if (GUI.Button(new Rect(CancelPosition, ButtonWidth), CancelButtonUI))
+            else
             {
-
-                Tool = BrainToolType.Cancel;
-                Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
-                InspectBrainNode = null;
-                if (SwappingBrainNode != null)
-                {
-                    SwappingBrainNode.SetReadyToSwap(false);
-                    SwappingBrainNode = null;
-                }
+                GUI.DrawTexture(new Rect(InspectPosition, ButtonWidth), InspectButtonUI);
             }
         }
-        else
-        {
-            GUI.DrawTexture(new Rect(CancelPosition, ButtonWidth), CancelButtonUI);
-        }
 
-        if (Tool != BrainToolType.SwapStart && Tool != BrainToolType.SwapEnd)
+        if (CurrentLevel.AvailableTools.Contains(BrainToolType.Cancel))
         {
-            if (GUI.Button(new Rect(SwapPosition, ButtonWidth), SwapButtonUI))
+            if (Tool != BrainToolType.Cancel)
             {
-
-                Tool = BrainToolType.SwapStart;
-                Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
-                InspectBrainNode = null;
-                if (SwappingBrainNode != null)
+                if (GUI.Button(new Rect(CancelPosition, ButtonWidth), CancelButtonUI))
                 {
-                    SwappingBrainNode.SetReadyToSwap(false);
-                    SwappingBrainNode = null;
+
+                    Tool = BrainToolType.Cancel;
+                    Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
+                    InspectBrainNode = null;
+                    if (SwappingBrainNode != null)
+                    {
+                        SwappingBrainNode.SetReadyToSwap(false);
+                        SwappingBrainNode = null;
+                    }
                 }
             }
+            else
+            {
+                GUI.DrawTexture(new Rect(CancelPosition, ButtonWidth), CancelButtonUI);
+            }
         }
-        else
+
+        if (CurrentLevel.AvailableTools.Contains(BrainToolType.SwapStart) || CurrentLevel.AvailableTools.Contains(BrainToolType.SwapEnd))
         {
-            GUI.DrawTexture(new Rect(SwapPosition, ButtonWidth), SwapButtonUI);
+            if (Tool != BrainToolType.SwapStart && Tool != BrainToolType.SwapEnd)
+            {
+                if (GUI.Button(new Rect(SwapPosition, ButtonWidth), SwapButtonUI))
+                {
+
+                    Tool = BrainToolType.SwapStart;
+                    Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
+                    InspectBrainNode = null;
+                    if (SwappingBrainNode != null)
+                    {
+                        SwappingBrainNode.SetReadyToSwap(false);
+                        SwappingBrainNode = null;
+                    }
+                }
+            }
+            else
+            {
+                GUI.DrawTexture(new Rect(SwapPosition, ButtonWidth), SwapButtonUI);
+            }
         }
         
         if(Tool == BrainToolType.Inspect && InspectBrainNode != null)

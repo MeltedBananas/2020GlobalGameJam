@@ -80,7 +80,10 @@ public class BootLoader : MonoBehaviour
 
             _brain.OnLoaded += () =>
             {
-                _brain.Setup(_currentLevel.GenerateBrainDataList());
+#if UNITY_EDITOR
+                _currentLevel.AvailableTools.Add(BrainToolType.Inspect);
+#endif
+                _brain.Setup(_currentLevel);
                 _currentLevel.FuckUp(_brain);
             };
 

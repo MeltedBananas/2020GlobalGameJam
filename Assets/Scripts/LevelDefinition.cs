@@ -51,6 +51,7 @@ public class LevelDefinition  : ScriptableObject
     public List<LevelBrainNode> BrainNodes;
     public List<LevelProblem> Problems;
     public List<LevelSolution> Solutions;
+    public List<BrainToolType> AvailableTools = new List<BrainToolType>() { BrainToolType.SwapStart };
 
 #if UNITY_EDITOR
     [UnityEditor.MenuItem("Assets/Create/JAM2020/LevelDefinition", false, int.MinValue)]
