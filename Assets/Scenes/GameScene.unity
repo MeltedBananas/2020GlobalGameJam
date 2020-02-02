@@ -166,7 +166,7 @@ PrefabInstance:
     - target: {fileID: 2321507244520810331, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2321507244520810331, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
@@ -391,7 +391,7 @@ RectTransform:
   m_Children:
   - {fileID: 1307185033}
   m_Father: {fileID: 1557716097}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0.5}
   m_AnchorMax: {x: 1, y: 0.5}
@@ -537,7 +537,7 @@ RectTransform:
   - {fileID: 717586381}
   - {fileID: 1982138145}
   m_Father: {fileID: 1557716097}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -574,7 +574,7 @@ RectTransform:
   m_LocalScale: {x: 1.25, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1557716097}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
@@ -647,7 +647,7 @@ RectTransform:
   m_LocalScale: {x: 2, y: 2.5, z: 2}
   m_Children: []
   m_Father: {fileID: 1557716097}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
@@ -790,12 +790,12 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 466825578}
   - {fileID: 1251598584}
   - {fileID: 2057728489}
   - {fileID: 1069652575}
   - {fileID: 659193735}
   - {fileID: 998612565}
+  - {fileID: 466825578}
   - {fileID: 658725855}
   m_Father: {fileID: 1572217144}
   m_RootOrder: 0
@@ -942,7 +942,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1557716097}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1359,6 +1359,11 @@ PrefabInstance:
       propertyPath: m_enableAutoSizing
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6621070375181499963, guid: 9a02a40533a5dab40ad0e5b81dd3c393,
+        type: 3}
+      propertyPath: delayBetweenLetters
+      value: 0.08
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9a02a40533a5dab40ad0e5b81dd3c393, type: 3}
 --- !u!114 &6621070376089368858 stripped
@@ -1388,7 +1393,7 @@ PrefabInstance:
     - target: {fileID: 8985440596760857768, guid: 32fabf6b56d8a3349a0c317f32908db8,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8985440596760857769, guid: 32fabf6b56d8a3349a0c317f32908db8,
         type: 3}
