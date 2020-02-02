@@ -144,6 +144,7 @@ public class BootLoader : MonoBehaviour
         CurrentLevelIndex = _levelDefinitions.Count;
 
         _brain.Reset();
+        _brain.Show(false);
         _brainCamera.gameObject.SetActive(false);
         _clipboard.UI_EndofGame();
         _startGameButton.enabled = true;
