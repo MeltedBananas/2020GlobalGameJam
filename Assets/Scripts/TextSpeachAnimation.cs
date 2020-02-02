@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using Unity.Collections;
@@ -13,6 +14,7 @@ public class TextSpeachAnimation : MonoBehaviour
 
     string result = "";
     private int _currentWordIndex = 0;
+    public Action OnTextComplete = null; 
 
     private void Awake()
     {
@@ -37,7 +39,8 @@ public class TextSpeachAnimation : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimateText();
+        if (_currentWordIndex < wordDisplayList.Count)
+            AnimateText();
     }
     
     void  AnimateText()
@@ -64,5 +67,8 @@ public class TextSpeachAnimation : MonoBehaviour
         }
         
         textBox.SetText(result);
+
+        if (_currentWordIndex == wordDisplayList.Count)
+            OnTextComplete?.Invoke();
     }
 }
