@@ -38,7 +38,7 @@ public class TextSpeachAnimation : MonoBehaviour
        foreach(Word w in td.wordList)
        {
            wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize, BootLoader));
-       }  
+       }
     }
     // Update is called once per frame
     void Update()

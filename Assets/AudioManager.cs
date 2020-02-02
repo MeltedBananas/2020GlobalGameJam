@@ -4,9 +4,29 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
+    public enum SoundsBank { TalkSpeech }
+    
+    [SerializeField] private AudioSource _audioSource = null;
+    [SerializeField] private AudioClip _talkSpeechSound = null;
 
-    public GameObject prefabSoundSource;
+    public void PlaySound(SoundsBank soundId, bool isLooping = true)
+    {
+        switch (soundId)
+        {
+            case SoundsBank.TalkSpeech:
+                _audioSource.clip = _talkSpeechSound;
+                break;
+        }
+        
+        _audioSource.Play();
+        _audioSource.loop = isLooping;
+    }
 
-    List<GameObject> SoundSource;
-
+    public void StopSound()
+    {
+        if (_audioSource.isPlaying)
+        {
+            _audioSource.Stop();
+        }
+    }
 }

@@ -38,6 +38,9 @@ public class BootLoader : MonoBehaviour
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.85f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager _audioManager = null;
+    
     private LevelDefinition _currentLevel = null;
     private Client _currentClient = null;
     private Vector3 _speechBubbleInitialScale = Vector3.one;
@@ -180,6 +183,7 @@ public class BootLoader : MonoBehaviour
         {
             _speachBubble.enabled = true;
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
         });
     }
@@ -187,6 +191,7 @@ public class BootLoader : MonoBehaviour
     private void OnTextComplete()
     {
         _currentClient.Shutup();
+        _audioManager.StopSound();
 
         if (!_firstTimeShown)
         {
@@ -232,6 +237,7 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient.AskQuestion(index);
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
         }
         
     }
