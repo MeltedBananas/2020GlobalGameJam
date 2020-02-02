@@ -18,6 +18,14 @@ public class WorldButton : MonoBehaviour
     private int _uiLayerMask;
 
     public bool HoverEnabled => _enableHover;
+
+    private void GetInputManager()
+    {
+        if (_inputManager == null)
+        {
+            _inputManager = FindObjectOfType<InputManager>();
+        }
+    }
     
     private void Awake()
     {

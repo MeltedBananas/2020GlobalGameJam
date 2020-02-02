@@ -31,14 +31,21 @@ public class TextSpeachAnimation : MonoBehaviour
         _letterTimer = 0.5f;
         //SetupLine(TextDiagnostic);
     }
-    public void SetupLine(TextDiagnostic td)
+
+    public void ClearLine()
     {
         _currentWordIndex = 0;
-       wordDisplayList.Clear();
+        wordDisplayList.Clear();
+        textBox.SetText("");
+    }
+
+    public void SetupLine(TextDiagnostic td)
+    {
+        ClearLine();
        foreach(Word w in td.wordList)
        {
            wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize, BootLoader));
-       }  
+       }
     }
     // Update is called once per frame
     void Update()

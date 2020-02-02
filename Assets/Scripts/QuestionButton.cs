@@ -44,6 +44,7 @@ public class QuestionButton : MonoBehaviour
             
         }
 
+
         if (QuestionIndex == definition.Questions.Count)
         {
             bEnabled = true;
@@ -62,7 +63,13 @@ public class QuestionButton : MonoBehaviour
             
         }
 
-        
+		WorldButton button = GetComponent<WorldButton>();
+        if(button != null)
+        {
+            button.enabled = false;
+        }
+
+        TextMeshPro.SetText(Label);
 
         gameObject.SetActive(false);
         transform.localScale = Vector3.one * Mathf.Epsilon;

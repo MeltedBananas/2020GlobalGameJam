@@ -14,6 +14,7 @@ public class BootLoader : MonoBehaviour
 
     [Header("References")]
     public GameObject _menu = null;
+    public Menu _clipboard = null;
     public Transform _clientsParent = null;
     public Transform _inventoryParent = null;
     public TextSpeachAnimation _speachBubble = null;
@@ -38,6 +39,9 @@ public class BootLoader : MonoBehaviour
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.85f;
 
+    [Header("Audio")]
+    [SerializeField] private AudioManager _audioManager = null;
+    
     private LevelDefinition _currentLevel = null;
     private Client _currentClient = null;
     private Vector3 _speechBubbleInitialScale = Vector3.one;
@@ -51,6 +55,10 @@ public class BootLoader : MonoBehaviour
     private int CurrentLevelIndex = -1;
     private bool bWaitingForSpawn = false;
     private GameObject item;
+    private bool bStartNextLevelAfterSpeech = false;
+    public bool bInCredits = false;
+
+
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -88,61 +96,72 @@ public class BootLoader : MonoBehaviour
                 if (_brain != null)
                     break;
             }
-            
-            
 
-            /*_brain.OnLoaded += () =>
+            if (_brain != null)
             {
-
-            };*/
-
-
-            //NextLevel();
+                _brain.Reset();
+            }
         }
     }
 
     private void NextLevel(bool bShowLevel)
     {
-        _currentLevel = _levelDefinitions[++CurrentLevelIndex];
-        _levelDescription.SetText(_currentLevel.SetupDescription);
-        _firstTimeShown = false;
+        _speachBubble.ClearLine();
 
-#if UNITY_EDITOR
-        _currentLevel.AvailableTools.Add(BrainToolType.Inspect);
-#endif
-
-        if (_brain != null)
+        if (CurrentLevelIndex < _levelDefinitions.Count - 1)
         {
-            _brain.bShow = false;
-            _brain.Setup(_currentLevel);
-            _currentLevel.FuckUp(_brain);
-        }
+            _currentLevel = _levelDefinitions[++CurrentLevelIndex];
+            _levelDescription.SetText(_currentLevel.SetupDescription);
+            _firstTimeShown = false;
 
-        if (bShowLevel)
-        {
-            UI_ShowMenu();
-            bWaitingForSpawn = true;
+            if (_brain != null)
+            {
+                _brain.bShow = false;
+                _brain.Setup(_currentLevel);
+                _currentLevel.FuckUp(_brain);
+            }
+
+            if (bShowLevel)
+            {
+                UI_ShowMenu();
+                bWaitingForSpawn = true;
+            }
+            else
+            {
+                bWaitingForSpawn = false;
+                InstantiateLevelObjects();
+            }
         }
         else
         {
-            bWaitingForSpawn = false;
-            InstantiateLevelObjects();
+            EndOfGame();
         }
+        
     }
     
+    private void EndOfGame()
+    {
+        CurrentLevelIndex = _levelDefinitions.Count;
+
+        _brain.Reset();
+        _brainCamera.gameObject.SetActive(false);
+        _clipboard.UI_EndofGame();
+        _startGameButton.enabled = true;
+    }
+
     private void InstantiateLevelObjects()
     {
         if (_currentLevel != null)
         {
             if(_currentClient != null)
             {
-                Destroy(_currentClient);
+                Destroy(_currentClient.gameObject);
                 _currentClient = null;
             }
 
              if(item != null)
             {
-                Destroy(item);
+                Destroy(item.gameObject);
                 item = null;
             } 
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
@@ -163,13 +182,46 @@ public class BootLoader : MonoBehaviour
 
     public void UI_StartGame()
     {
-        LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        if (bInCredits)
         {
-            _brainCamera.gameObject.SetActive(true);
-            _brain.Show(true);
+            CurrentLevelIndex = -1;
+            bInCredits = false;
+
+            LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+            {
+                _clipboard.UI_MainMenu();
+            });
             
-            StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
-        });
+        }
+        else
+        {
+            if (CurrentLevelIndex < _levelDefinitions.Count)
+            {
+                LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+                {
+                    _brainCamera.gameObject.SetActive(true);
+                    _brain.Show(true);
+
+                    StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
+                });
+            }
+            else
+            {
+                if (_currentClient != null)
+                {
+                    Destroy(_currentClient.gameObject);
+                    _currentClient = null;
+                }
+
+                if (item != null)
+                {
+                    Destroy(item.gameObject);
+                    item = null;
+                }
+
+                _clipboard.UI_Credits();
+            }
+        }
     }
     
     private IEnumerator ShowBubbleAfterAFewSeconds(float seconds)
@@ -180,13 +232,18 @@ public class BootLoader : MonoBehaviour
         {
             _speachBubble.enabled = true;
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
         });
     }
     
     private void OnTextComplete()
     {
-        _currentClient.Shutup();
+        if (_currentClient != null)
+        {
+            _currentClient.Shutup();
+        }
+        _audioManager.StopSound();
 
         if (!_firstTimeShown)
         {
@@ -201,12 +258,19 @@ public class BootLoader : MonoBehaviour
             }
             _firstTimeShown = true;
         }
+
+        if(bStartNextLevelAfterSpeech)
+        {
+            NextLevel(true);
+            bStartNextLevelAfterSpeech = false;
+        }
     }
 
     public void UI_ShowMenu()
     {
         if (_brainCamera != null)
         {
+            _brain.Reset();
             _brainCamera.gameObject.SetActive(false);
         }
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
@@ -233,6 +297,7 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient.AskQuestion(index);
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
         }
         
     }
@@ -240,7 +305,15 @@ public class BootLoader : MonoBehaviour
     {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
-            NextLevel(true);
+            _currentClient.Talk();
+            _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
+
+            bStartNextLevelAfterSpeech = true;
+        }
+        else
+        {
+            _currentClient.Talk();
+            _speachBubble.SetupLine(_currentLevel.FailSpeech);
         }
     }
 
