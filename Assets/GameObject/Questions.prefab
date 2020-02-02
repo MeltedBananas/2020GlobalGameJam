@@ -485,6 +485,8 @@ MonoBehaviour:
   AppearTimeSeconds: 0.25
   AppearTween: 28
   TextMeshPro: {fileID: 7967512225646168104}
+  image: {fileID: 0}
+  DefaultButtonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &5025643193800477476
 GameObject:
   m_ObjectHideFlags: 0
@@ -936,6 +938,8 @@ MonoBehaviour:
   AppearTimeSeconds: 0.25
   AppearTween: 28
   TextMeshPro: {fileID: 5537920384622452158}
+  image: {fileID: 0}
+  DefaultButtonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &8619570002049131580
 GameObject:
   m_ObjectHideFlags: 0
@@ -1073,6 +1077,8 @@ MonoBehaviour:
   AppearTimeSeconds: 0.25
   AppearTween: 28
   TextMeshPro: {fileID: 5664931484390219851}
+  image: {fileID: 0}
+  DefaultButtonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}
 --- !u!1 &8682649528071943121
 GameObject:
   m_ObjectHideFlags: 0
@@ -1210,3 +1216,5 @@ MonoBehaviour:
   AppearTimeSeconds: 0.25
   AppearTween: 28
   TextMeshPro: {fileID: 8234596248792876761}
+  image: {fileID: 0}
+  DefaultButtonSprite: {fileID: 10905, guid: 0000000000000000f000000000000000, type: 0}

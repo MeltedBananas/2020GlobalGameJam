@@ -10,6 +10,7 @@ public class QuestionButton : MonoBehaviour
     public LeanTweenType AppearTween = LeanTweenType.easeInOutBack;
     public TMP_Text TextMeshPro;
     public Image image;
+    public Sprite DefaultButtonSprite;
     
     private bool bIsSubmit = false;
     private bool bEnabled = false;
@@ -34,11 +35,15 @@ public class QuestionButton : MonoBehaviour
             if (definition.Questions[QuestionIndex].QuestionIcon)
             {
                 image.sprite = definition.Questions[QuestionIndex].QuestionIcon;
+                var rt = (RectTransform)transform;
+                rt.sizeDelta = new Vector2(image.sprite.texture.width, image.sprite.texture.height);
                 TextMeshPro.gameObject.SetActive(false);
             }
             else
             {
                 Label = definition.Questions[QuestionIndex].QuestionLabel;
+                var rt = (RectTransform)transform;
+                rt.sizeDelta = new Vector2(256, 128);
                 TextMeshPro.SetText(Label);
                 TextMeshPro.gameObject.SetActive(true);
             }
@@ -54,11 +59,15 @@ public class QuestionButton : MonoBehaviour
             if (definition.SubmitAnswerTexture)
             {
                 image.sprite = definition.SubmitAnswerTexture;
+                var rt = (RectTransform)transform;
+                rt.sizeDelta = new Vector2(image.sprite.texture.width, image.sprite.texture.height);
                 TextMeshPro.gameObject.SetActive(false);
             }
             else
             {
                 TextMeshPro.SetText(Label);
+                var rt = (RectTransform)transform;
+                rt.sizeDelta = new Vector2(256, 128);
                 TextMeshPro.gameObject.SetActive(true);
             }
             

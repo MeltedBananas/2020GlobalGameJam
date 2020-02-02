@@ -323,6 +323,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Menu_New
       objectReference: {fileID: 0}
+    - target: {fileID: 8985440596760857768, guid: 32fabf6b56d8a3349a0c317f32908db8,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8985440596760857769, guid: 32fabf6b56d8a3349a0c317f32908db8,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2160,7 +2165,7 @@ PrefabInstance:
     - target: {fileID: 4093024145178313919, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 256
+      value: 128
       objectReference: {fileID: 0}
     - target: {fileID: 4093024145178313919, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
