@@ -93,8 +93,7 @@ public class Brain : MonoBehaviour
         foreach(BrainNode node in Nodes)
         {
             node.BrainOwner = this;
-            node.MainCamera = MainCamera;
-            node.Init();
+            node.Init(MainCamera);
         }
 
         OnLoaded?.Invoke();
@@ -133,6 +132,8 @@ public class Brain : MonoBehaviour
             node.IconRenderer.sprite = Sprite.Create(icon, new Rect(0.0f, 0.0f, icon.width, icon.height), new Vector2(0.5f, 0.5f), 100.0f);
 
             PossibleNodeIcons.RemoveAt(rndIconIdx);
+
+            node.Init(MainCamera);
         }
     }
 

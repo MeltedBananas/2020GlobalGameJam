@@ -36,9 +36,12 @@ public class BrainNode : MonoBehaviour
         SetEnabled(BrainNodeEnabled);
     }
 
-    public void Init()
+    public void Init(Camera mainCamera)
     {
-        Billboard.MainCamera = MainCamera;
+        if (mainCamera != null)
+        {
+            Billboard.MainCamera = mainCamera;
+        }
     }
 
     void OnMouseDown()
