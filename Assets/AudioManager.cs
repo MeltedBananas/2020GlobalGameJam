@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class AudioManager : MonoBehaviour
 {
-    public enum SoundsBank { TalkSpeech }
-    
+    public enum SoundsBank
+    {
+        TalkSpeech
+    }
+
+    [SerializeField] private AudioSource _musicSource = null;
     [SerializeField] private AudioSource _audioSource = null;
     [SerializeField] private AudioClip _talkSpeechSound = null;
 
@@ -17,7 +21,7 @@ public class AudioManager : MonoBehaviour
                 _audioSource.clip = _talkSpeechSound;
                 break;
         }
-        
+
         _audioSource.Play();
         _audioSource.loop = isLooping;
     }
@@ -28,5 +32,10 @@ public class AudioManager : MonoBehaviour
         {
             _audioSource.Stop();
         }
+    }
+
+    public void PlayMusic()
+    {
+        _musicSource.Play();
     }
 }

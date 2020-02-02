@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07e9d07720b462a41a76203ed1c88f7a, type: 3}
   m_Name: Level04-Definition
   m_EditorClassIdentifier: 
-  Client: {fileID: 2124898037925491123, guid: 373c9ad61ea5b404bbca77196baa3702, type: 3}
-  ClientDescription: {fileID: 11400000, guid: bbaa1bb45bf303a4b8e29a8dc442e75e, type: 2}
-  FailSpeech: {fileID: 11400000, guid: 84358244192b4a346b5faa7f2e9da352, type: 2}
-  SuccessSpeech: {fileID: 11400000, guid: 4d0d73b8424b03f4488e3e8294293df4, type: 2}
+  Client: {fileID: 2124898037925491123, guid: 9f0c90b7d3a65a3438a4d13ef5c4ee01, type: 3}
+  ClientDescription: {fileID: 11400000, guid: 2dcfe85fc5d07d44d96f149bbd799d2b, type: 2}
+  FailSpeech: {fileID: 11400000, guid: c434daf5a87f08c47909b3fa2a680192, type: 2}
+  SuccessSpeech: {fileID: 11400000, guid: 96adc58d52f52034798eca3485ee7642, type: 2}
   SetupDescription: This young lady needs your help. She doesnt look too good.
   ItemPrefab: {fileID: 0}
   SubmitAnswerTexture: {fileID: 0}
