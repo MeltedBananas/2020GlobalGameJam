@@ -1143,6 +1143,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 2073892503}
 --- !u!65 &2074633949
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1493,6 +1497,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1557716097}
     m_Modifications:
+    - target: {fileID: 1024603847761489264, guid: 32fabf6b56d8a3349a0c317f32908db8,
+        type: 3}
+      propertyPath: _inputManager
+      value: 
+      objectReference: {fileID: 2073892503}
+    - target: {fileID: 2056694524580788840, guid: 32fabf6b56d8a3349a0c317f32908db8,
+        type: 3}
+      propertyPath: _inputManager
+      value: 
+      objectReference: {fileID: 2073892503}
+    - target: {fileID: 4892897738194983592, guid: 32fabf6b56d8a3349a0c317f32908db8,
+        type: 3}
+      propertyPath: _inputManager
+      value: 
+      objectReference: {fileID: 2073892503}
     - target: {fileID: 8985440596760857768, guid: 32fabf6b56d8a3349a0c317f32908db8,
         type: 3}
       propertyPath: m_Name
