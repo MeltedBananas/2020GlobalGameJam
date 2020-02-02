@@ -230,6 +230,13 @@ public class BootLoader : MonoBehaviour
         ShowSpeech();
     }
 
+    private IEnumerator NextLevelAfterAFewSeconds(float seconds)
+    {
+        yield return new WaitForSeconds(seconds);
+        HideSpeech();
+        NextLevel(true);
+    }
+
     public void ShowSpeech()
     {
         _speechBubbleImage.SetActive(true);
@@ -276,9 +283,8 @@ public class BootLoader : MonoBehaviour
 
         if(bStartNextLevelAfterSpeech)
         {
-            NextLevel(true);
+            StartCoroutine(NextLevelAfterAFewSeconds(2.0f));
             bStartNextLevelAfterSpeech = false;
-            HideSpeech();
         }
     }
 
