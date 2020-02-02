@@ -330,13 +330,14 @@ public class BootLoader : MonoBehaviour
             _currentClient.Talk();
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
         }
-        
     }
+    
     public void UI_TestSolution()
     {
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
 
             bStartNextLevelAfterSpeech = true;
@@ -344,6 +345,7 @@ public class BootLoader : MonoBehaviour
         else
         {
             _currentClient.Talk();
+            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.FailSpeech);
         }
     }
