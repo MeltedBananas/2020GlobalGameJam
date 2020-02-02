@@ -143,6 +143,12 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -362
       objectReference: {fileID: 0}
+    - target: {fileID: 2302455155615325200, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: SubmitAnswerTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 71235027020dbd042938fcd00a2d6d05,
+        type: 3}
     - target: {fileID: 2321507244520810331, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -223,6 +229,12 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4590455613969344534, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: SubmitAnswerTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 71235027020dbd042938fcd00a2d6d05,
+        type: 3}
     - target: {fileID: 4737100500765482681, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -323,6 +335,18 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -363
       objectReference: {fileID: 0}
+    - target: {fileID: 6875756582792963787, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: SubmitAnswerTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 71235027020dbd042938fcd00a2d6d05,
+        type: 3}
+    - target: {fileID: 6899762488552895069, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: SubmitAnswerTexture
+      value: 
+      objectReference: {fileID: 21300000, guid: 71235027020dbd042938fcd00a2d6d05,
+        type: 3}
     - target: {fileID: 7967512225646168104, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.characterCount
@@ -351,27 +375,32 @@ PrefabInstance:
     - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.characterCount
-      value: 0
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.spaceCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.wordCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.lineCount
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
       propertyPath: m_textInfo.pageCount
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8234596248792876761, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8606503622723201489, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
         type: 3}
@@ -875,6 +904,17 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UI_ShowInventory
       objectReference: {fileID: 0}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: bb961545fefacda4f93bb647c7efabaa,
+        type: 3}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4093024145178313918, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_Name
@@ -883,7 +923,7 @@ PrefabInstance:
     - target: {fileID: 4093024145178313918, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4093024145178313919, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
@@ -1013,6 +1053,11 @@ PrefabInstance:
     - target: {fileID: 4093024146298888311, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_textInfo.pageCount
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093024146298888311, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -1638,6 +1683,17 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UI_ShowQuestions
       objectReference: {fileID: 0}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae678251ee072374babd4e8b20c72f9e,
+        type: 3}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4093024145178313918, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_Name
@@ -1789,6 +1845,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 60.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093024146298888311, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1824669d11102d49af0b274fcbf6845, type: 3}

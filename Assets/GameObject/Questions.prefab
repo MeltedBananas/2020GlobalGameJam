@@ -341,10 +341,10 @@ Transform:
   m_LocalPosition: {x: -28.249586, y: -57.461502, z: 556.0735}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 5537920385353252478}
   - {fileID: 2372861578375884849}
   - {fileID: 6017113553204651714}
   - {fileID: 721152639694153394}
+  - {fileID: 5537920385353252478}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -382,7 +382,7 @@ RectTransform:
   m_Children:
   - {fileID: 4303301454586159687}
   m_Father: {fileID: 2321507244520810331}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -465,6 +465,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &2302455155615325200
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -829,7 +833,7 @@ RectTransform:
   m_Children:
   - {fileID: 5537920384622452153}
   m_Father: {fileID: 2321507244520810331}
-  m_RootOrder: 0
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -912,6 +916,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &4590455613969344534
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -962,7 +970,7 @@ RectTransform:
   m_Children:
   - {fileID: 6504725706707297981}
   m_Father: {fileID: 2321507244520810331}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1045,6 +1053,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &6899762488552895069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1095,7 +1107,7 @@ RectTransform:
   m_Children:
   - {fileID: 4558475649582811819}
   m_Father: {fileID: 2321507244520810331}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1178,6 +1190,10 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  _enableHover: 0
+  _hoverColor: {r: 0.5, g: 0.5, b: 0.5, a: 1}
+  _buttonText: {fileID: 0}
+  _inputManager: {fileID: 0}
 --- !u!114 &6875756582792963787
 MonoBehaviour:
   m_ObjectHideFlags: 0

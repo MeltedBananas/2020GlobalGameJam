@@ -193,8 +193,9 @@ public class BootLoader : MonoBehaviour
             QuestionButtons.ForEach(x => x.ScaleUp());
             QuestionMenuButton.gameObject.SetActive(true);
             QuestionMenuButton.ScaleUp();
-            if (_currentLevel.ItemPrefab != null)
+            if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
             {
+                InventoryMenuButton.image.sprite = _currentLevel.ItemSprite;
                 InventoryMenuButton.gameObject.SetActive(true);
                 InventoryMenuButton.ScaleUp();
             }
