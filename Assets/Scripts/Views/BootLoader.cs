@@ -187,7 +187,7 @@ public class BootLoader : MonoBehaviour
             CurrentLevelIndex = -1;
             bInCredits = false;
 
-            LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+            LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
             {
                 _clipboard.UI_MainMenu();
             });
@@ -197,7 +197,7 @@ public class BootLoader : MonoBehaviour
         {
             if (CurrentLevelIndex < _levelDefinitions.Count)
             {
-                LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+                LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
                 {
                     _brainCamera.gameObject.SetActive(true);
                     _brain.Show(true);
@@ -298,7 +298,7 @@ public class BootLoader : MonoBehaviour
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
         QuestionMenuButton.gameObject.SetActive(false);
         InventoryMenuButton.gameObject.SetActive(false);
-        LeanTween.moveY(_menu, 0f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        LeanTween.moveY(_menu, 10f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _startGameButton.enabled = true;
             if (bWaitingForSpawn)
