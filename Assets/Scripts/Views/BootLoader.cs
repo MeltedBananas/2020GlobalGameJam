@@ -40,6 +40,8 @@ public class BootLoader : MonoBehaviour
     private bool _firstTimeShown = false;
     public Brain _brain = null;
     private Camera _brainCamera = null;
+    private Rect _brainCameraViewport = Rect.zero;
+    private bool _isBrainCameraOpened = true;
 
     private void Awake()
     {
@@ -69,6 +71,7 @@ public class BootLoader : MonoBehaviour
                     break;
             }
 
+            _brainCameraViewport = _brainCamera.rect;
             _brainCamera.gameObject.SetActive(false);
 
             foreach (var root in _brainSceneRootGameObjects)
@@ -159,5 +162,11 @@ public class BootLoader : MonoBehaviour
         
     }
 
-
+    public void UI_CloseScreen()
+    {
+        // TODO: only enable after it has opened
+        _isBrainCameraOpened = !_isBrainCameraOpened;
+        
+        
+    }
 }
