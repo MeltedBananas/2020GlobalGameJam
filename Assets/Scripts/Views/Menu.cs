@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _postItsParent = null;
     [SerializeField] private GameObject _levelDescParent = null;
     [SerializeField] private GameObject _creditParent = null;
+    public AudioManager _audioManager = null;
 
     [Header("Menu Disappear")]
     public float _disappearSeconds = 0.85f;
@@ -27,6 +28,7 @@ public class Menu : MonoBehaviour
 
     public void UI_StartGame()
     {
+        _audioManager.PlayMusic();
         Bootloader.StartGame(false);
         LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
