@@ -41,7 +41,7 @@ public class TextSpeachAnimation : MonoBehaviour
 
     public void SetupLine(TextDiagnostic td)
     {
-        ClearLine();
+       ClearLine();
        foreach(Word w in td.wordList)
        {
            wordDisplayList.Add(new WordDisplayText(w,lastLetterfontSize, BootLoader));
