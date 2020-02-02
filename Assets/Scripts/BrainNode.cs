@@ -17,18 +17,22 @@ public class BrainNode : MonoBehaviour
     public object data = null;
     bool bMouseOver = false;
 
-    public Texture2D BaseIcon;
-    public Texture2D CancelIcon;
-    public Texture2D SwapIcon;
-
     public Brain BrainOwner;
     public bool BrainNodeEnabled = true;
+
+    public SpriteRenderer IconRenderer;
+    public SpriteRenderer SwapIconRenderer;
+    public SpriteRenderer CancelIconRenderer;
 
     private void Start()
     {
         mainCamera = Camera.main;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.color = NormalColor;
+        IconRenderer.color = NormalColor;
+
+        SetReadyToSwap(false);
+        SetEnabled(BrainNodeEnabled);
     }
 
     void OnMouseDown()
@@ -42,6 +46,7 @@ public class BrainNode : MonoBehaviour
         if (!Input.GetMouseButton(1))
         {
             mySpriteRenderer.color = MouseOverColor;
+            IconRenderer.color = MouseOverColor;
         }
     }
 
@@ -57,30 +62,33 @@ public class BrainNode : MonoBehaviour
     {
         bMouseOver = false;
         mySpriteRenderer.color = NormalColor;
+        IconRenderer.color = NormalColor;
     }
 
     public void SetEnabled(bool bEnabled)
     {
         BrainNodeEnabled = bEnabled;
-        if (BrainNodeEnabled)
-        {
-            mySpriteRenderer.sprite = Sprite.Create(BaseIcon, new Rect(0.0f, 0.0f, BaseIcon.width, BaseIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
-        }
-        else
-        {
-            mySpriteRenderer.sprite = Sprite.Create(CancelIcon, new Rect(0.0f, 0.0f, CancelIcon.width, CancelIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
-        }
+
+        CancelIconRenderer.enabled = !BrainNodeEnabled;
     }
 
     public void SetReadyToSwap(bool bReadyToSwap)
     {
-        if (bReadyToSwap)
-        {
-            mySpriteRenderer.sprite = Sprite.Create(SwapIcon, new Rect(0.0f, 0.0f, SwapIcon.width, SwapIcon.height), new Vector2(0.5f, 0.5f), 250.0f);
-        }
-        else
-        {
-            SetEnabled(BrainNodeEnabled);
-        }
+        SwapIconRenderer.enabled = bReadyToSwap;
+    }
+
+    public void Swap(BrainNode otherNode)
+    {
+        object swapData = data;
+        data = otherNode.data;
+        otherNode.data = swapData;
+
+        Sprite swapSprite = IconRenderer.sprite;
+        IconRenderer.sprite = otherNode.IconRenderer.sprite;
+        otherNode.IconRenderer.sprite = swapSprite;
+
+        bool swapEnabled = BrainNodeEnabled;
+        SetEnabled(otherNode.BrainNodeEnabled);
+        otherNode.SetEnabled(swapEnabled);
     }
 }

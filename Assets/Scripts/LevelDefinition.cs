@@ -23,7 +23,7 @@ public class LevelProblem
 {
     public bool WordSwap = false;
     public string WordSwapLabel;
-    public List<string> WordSwapPossibilities;
+    public List<Word> WordSwapPossibilities;
 }
 
 public class LevelDefinition  : ScriptableObject
