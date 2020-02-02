@@ -41,10 +41,10 @@ public class BootLoader : MonoBehaviour
     public Brain _brain = null;
     private Camera _brainCamera = null;
 
+    private int CurrentLevelIndex = -1;
+
     private void Awake()
     {
-        PickRandomLevel();
-
         _speachBubble.enabled = false;
         _speachBubble.OnTextComplete += OnTextComplete;
         _speechBubbleImage.SetActive(false);
@@ -53,6 +53,11 @@ public class BootLoader : MonoBehaviour
         
         SceneManager.sceneLoaded += OnSceneLoaded;
         SceneManager.LoadSceneAsync(_brainScene, LoadSceneMode.Additive);
+    }
+
+    private void Start()
+    {
+        NextLevel();
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode sceneMode)
@@ -92,9 +97,9 @@ public class BootLoader : MonoBehaviour
         }
     }
 
-    private void PickRandomLevel()
+    private void NextLevel()
     {
-        _currentLevel = _levelDefinitions[UnityEngine.Random.Range(0, _levelDefinitions.Count)];
+        _currentLevel = _levelDefinitions[CurrentLevelIndex++];
         _levelDescription.SetText(_currentLevel.SetupDescription);
         _firstTimeShown = false;
     }
@@ -162,5 +167,16 @@ public class BootLoader : MonoBehaviour
         
     }
 
-
+    public void Update()
+    {
+        if(Input.GetButtonDown("CheatNextLevel"))
+        {
+            NextLevel();
+        }
+        else if (Input.GetButtonDown("CheatPreviousLevel"))
+        {
+            CurrentLevelIndex = Mathf.Max(CurrentLevelIndex - 1, -1);
+            NextLevel();
+        }
+    }
 }
