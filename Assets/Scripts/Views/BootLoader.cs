@@ -224,7 +224,16 @@ public class BootLoader : MonoBehaviour
 
     public void UI_AskQuestion(int index)
     {
-        _currentClient.AskQuestion(index);
+        if (index >= _currentLevel.Questions.Count)
+        {
+            UI_TestSolution();
+        }
+        else
+        {
+            _currentClient.AskQuestion(index);
+        }
+        
+        
         
         
     }

@@ -9,7 +9,7 @@ public class QuestionButton : MonoBehaviour
     public float AppearTimeSeconds = 0.25f;
     public LeanTweenType AppearTween = LeanTweenType.easeInOutBack;
     public TMP_Text TextMeshPro;
-
+    private bool bIsSubmit = false;
     private bool bEnabled = false;
     private string Label;
     private Vector3 _initialScale = Vector3.one;
@@ -28,6 +28,13 @@ public class QuestionButton : MonoBehaviour
         {
             bEnabled = true;
             Label = definition.Questions[QuestionIndex].QuestionLabel;
+        }
+
+        if (QuestionIndex == definition.Questions.Count)
+        {
+            bEnabled = true;
+            bIsSubmit = true;
+            Label = "Submit Answer";
         }
 
         TextMeshPro.SetText(Label);

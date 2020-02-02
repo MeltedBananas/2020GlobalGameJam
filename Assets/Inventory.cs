@@ -78,9 +78,11 @@ public class Inventory : MonoBehaviour
         else
         {
             isActive = false;
+            isMoving = true;
             LeanTween.moveX(gameObject, -Screen.width, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
             {
                 Item.SetActive(false);
+                isMoving = false;
             });
         }
         
