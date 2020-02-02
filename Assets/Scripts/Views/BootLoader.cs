@@ -233,9 +233,6 @@ public class BootLoader : MonoBehaviour
             _currentClient.AskQuestion(index);
         }
         
-        
-        
-        
     }
     public void UI_TestSolution()
     {
