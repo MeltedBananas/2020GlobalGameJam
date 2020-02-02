@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level04_ClientDescription
   m_EditorClassIdentifier: 
-  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
+  Phrase: I've never been *BARK* humiliated like this *BARK* before, please fix this!
   sperator:
   - ' '
   wordList:
@@ -29,9 +29,9 @@ MonoBehaviour:
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
-    Prefix: <b><i>
-    Suffix: </i></b>
+    Label: 
+    Prefix: 
+    Suffix: 
   - Text: humiliated
     Label: 
     Prefix: 
@@ -45,9 +45,9 @@ MonoBehaviour:
     Prefix: 
     Suffix: 
   - Text: '*BARK*'
-    Label: BARK
-    Prefix: <b><i>
-    Suffix: </i></b>
+    Label: 
+    Prefix: 
+    Suffix: 
   - Text: before,
     Label: 
     Prefix: 
