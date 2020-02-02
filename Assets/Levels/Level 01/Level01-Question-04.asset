@@ -65,7 +65,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: shirt
+  - Text: shirt,
     Label: 
     Prefix: 
     Suffix: 
@@ -89,7 +89,7 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
-  - Text: anymore
+  - Text: anymore.
     Label: 
     Prefix: 
     Suffix: 

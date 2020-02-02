@@ -37,4 +37,24 @@ public class TextDiagnostic : ScriptableObject
             wordList.Add(new Word(s)); 
         } 
     }
+
+    public List<BrainData> GatherBrainData()
+    {
+        HashSet<string> labels = new HashSet<string>();
+        List<BrainData> brainDataList = new List<BrainData>();
+
+        foreach (Word word in wordList)
+        {
+            if(word.Label.Length > 0)
+            {
+                if(!labels.Contains(word.Label))
+                {
+                    labels.Add(word.Label);
+                    brainDataList.Add(new BrainData(word));
+                }
+            }
+        }
+
+        return brainDataList;
+    }
 }

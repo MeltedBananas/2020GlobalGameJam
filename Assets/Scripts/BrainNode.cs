@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 
 [RequireComponent(typeof(SphereCollider))]
 public class BrainNode : MonoBehaviour
@@ -11,28 +9,33 @@ public class BrainNode : MonoBehaviour
     public string Label;
     public Vector2 Size = new Vector2(32.0f, 32.0f);
 
-    private Camera mainCamera;
+    public Camera MainCamera;
     private SpriteRenderer mySpriteRenderer;
 
-    public object data = null;
+    public BrainData data = null;
     bool bMouseOver = false;
 
     public Brain BrainOwner;
     public bool BrainNodeEnabled = true;
 
+    public Billboard Billboard;
     public SpriteRenderer IconRenderer;
     public SpriteRenderer SwapIconRenderer;
     public SpriteRenderer CancelIconRenderer;
 
     private void Start()
     {
-        mainCamera = Camera.main;
         mySpriteRenderer = GetComponent<SpriteRenderer>();
         mySpriteRenderer.color = NormalColor;
         IconRenderer.color = NormalColor;
 
         SetReadyToSwap(false);
         SetEnabled(BrainNodeEnabled);
+    }
+
+    public void Init()
+    {
+        Billboard.MainCamera = MainCamera;
     }
 
     void OnMouseDown()
@@ -79,7 +82,7 @@ public class BrainNode : MonoBehaviour
 
     public void Swap(BrainNode otherNode)
     {
-        object swapData = data;
+        BrainData swapData = data;
         data = otherNode.data;
         otherNode.data = swapData;
 

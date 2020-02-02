@@ -50,4 +50,55 @@ public class LevelDefinition  : ScriptableObject
         UnityEditor.Selection.activeObject = asset;
     }
 #endif
+
+    public List<BrainData> GenerateBrainDataList()
+    {
+        HashSet<string> labels = new HashSet<string>();
+        List<BrainData> brainDataList = new List<BrainData>();
+
+        foreach(LevelQuestion question in Questions)
+        {
+            foreach(TextDiagnostic answer in question.Answers)
+            {
+                List<BrainData> answerBrainData = answer.GatherBrainData();
+
+                foreach(BrainData braindData in answerBrainData)
+                {
+                    if (!labels.Contains(braindData.Word.Label))
+                    {
+                        labels.Add(braindData.Word.Label);
+                        brainDataList.Add(new BrainData(braindData.Word));
+                    }
+                }
+            }
+        }
+
+        foreach(LevelBrainNode levelBrainNode in BrainNodes)
+        {
+            for(int i = 0; i < levelBrainNode.NumberOfNode; ++i)
+            {
+                Word newWord = new Word("");
+                newWord.Label = string.Format("{0}{1}", levelBrainNode.Label, (levelBrainNode.StartingIndex + i));
+
+                if (levelBrainNode.PossibleNames.Count > 0)
+                {
+                    List<Word> possibleNames = new List<Word>(levelBrainNode.PossibleNames);
+                    int randomIdx = UnityEngine.Random.Range(0, levelBrainNode.PossibleNames.Count);
+                    newWord.Text = levelBrainNode.PossibleNames[randomIdx].Text;
+                    newWord.Prefix = levelBrainNode.PossibleNames[randomIdx].Prefix;
+                    newWord.Suffix = levelBrainNode.PossibleNames[randomIdx].Suffix;
+                    possibleNames.RemoveAt(randomIdx);
+                }
+                else
+                {
+                    newWord.Text = "!Undefined!";
+                }
+
+                brainDataList.Add(new BrainData(newWord));
+                
+            }
+        }
+
+        return brainDataList;
+    }
 }

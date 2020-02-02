@@ -228,8 +228,10 @@ MonoBehaviour:
   MouseOverColor: {r: 0.19215687, g: 0.78431374, b: 0.78431374, a: 1}
   Label: 
   Size: {x: 32, y: 32}
+  MainCamera: {fileID: 0}
   BrainOwner: {fileID: 0}
   BrainNodeEnabled: 1
+  Billboard: {fileID: 5098022224424613687}
   IconRenderer: {fileID: 8652561187719787447}
   SwapIconRenderer: {fileID: 7032595085798786251}
   CancelIconRenderer: {fileID: 3997972536065112909}
@@ -295,6 +297,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9479877fbf2468047856771ea42c055d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCamera: {fileID: 0}
 --- !u!1 &8391871759604871034
 GameObject:
   m_ObjectHideFlags: 0

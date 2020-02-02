@@ -14,17 +14,16 @@ enum BrainToolType
 
 public class BrainData
 {
+    public Word Word;
 
-    string Name;
-
-    public BrainData(string name)
+    public BrainData(Word word)
     {
-        Name = name;
+        Word = word;
     }
 
     public override string ToString()
     {
-        return Name;
+        return Word.ToString();
     }
 }
 
@@ -55,31 +54,37 @@ public class Brain : MonoBehaviour
     public Vector2 SwapPosition;
     private BrainNode SwappingBrainNode;
 
+    public Camera MainCamera;
+    public SetCameraViewport CameraViewport;
+
     public List<Texture2D> PossibleNodeIcons;
+
+    public Action OnLoaded = null;
 
     BrainToolType Tool;
 
     private bool bOnBrainScreen = false;
     Rect CursorZone;
 
+    bool bShow = false;
+
     private void Start()
     {
-        SetCameraViewport cameraViewport = Camera.main.GetComponent<SetCameraViewport>();
-
-        float zoneHeight = cameraViewport._viewportRect.size.y * Screen.height;
-        CursorZone = new Rect(cameraViewport._viewportRect.position.x * Screen.width, Screen.height - cameraViewport._viewportRect.position.y * Screen.height - zoneHeight, cameraViewport._viewportRect.size.x * Screen.width, zoneHeight);
+        float zoneHeight = CameraViewport._viewportRect.size.y * Screen.height;
+        CursorZone = new Rect(CameraViewport._viewportRect.position.x * Screen.width, Screen.height - CameraViewport._viewportRect.position.y * Screen.height - zoneHeight, CameraViewport._viewportRect.size.x * Screen.width, zoneHeight);
 
         GatherBrainNodes(transform);
         foreach(BrainNode node in Nodes)
         {
             node.BrainOwner = this;
+            node.MainCamera = MainCamera;
+            node.Init();
         }
 
-
-        Setup(new List<object>() { new BrainData("A"), new BrainData("B"), new BrainData("C"), new BrainData("D"), new BrainData("E"), new BrainData("F"), new BrainData("G"), new BrainData("H") });
+        OnLoaded?.Invoke();
     }
 
-    public void Setup(List<object> dataList)
+    public void Setup(List<BrainData> dataList)
     {
         List<BrainNode> randomizeNodes = new List<BrainNode>();
         for(int i = 0; i < dataList.Count; ++i)
@@ -161,8 +166,18 @@ public class Brain : MonoBehaviour
         }
     }
 
+    public void Show(bool bShow)
+    {
+        this.bShow = bShow;
+    }
+
     private void OnGUI()
     {
+        if(!bShow)
+        {
+            return;
+        }
+
         GUI.DrawTexture(new Rect(BarPosition, BarWidth), BarUI);
 
         if (Tool != BrainToolType.Inspect)
@@ -230,7 +245,7 @@ public class Brain : MonoBehaviour
             // Create style for a button
             GUIStyle myStyle = new GUIStyle(GUI.skin.box);
             myStyle.fontSize = 50;
-            string nodeInfo = string.Format("{0} - {1}", ((BrainData)InspectBrainNode.data).ToString(), InspectBrainNode.BrainNodeEnabled ? "Enabled" : "Disabled");
+            string nodeInfo = string.Format("{0} - {1}", InspectBrainNode.data.ToString(), InspectBrainNode.BrainNodeEnabled ? "Enabled" : "Disabled");
             GUI.Box(new Rect(InspectBoxPosition, InspectBoxSize), nodeInfo, myStyle);
         }
 

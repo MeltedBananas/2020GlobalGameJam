@@ -38,6 +38,8 @@ public class BootLoader : MonoBehaviour
     private Vector3 _speechBubbleInitialScale = Vector3.one;
     private readonly List<GameObject> _brainSceneRootGameObjects = new List<GameObject>();
     private bool _firstTimeShown = false;
+    private Brain _brain = null;
+    private Camera _brainCamera = null;
 
     private void Awake()
     {
@@ -59,8 +61,29 @@ public class BootLoader : MonoBehaviour
         {
             _brainSceneRootGameObjects.Clear();
             _brainSceneRootGameObjects.AddRange(scene.GetRootGameObjects());
-            _brainSceneRootGameObjects.ForEach(x => x.SetActive(false));
-        
+            
+            foreach (var root in _brainSceneRootGameObjects)
+            {
+                _brainCamera = root.GetComponentInChildren<Camera>(true);
+                if (_brainCamera != null)
+                    break;
+            }
+
+            _brainCamera.gameObject.SetActive(false);
+
+            foreach (var root in _brainSceneRootGameObjects)
+            {
+                _brain = root.GetComponentInChildren<Brain>(true);
+                if (_brain != null)
+                    break;
+            }
+
+            _brain.OnLoaded += () =>
+            {
+                _brain.Setup(_currentLevel.GenerateBrainDataList());
+            };
+
+
             InstantiateLevelObjects();
         }
     }
@@ -78,6 +101,7 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
 
+
             _currentClient.Init(_currentLevel, _speachBubble);
             foreach(QuestionButton questionButton in QuestionButtons)
             {
@@ -90,7 +114,8 @@ public class BootLoader : MonoBehaviour
     {
         LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
-            _brainSceneRootGameObjects.ForEach(x => x.SetActive(true));
+            _brainCamera.gameObject.SetActive(true);
+            _brain.Show(true);
             StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
         });
     }
