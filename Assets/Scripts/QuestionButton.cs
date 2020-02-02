@@ -19,11 +19,12 @@ public class QuestionButton : MonoBehaviour
     private void Awake()
     {
         _initialScale = transform.localScale;
-        image = GetComponent<Image>();
+        
     }
 
     public void Initialized(LevelDefinition definition)
     {
+        image = GetComponent<Image>();
         bEnabled = false;
         Label = string.Empty;
 

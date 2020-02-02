@@ -1335,6 +1335,11 @@ PrefabInstance:
       propertyPath: m_textInfo.pageCount
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4093024146298888311, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1824669d11102d49af0b274fcbf6845, type: 3}
 --- !u!1 &971321554 stripped
@@ -1500,7 +1505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 342a32728c80a5e4985053f5209729a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  IsQuestion: 0
+  IsQuestion: 1
   Item: {fileID: 1179301782}
   _disappearSeconds: 0.85
   _disappearEaseType: 1
@@ -1971,6 +1976,17 @@ PrefabInstance:
       propertyPath: _action.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: UI_ShowQuestions
       objectReference: {fileID: 0}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: ae678251ee072374babd4e8b20c72f9e,
+        type: 3}
+    - target: {fileID: 4093024145178313907, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Type
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4093024145178313918, guid: f1824669d11102d49af0b274fcbf6845,
         type: 3}
       propertyPath: m_Name
@@ -2122,6 +2138,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 60.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 4093024146298888311, guid: f1824669d11102d49af0b274fcbf6845,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f1824669d11102d49af0b274fcbf6845, type: 3}
