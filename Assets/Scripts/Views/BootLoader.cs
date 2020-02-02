@@ -71,7 +71,7 @@ public class BootLoader : MonoBehaviour
         if (_currentLevel != null)
         {
             _currentClient = Instantiate(_currentLevel.Client.gameObject, _clientsParent).GetComponent<Client>();
-            StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
+            _speachBubble.SetupLine(_currentLevel.ClientDescription);
         }
     }
 
@@ -84,7 +84,11 @@ public class BootLoader : MonoBehaviour
 
     public void UI_StartGame()
     {
-        LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() => _brainSceneRootGameObjects.ForEach(x => x.SetActive(true)));
+        LeanTween.moveY(_menu, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        {
+            _brainSceneRootGameObjects.ForEach(x => x.SetActive(true));
+            StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
+        });
     }
 
     public void UI_ShowMenu()

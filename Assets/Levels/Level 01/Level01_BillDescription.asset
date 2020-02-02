@@ -1,0 +1,78 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level01_BillDescription
+  m_EditorClassIdentifier: 
+  Phrase: Hi, my name is Bill Fates, I was in a car crash. Please help!
+  sperator:
+  - ' '
+  - ','
+  - '!'
+  - '?'
+  - .
+  wordList:
+  - Text: Hi
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: my
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: name
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: is
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Bill
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Fates
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: was
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: in
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: car
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: crash
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: Please
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: help
+    Label: 
+    Prefix: 
+    Suffix: 
