@@ -1,0 +1,144 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level04_Question02-Answer02
+  m_EditorClassIdentifier: 
+  Phrase: We have [bark-2] a 5 [billion] [dollars] website. I [bark-2] have so many
+    websites. I have them [bark-2] all over the place... I hire [bark-2] people...
+    it costs me three [dollars].
+  sperator:
+  - ' '
+  wordList:
+  - Text: We
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-2
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: a
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: 5
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: billion
+    Label: billion
+    Prefix: 
+    Suffix: 
+  - Text: dollars
+    Label: dollars
+    Prefix: 
+    Suffix: 
+  - Text: website.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '!*!*undefined*!*!'
+    Label: bark-2
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: so
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: many
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: websites.
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: have
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: them
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-2
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: all
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: over
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: the
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: place...
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: I
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: hire
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: bark-2
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: people...
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: it
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: costs
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: me
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: three
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: dollars
+    Label: dollars
+    Prefix: 
+    Suffix: 

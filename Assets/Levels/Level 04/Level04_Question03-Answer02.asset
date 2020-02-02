@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
+  m_Name: Level04_Question03-Answer02
+  m_EditorClassIdentifier: 
+  Phrase: I've never been [BARK] humiliated like this [BARK] before, please fix this!
+  sperator:
+  - ' '
+  wordList:
+  - Text: I've
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: never
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: been
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: BARK
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: humiliated
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: like
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: this
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: '*BARK*'
+    Label: BARK
+    Prefix: <b><i>
+    Suffix: </i></b>
+  - Text: before,
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: please
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: fix
+    Label: 
+    Prefix: 
+    Suffix: 
+  - Text: this!
+    Label: 
+    Prefix: 
+    Suffix: 
