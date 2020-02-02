@@ -43,6 +43,10 @@ public class BrainData
 
 public class Brain : MonoBehaviour
 {
+#if UNITY_EDITOR
+    [SerializeField] private LevelDefinition _testLevel = null;     
+#endif
+    
     public List<BrainNode> Nodes = new List<BrainNode>();
 
     public Texture2D BarUI;
@@ -72,6 +76,13 @@ public class Brain : MonoBehaviour
     public SetCameraViewport CameraViewport;
 
     public List<Texture2D> PossibleNodeIcons;
+
+    [SerializeField] private GameObject _infoBox = null;
+    [SerializeField] private GameObject _swapInfo = null;
+    [SerializeField] private GameObject _cancelInfo = null;
+
+    private bool _swapInfoShown = false;
+    private bool _cancelInfoShown = false;
 
     public Action OnLoaded = null;
 
@@ -157,6 +168,11 @@ public class Brain : MonoBehaviour
 
     private void Update()
     {
+        if (_infoBox.activeSelf && Input.GetKeyDown(KeyCode.Space))
+        {
+            _infoBox.gameObject.SetActive(false);
+        }
+        
         if(Input.GetMouseButtonUp(1))
         {
             foreach(BrainNode node in Nodes)
@@ -202,6 +218,14 @@ public class Brain : MonoBehaviour
 
     private void OnGUI()
     {
+#if UNITY_EDITOR
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            bShow = true;
+            Setup(_testLevel);
+        }
+#endif
+        
         if(!bShow)
         {
             return;
@@ -242,7 +266,13 @@ public class Brain : MonoBehaviour
             {
                 if (GUI.Button(new Rect(CancelPosition, ButtonWidth), CancelButtonUI))
                 {
-
+                    if (!_cancelInfoShown)
+                    {
+                        _cancelInfoShown = true;
+                        // show info on first click!
+                        ShowInfoBox(true, false);
+                    }
+                    
                     Tool = BrainToolType.Cancel;
                     Cursor.SetCursor(CancelCursor, Vector2.zero, CursorMode.ForceSoftware);
                     InspectBrainNode = null;
@@ -265,7 +295,13 @@ public class Brain : MonoBehaviour
             {
                 if (GUI.Button(new Rect(SwapPosition, ButtonWidth), SwapButtonUI))
                 {
-
+                    if (!_swapInfoShown)
+                    {
+                        _swapInfoShown = true;
+                        // show swap on first click!
+                        ShowInfoBox(false, true);
+                    }
+                    
                     Tool = BrainToolType.SwapStart;
                     Cursor.SetCursor(SwapCursorStart, Vector2.zero, CursorMode.ForceSoftware);
                     InspectBrainNode = null;
@@ -370,5 +406,17 @@ public class Brain : MonoBehaviour
         {
             word = null;    
         }
+    }
+
+    private void ShowInfoBox(bool isCancel, bool isSwap)
+    {
+        Vector3 localScale = _infoBox.transform.localScale;
+        _infoBox.transform.localScale = Vector3.zero;
+        _infoBox.gameObject.SetActive(true);
+        
+        _cancelInfo.SetActive(isCancel);
+        _swapInfo.SetActive(isSwap);
+        
+        LeanTween.scale(_infoBox, localScale, 1f).setEase(LeanTweenType.easeOutBack);
     }
 }
