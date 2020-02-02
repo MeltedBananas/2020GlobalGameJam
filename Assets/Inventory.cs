@@ -13,19 +13,7 @@ public class Inventory : MonoBehaviour
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.25f;
 
-    private OnClickOutside _onClickOutside = null;
-    private OnClickOutside OnClickOutside
-    {
-        get
-        {
-            if (_onClickOutside == null)
-            {
-                _onClickOutside = GetComponentInChildren<OnClickOutside>(true);
-            }
-
-            return _onClickOutside;
-        }
-    }
+    public OnClickOutside _onClickOutside = null;
 
     public void Start()
     {
@@ -55,6 +43,9 @@ public class Inventory : MonoBehaviour
         }
         if (!isActive)
         {
+            if (_onClickOutside != null)
+                _onClickOutside.gameObject.SetActive(true);
+            
             isActive = true;
             Item.SetActive(true);
             isMoving = true;
@@ -65,15 +56,8 @@ public class Inventory : MonoBehaviour
         }
         else
         {
-            isMoving = true;
-            isActive = false;
-            LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
-            {
-                isMoving = false;
-                Item.SetActive(false);
-            });
+            UI_HideInventory();
         }
-        
     }
     
     public void UI_ShowQuestions()
@@ -85,7 +69,9 @@ public class Inventory : MonoBehaviour
         
         if (!isActive)
         {
-            //OnClickOutside.gameObject.SetActive(true);
+            if (_onClickOutside != null)
+                _onClickOutside.gameObject.SetActive(true);
+            
             isActive = true;
             isMoving = true;
             Item.SetActive(true);
@@ -94,17 +80,37 @@ public class Inventory : MonoBehaviour
                 isMoving = false;
             });
         }
+        else 
+        {
+            UI_HideQuestions();
+        }
     }
 
     public void UI_HideQuestions()
     {
-        //OnClickOutside.gameObject.SetActive(false);
+        if (_onClickOutside != null)
+            _onClickOutside.gameObject.SetActive(false);
+        
         isActive = false;
         isMoving = true;
         LeanTween.moveX(gameObject, -Screen.width, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             Item.SetActive(false);
             isMoving = false;
+        });
+    }
+
+    public void UI_HideInventory()
+    {
+        if (_onClickOutside != null)
+            _onClickOutside.gameObject.SetActive(false);
+        
+        isMoving = true;
+        isActive = false;
+        LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+        {
+            isMoving = false;
+            Item.SetActive(false);
         });
     }
 }

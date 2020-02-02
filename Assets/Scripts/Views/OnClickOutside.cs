@@ -29,18 +29,21 @@ public class OnClickOutside : MonoBehaviour
         if (_uiCamera == null)
             return;
 
-        int count = Physics.RaycastNonAlloc(_uiCamera.ScreenPointToRay(Input.mousePosition), _hits,
-            _uiCamera.farClipPlane, 1 << _uiLayerMask, QueryTriggerInteraction.Collide);
-
-        bool hasHit = false;
-        for (int i = 0; i < count && !hasHit; ++i)
+        if (Input.GetMouseButtonDown(0))
         {
-            hasHit = _hits[i].collider.GetComponent<OnClickOutside>() == this;
-        }
+            int count = Physics.RaycastNonAlloc(_uiCamera.ScreenPointToRay(Input.mousePosition), _hits,
+                _uiCamera.farClipPlane, 1 << _uiLayerMask, QueryTriggerInteraction.Collide);
 
-        if (!hasHit)
-        {
-            OnOutsideHit?.Invoke();
+            bool hasHit = false;
+            for (int i = 0; i < count && !hasHit; ++i)
+            {
+                hasHit = _hits[i].collider.GetComponent<OnClickOutside>() == this;
+            }
+
+            if (!hasHit)
+            {
+                OnOutsideHit?.Invoke();
+            }
         }
     }
 }

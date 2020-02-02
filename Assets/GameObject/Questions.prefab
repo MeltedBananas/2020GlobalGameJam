@@ -323,6 +323,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2321507244520810331}
+  - component: {fileID: 7648824624451902740}
   m_Layer: 0
   m_Name: Questions
   m_TagString: Untagged
@@ -348,6 +349,24 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7648824624451902740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3329704784714186912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 342a32728c80a5e4985053f5209729a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  IsQuestion: 1
+  Item: {fileID: 3329704784714186912}
+  _disappearSeconds: 0.85
+  _disappearEaseType: 1
+  _appearSeconds: 0.25
+  _onClickOutside: {fileID: 0}
 --- !u!1 &4445512388006327397
 GameObject:
   m_ObjectHideFlags: 0

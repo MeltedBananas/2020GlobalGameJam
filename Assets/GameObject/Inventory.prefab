@@ -90,6 +90,7 @@ MonoBehaviour:
   _disappearSeconds: 0.85
   _disappearEaseType: 1
   _appearSeconds: 0.25
+  _onClickOutside: {fileID: 3537695515252242132}
 --- !u!1 &3086214565070006270
 GameObject:
   m_ObjectHideFlags: 0
@@ -102,12 +103,12 @@ GameObject:
   - component: {fileID: 72382625102970324}
   - component: {fileID: 3537695515252242132}
   m_Layer: 5
-  m_Name: HideInventoryOutside
+  m_Name: HideAll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &7082091097016675189
 RectTransform:
   m_ObjectHideFlags: 0
