@@ -50,6 +50,15 @@ public class LoadingScreen : MonoBehaviour
 
     private void Update()
     {
+#if UNITY_EDITOR
+        if (Input.GetMouseButtonDown(0))
+        {
+            // Skip All
+            StopAllCoroutines();
+            SceneManager.LoadScene("GameScene");
+        }
+#endif
+        
         if (!_isFadingOut)
         {
             _colorDelta += Time.deltaTime;
