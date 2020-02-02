@@ -393,7 +393,7 @@ public class Brain : MonoBehaviour
         return null;
     }
 
-    public void RefreshFromLabel(string label, out Word word)
+    public void RefreshFromLabel(string label, ref Word word)
     {
         BrainNode node = GetFromLabel(label);
         if (node != null)
@@ -411,7 +411,7 @@ public class Brain : MonoBehaviour
         }
         else
         {
-            word = null;    
+             word = word;    
         }
     }
 

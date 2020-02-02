@@ -32,9 +32,9 @@ public class WordDisplayText
     {
         result = "";
         ++letterIndex;
+        
         if (letterIndex < word.Text.Length)
         {
-            
             result  = word.Prefix + ShowCharacters() + word.Suffix;
         }
         else
@@ -59,7 +59,7 @@ public class WordDisplayText
     {
         if(word.Label.Length > 0)
         {
-            BootLoader._brain.RefreshFromLabel(word.Label, out word);
+            BootLoader._brain.RefreshFromLabel(word.Label, ref word);
         }
     }
 }
