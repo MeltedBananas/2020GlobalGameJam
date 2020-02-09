@@ -13,8 +13,6 @@ public class Inventory : MonoBehaviour
     public LeanTweenType _disappearEaseType = LeanTweenType.linear;
     public float _appearSeconds = 0.25f;
 
-    public OnClickOutside _onClickOutside = null;
-
     public void Start()
     {
         isActive = false;
@@ -43,9 +41,6 @@ public class Inventory : MonoBehaviour
         }
         if (!isActive)
         {
-            if (_onClickOutside != null)
-                _onClickOutside.gameObject.SetActive(true);
-            
             isActive = true;
             Item.SetActive(true);
             isMoving = true;
@@ -69,9 +64,6 @@ public class Inventory : MonoBehaviour
         
         if (!isActive)
         {
-            if (_onClickOutside != null)
-                _onClickOutside.gameObject.SetActive(true);
-            
             isActive = true;
             isMoving = true;
             Item.SetActive(true);
@@ -82,15 +74,12 @@ public class Inventory : MonoBehaviour
         }
         else 
         {
-            UI_HideQuestions();
+            //UI_HideQuestions();
         }
     }
 
     public void UI_HideQuestions()
     {
-        if (_onClickOutside != null)
-            _onClickOutside.gameObject.SetActive(false);
-        
         isActive = false;
         isMoving = true;
         LeanTween.moveX(gameObject, -Screen.width, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
@@ -102,9 +91,6 @@ public class Inventory : MonoBehaviour
 
     public void UI_HideInventory()
     {
-        if (_onClickOutside != null)
-            _onClickOutside.gameObject.SetActive(false);
-        
         isMoving = true;
         isActive = false;
         LeanTween.moveY(gameObject, -Screen.height, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>

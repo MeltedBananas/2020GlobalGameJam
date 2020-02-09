@@ -27,7 +27,9 @@ public class QuestionButton : MonoBehaviour
     private bool bEnabled = false;
     private string Label;
     private Vector3 _initialScale = Vector3.one;
-   
+
+    public ValidationState ButtonState;
+
 
     private void Awake()
     {
@@ -98,7 +100,8 @@ public class QuestionButton : MonoBehaviour
 
     public void SetValidationState(ValidationState newState)
     {
-        switch(newState)
+        ButtonState = newState;
+        switch (ButtonState)
         {
             case ValidationState.Unknown:
                 VerificationIcon.sprite = UnknownVerifyState;

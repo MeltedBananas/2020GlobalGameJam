@@ -31,7 +31,7 @@ public class BootLoader : MonoBehaviour
 
     [Header("Question Buttons")]
     public List<QuestionButton> QuestionButtons;
-    public QuestionButton QuestionMenuButton;
+    public Inventory ActionsMenu;
     public QuestionButton InventoryMenuButton;
 
     [Header("Menu Disappear")]
@@ -204,6 +204,7 @@ public class BootLoader : MonoBehaviour
                 {
                     _brainCamera.gameObject.SetActive(true);
                     _brain.Show(true);
+                    ActionsMenu.UI_ShowQuestions();
 
                     StartCoroutine(ShowBubbleAfterAFewSeconds(_appearAfterSeconds));
                 });
@@ -261,7 +262,6 @@ public class BootLoader : MonoBehaviour
             _speachBubble.ClearLine();
 
             QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
-            QuestionMenuButton.gameObject.SetActive(false);
             if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
             {
                 InventoryMenuButton.gameObject.SetActive(false);
@@ -275,8 +275,6 @@ public class BootLoader : MonoBehaviour
         {
             _currentClient.Shutup();
 
-            //UI_TestSolution();
-
             if(QuestionAskedIndex >= 0)
             {
                 bool bValidated = _brain.Validate(_currentLevel.Solutions, QuestionButtons[QuestionAskedIndex].AssociatedLabels);
@@ -288,8 +286,6 @@ public class BootLoader : MonoBehaviour
         if (!_firstTimeShown)
         {
             QuestionButtons.ForEach(x => x.ScaleUp());
-            QuestionMenuButton.gameObject.SetActive(true);
-            QuestionMenuButton.ScaleUp();
             if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
             {
                 InventoryMenuButton.gameObject.GetComponent<Image>().sprite = _currentLevel.ItemSprite;
@@ -299,12 +295,28 @@ public class BootLoader : MonoBehaviour
             _firstTimeShown = true;
         }
 
-        if(bStartNextLevelAfterSpeech)
-        {   
-            
-
-            StartCoroutine(NextLevelAfterAFewSeconds(2.0f));
+        if (bStartNextLevelAfterSpeech)
+        {
+            StartCoroutine(NextLevelAfterAFewSeconds(1.75f));
             bStartNextLevelAfterSpeech = false;
+        }
+        else
+        {
+            bool bAllQuestionValidated = true;
+            for (int i = 0; i < _currentLevel.Questions.Count; ++i)
+            {
+                QuestionButton questionButton = QuestionButtons[i];
+                if (questionButton.ButtonState != QuestionButton.ValidationState.Valid)
+                {
+                    bAllQuestionValidated = false;
+                    break;
+                }
+            }
+
+            if (bAllQuestionValidated)
+            {
+                StartCoroutine(TestSolution(1.5f));
+            }
         }
     }
 
@@ -316,7 +328,7 @@ public class BootLoader : MonoBehaviour
             _brainCamera.gameObject.SetActive(false);
         }
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
-        QuestionMenuButton.gameObject.SetActive(false);
+        ActionsMenu.UI_HideQuestions();
         InventoryMenuButton.gameObject.SetActive(false);
         LeanTween.moveY(_menu, 10f, _appearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
@@ -332,14 +344,19 @@ public class BootLoader : MonoBehaviour
     public void UI_AskQuestion(int index)
     {
         QuestionAskedIndex = index;
+        if(QuestionButtons[QuestionAskedIndex].ButtonState == QuestionButton.ValidationState.Invalid)
+        {
+            QuestionButtons[QuestionAskedIndex].SetValidationState(QuestionButton.ValidationState.Unknown);
+        }
 
         _currentClient.AskQuestion(index);
         _currentClient.Talk();
         _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
     }
-    
-    public void UI_TestSolution()
+
+    private IEnumerator TestSolution(float seconds)
     {
+        yield return new WaitForSeconds(seconds);
         if (_brain.ValidateBrain(_currentLevel.Solutions))
         {
             _currentClient.Talk();
