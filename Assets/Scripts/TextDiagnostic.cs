@@ -57,4 +57,22 @@ public class TextDiagnostic : ScriptableObject
 
         return brainDataList;
     }
+
+    public List<string> GetAllLabels()
+    {
+        List<string> labels = new List<string>();
+
+        foreach (Word word in wordList)
+        {
+            if (word.Label.Length > 0)
+            {
+                if(!labels.Contains(word.Label))
+                {
+                    labels.Add(word.Label);
+                }
+            }
+        }
+
+        return labels;
+    }
 }

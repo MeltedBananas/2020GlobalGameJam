@@ -44,6 +44,11 @@ public class BrainNode : MonoBehaviour
         }
     }
 
+    public void Reset()
+    {
+        SetEnabled(true);
+    }
+
     void OnMouseDown()
     {
         BrainOwner.OnNodeClick(this);

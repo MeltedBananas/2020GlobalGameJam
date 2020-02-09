@@ -51,4 +51,4 @@ MonoBehaviour:
   - IsEnabled: 1
     Text: red
     Label: color-1
-  AvailableTools: 0400000002000000
+  AvailableTools: 02000000

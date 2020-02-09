@@ -58,6 +58,8 @@ public class BootLoader : MonoBehaviour
     private bool bStartNextLevelAfterSpeech = false;
     public bool bInCredits = false;
 
+    int QuestionAskedIndex = -1;
+
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -106,6 +108,7 @@ public class BootLoader : MonoBehaviour
     private void NextLevel(bool bShowLevel)
     {
         _speachBubble.ClearLine();
+        QuestionAskedIndex = -1;
 
         if (CurrentLevelIndex < _levelDefinitions.Count - 1)
         {
@@ -271,6 +274,14 @@ public class BootLoader : MonoBehaviour
         if (_currentClient != null)
         {
             _currentClient.Shutup();
+
+            //UI_TestSolution();
+
+            if(QuestionAskedIndex >= 0)
+            {
+                bool bValidated = _brain.Validate(_currentLevel.Solutions, QuestionButtons[QuestionAskedIndex].AssociatedLabels);
+                QuestionButtons[QuestionAskedIndex].SetValidationState(bValidated ? QuestionButton.ValidationState.Valid : QuestionButton.ValidationState.Invalid);
+            }
         }
         _audioManager.StopSound();
 
@@ -320,16 +331,11 @@ public class BootLoader : MonoBehaviour
 
     public void UI_AskQuestion(int index)
     {
-        if (index >= _currentLevel.Questions.Count)
-        {
-            UI_TestSolution();
-        }
-        else
-        {
-            _currentClient.AskQuestion(index);
-            _currentClient.Talk();
-            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
-        }
+        QuestionAskedIndex = index;
+
+        _currentClient.AskQuestion(index);
+        _currentClient.Talk();
+        _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
     }
     
     public void UI_TestSolution()
@@ -341,12 +347,6 @@ public class BootLoader : MonoBehaviour
             _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
 
             bStartNextLevelAfterSpeech = true;
-        }
-        else
-        {
-            _currentClient.Talk();
-            _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
-            _speachBubble.SetupLine(_currentLevel.FailSpeech);
         }
     }
 

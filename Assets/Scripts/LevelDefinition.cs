@@ -55,7 +55,6 @@ public class LevelDefinition  : ScriptableObject
 {
     public Client Client;
     public TextDiagnostic ClientDescription;
-    public TextDiagnostic FailSpeech;
     public TextDiagnostic SuccessSpeech;
     public string SetupDescription = "This is your assignment - please fix the issue";
     public GameObject ItemPrefab;

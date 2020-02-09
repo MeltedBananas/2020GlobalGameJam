@@ -132,6 +132,7 @@ public class Brain : MonoBehaviour
 
         for (int i = Nodes.Count - 1; i >= 0; --i)
         {
+            Nodes[i].Reset();
             Nodes[i].gameObject.SetActive(false);
         }
 
@@ -369,6 +370,22 @@ public class Brain : MonoBehaviour
                 break;
         }
     }
+
+    public bool Validate(List<LevelSolution> solution, List<string> labels)
+    {
+        foreach (LevelSolution s in solution)
+        {
+            if (labels.Contains(s.Label))
+            {
+                if (!s.ValidateBrain(Nodes))
+                {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
     public bool ValidateBrain(List<LevelSolution> solution)
     { 
         foreach(LevelSolution s in solution)
@@ -380,6 +397,7 @@ public class Brain : MonoBehaviour
         }
         return true;
     }
+
     public BrainNode GetFromLabel(string label)
     {
         foreach(BrainNode node in Nodes)
@@ -411,7 +429,7 @@ public class Brain : MonoBehaviour
         }
         else
         {
-             word = word;    
+             // Keep word as is
         }
     }
 

@@ -860,7 +860,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 --- !u!114 &466825579 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2302455155615325200, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+  m_CorrespondingSourceObject: {fileID: 5186843191065158949, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
     type: 3}
   m_PrefabInstance: {fileID: 466825577}
   m_PrefabAsset: {fileID: 0}
@@ -872,7 +872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &466825580 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6899762488552895069, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+  m_CorrespondingSourceObject: {fileID: 2082526344682619715, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
     type: 3}
   m_PrefabInstance: {fileID: 466825577}
   m_PrefabAsset: {fileID: 0}
@@ -884,7 +884,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
 --- !u!114 &466825581 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 6875756582792963787, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
+  m_CorrespondingSourceObject: {fileID: 7118841934607327982, guid: 5c23d8ff2e70fe04f9c54f9566d4c139,
     type: 3}
   m_PrefabInstance: {fileID: 466825577}
   m_PrefabAsset: {fileID: 0}
@@ -2549,7 +2549,7 @@ PrefabInstance:
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
       propertyPath: QuestionButtons.Array.size
-      value: 5
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
@@ -2646,7 +2646,7 @@ PrefabInstance:
         type: 3}
       propertyPath: QuestionButtons.Array.data[4]
       value: 
-      objectReference: {fileID: 466825579}
+      objectReference: {fileID: 0}
     - target: {fileID: 4642441813236454329, guid: e036cd92fab758e44a8b45494720cb7a,
         type: 3}
       propertyPath: QuestionButtons.Array.data[5]
