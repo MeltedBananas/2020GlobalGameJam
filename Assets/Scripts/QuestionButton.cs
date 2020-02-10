@@ -23,6 +23,8 @@ public class QuestionButton : MonoBehaviour
     public Sprite NotValidVerifyState;
     public Sprite ValidVerifyState;
     public List<string> AssociatedLabels = new List<string>();
+    public AudioSource ValidAudio;
+    public AudioSource InValidAudio;
 
     private bool bEnabled = false;
     private string Label;
@@ -108,9 +110,11 @@ public class QuestionButton : MonoBehaviour
                 break;
             case ValidationState.Invalid:
                 VerificationIcon.sprite = NotValidVerifyState;
+                InValidAudio.Play();
                 break;
             case ValidationState.Valid:
                 VerificationIcon.sprite = ValidVerifyState;
+                ValidAudio.Play();
                 break;
         }
     }

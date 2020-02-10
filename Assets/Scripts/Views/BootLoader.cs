@@ -41,7 +41,8 @@ public class BootLoader : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] private AudioManager _audioManager = null;
-    
+    public AudioSource LevelValidatedAudio;
+
     private LevelDefinition _currentLevel = null;
     private Client _currentClient = null;
     private Vector3 _speechBubbleInitialScale = Vector3.one;
@@ -363,7 +364,9 @@ public class BootLoader : MonoBehaviour
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
 
+            QuestionAskedIndex = -1;
             bStartNextLevelAfterSpeech = true;
+            LevelValidatedAudio.Play();
         }
     }
 
