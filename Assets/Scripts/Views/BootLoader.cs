@@ -290,6 +290,10 @@ public class BootLoader : MonoBehaviour
             if (_currentLevel.ItemPrefab != null && _currentLevel.ItemSprite != null)
             {
                 InventoryMenuButton.gameObject.GetComponent<Image>().sprite = _currentLevel.ItemSprite;
+
+                float widthRatio = _currentLevel.ItemSprite.texture.width / _currentLevel.ItemSprite.texture.height;
+                Vector2 currentRect = ((RectTransform)InventoryMenuButton.gameObject.transform).sizeDelta;
+                ((RectTransform)InventoryMenuButton.gameObject.transform).sizeDelta = new Vector2(currentRect.y * widthRatio, currentRect.y);
                 InventoryMenuButton.gameObject.SetActive(true);
                 InventoryMenuButton.ScaleUp();
             }

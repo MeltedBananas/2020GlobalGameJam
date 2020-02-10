@@ -199,6 +199,16 @@ PrefabInstance:
       propertyPath: QuestionIndex
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: BuzzingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: ValidBuzzingDistance
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb0ab06be0aa31469bdd2b941a0cc27, type: 3}
 --- !u!224 &3789049380709823309 stripped
@@ -353,6 +363,16 @@ PrefabInstance:
         type: 3}
       propertyPath: QuestionIndex
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: BuzzingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: ValidBuzzingDistance
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb0ab06be0aa31469bdd2b941a0cc27, type: 3}
@@ -509,6 +529,16 @@ PrefabInstance:
       propertyPath: QuestionIndex
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: BuzzingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: ValidBuzzingDistance
+      value: 50
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb0ab06be0aa31469bdd2b941a0cc27, type: 3}
 --- !u!224 &8036858930841490731 stripped
@@ -658,6 +688,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_textInfo.pageCount
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: BuzzingSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6832649365005276094, guid: 0fb0ab06be0aa31469bdd2b941a0cc27,
+        type: 3}
+      propertyPath: ValidBuzzingDistance
+      value: 50
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0fb0ab06be0aa31469bdd2b941a0cc27, type: 3}
