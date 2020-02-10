@@ -124,6 +124,7 @@ public class QuestionButton : MonoBehaviour
 
     public void SetValidationState(ValidationState newState)
     {
+        bool bChanged = ButtonState != newState;
         ButtonState = newState;
         switch (ButtonState)
         {
@@ -132,13 +133,19 @@ public class QuestionButton : MonoBehaviour
                 break;
             case ValidationState.Invalid:
                 VerificationIcon.sprite = NotValidVerifyState;
-                InValidAudio.Play();
-                StartCoroutine(BuzzInvalid(1.0f));
+                if (bChanged)
+                {
+                    InValidAudio.Play();
+                    StartCoroutine(BuzzInvalid(1.0f));
+                }
                 break;
             case ValidationState.Valid:
                 VerificationIcon.sprite = ValidVerifyState;
-                ValidAudio.Play();
-                StartCoroutine(BuzzValid(0.325f));
+                if (bChanged)
+                {
+                    ValidAudio.Play();
+                    StartCoroutine(BuzzValid(0.325f));
+                }
                 break;
         }
     }

@@ -120,7 +120,7 @@ public class BootLoader : MonoBehaviour
             if (_brain != null)
             {
                 _brain.bShow = false;
-                _brain.Setup(_currentLevel);
+                _brain.Setup(this, _currentLevel);
                 _currentLevel.FuckUp(_brain);
             }
 
@@ -407,6 +407,20 @@ public class BootLoader : MonoBehaviour
         else
         {
             NextLevel(false);
+        }
+    }
+
+    public void OnModifiedBrainNode(BrainNode node)
+    {
+        if (node != null && node.data != null && node.data.Word != null)
+        {
+            foreach (QuestionButton button in QuestionButtons)
+            {
+                if (button.AssociatedLabels.Contains(node.data.Word.Label))
+                {
+                    button.SetValidationState(QuestionButton.ValidationState.Unknown);
+                }
+            }
         }
     }
 }

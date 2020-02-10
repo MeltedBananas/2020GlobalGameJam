@@ -89,6 +89,7 @@ public class Brain : MonoBehaviour
     public Action OnLoaded = null;
 
     private LevelDefinition CurrentLevel;
+    public BootLoader CurrentBootLoader;
 
     BrainToolType Tool;
 
@@ -123,8 +124,9 @@ public class Brain : MonoBehaviour
         Tool = BrainToolType.None;
     }
 
-    public void Setup(LevelDefinition currentLevel)
+    public void Setup(BootLoader currentBootLoader, LevelDefinition currentLevel)
     {
+        CurrentBootLoader = currentBootLoader;
         CurrentLevel = currentLevel;
 
         Nodes.Clear();
@@ -230,7 +232,7 @@ public class Brain : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.T))
         {
             bShow = true;
-            Setup(_testLevel);
+            Setup(null, _testLevel);
         }
 #endif
         

@@ -84,6 +84,10 @@ public class BrainNode : MonoBehaviour
         BrainNodeEnabled = bEnabled;
 
         CancelIconRenderer.enabled = !BrainNodeEnabled;
+        if (BrainOwner != null && BrainOwner.CurrentBootLoader != null)
+        {
+            BrainOwner.CurrentBootLoader.OnModifiedBrainNode(this);
+        }
     }
 
     public void SetReadyToSwap(bool bReadyToSwap)
@@ -102,6 +106,9 @@ public class BrainNode : MonoBehaviour
         bool swapEnabled = BrainNodeEnabled;
         SetEnabled(otherNode.BrainNodeEnabled);
         otherNode.SetEnabled(swapEnabled);
+
+        BrainOwner.CurrentBootLoader.OnModifiedBrainNode(this);
+        BrainOwner.CurrentBootLoader.OnModifiedBrainNode(otherNode);
     }
 
     private Coroutine _stopPingCoroutine = null;
