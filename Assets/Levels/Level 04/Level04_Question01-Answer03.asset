@@ -21,63 +21,79 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: the
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: greatest
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: The
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: best
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: The
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: world
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: should
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: all
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: respect
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: our
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: great
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: nation.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

@@ -21,59 +21,74 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: you
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: recognize
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <i><b>
     Suffix: </b></i>
+    SilentWhenCancelled: 1
   - Text: me?
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I'm
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: the
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: President
     Label: President
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: of
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: the
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: United
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: States
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: of
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: America
     Label: America
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

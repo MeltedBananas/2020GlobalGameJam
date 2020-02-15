@@ -8,8 +8,9 @@ public class Word
     public string Label;
     public string Prefix;
     public string Suffix;
+    public bool SilentWhenCancelled = false;
 
-   
+
     public Word( string txt)
     {
         Text = txt;

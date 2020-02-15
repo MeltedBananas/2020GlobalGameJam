@@ -21,91 +21,114 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: when
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I'm
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: no
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: longer
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: around,
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: they
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: will
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: call
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: 'it:'
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: the
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: Trump
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: wall
     Label: wall
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: Its
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: got
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: to
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: be
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: the
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: greatest
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: wall
     Label: wall
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: .
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

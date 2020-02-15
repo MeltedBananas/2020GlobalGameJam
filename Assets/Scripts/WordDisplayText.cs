@@ -22,7 +22,7 @@ public class WordDisplayText
     }
     public string ColorFromPrefix()
     {
-        if (word.Prefix.Contains("color"))
+        if (word.Prefix != null && word.Prefix.Contains("color"))
         {
             return word.Prefix.Substring(word.Prefix.IndexOf("=") + 1, word.Prefix.IndexOf(">") - word.Prefix.IndexOf("=")-1);
         }
@@ -31,16 +31,8 @@ public class WordDisplayText
      public string Animate()
     {
         result = "";
-        ++letterIndex;
-        
-        if (letterIndex < word.Text.Length)
-        {
-            result  = word.Prefix + ShowCharacters() + word.Suffix;
-        }
-        else
-        {
-            result  = word.Prefix + word.Text.Substring(0, word.Text.Length ) + word.Suffix;
-        }
+        letterIndex = Mathf.Min(letterIndex + 1, word.Text.Length);
+        result  = word.Prefix + ShowCharacters() + word.Suffix;
 
         return result;
 
@@ -51,15 +43,26 @@ public class WordDisplayText
     }
     public string ShowCharacters()
     {
-        return  "<color="+ColorFromPrefix()+">" + word.Text.Substring(0,letterIndex )+ ShowLastLetter() + "</color>"+
-        "<color=white>"+ word.Text.Substring(letterIndex,word.Text.Length-letterIndex) + "</color>";
+        string characters;
+        if(word.Label.Length > 0)
+        {
+            characters = "<b><i><u><color=" + ColorFromPrefix() + ">" + word.Text.Substring(0, letterIndex) + "</color></u>" +
+                    "<color=white>" + word.Text.Substring(letterIndex, word.Text.Length - letterIndex) + "</color></i></b>";
+        }
+        else
+        {
+            characters = "<color=" + ColorFromPrefix() + ">" + word.Text.Substring(0, letterIndex) + "</color>" +
+                                "<color=white>" + word.Text.Substring(letterIndex, word.Text.Length - letterIndex) + "</color>";
+        }
+
+        return characters;
     }
 
     public void Refresh()
     {
         if(word.Label.Length > 0)
         {
-            BootLoader._brain.RefreshFromLabel(word.Label, ref word);
+            BootLoader._brain.Refresh(ref word);
         }
     }
 }

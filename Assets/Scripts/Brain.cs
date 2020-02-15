@@ -413,25 +413,11 @@ public class Brain : MonoBehaviour
         return null;
     }
 
-    public void RefreshFromLabel(string label, ref Word word)
+    public void Refresh(ref Word word)
     {
-        BrainNode node = GetFromLabel(label);
-        if (node != null)
+        foreach(BrainNode node in Nodes)
         {
-            if (node.BrainNodeEnabled)
-            {
-                word = node.data.Word;
-            }
-            else
-            {
-                word = new Word("");
-                word.Label = node.data.Word.Label;
-            }
-            node.Ping();
-        }
-        else
-        {
-             // Keep word as is
+            node.Refresh(ref word);
         }
     }
 

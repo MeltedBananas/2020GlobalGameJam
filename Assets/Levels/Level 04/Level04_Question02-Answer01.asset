@@ -20,43 +20,54 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: beauty
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: of
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: me
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <i><b>
     Suffix: </b></i>
+    SilentWhenCancelled: 1
   - Text: is
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: that
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I'm
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: very
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: rich
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1

@@ -21,75 +21,94 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: have
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: a
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: 5
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: billion
     Label: billion
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: dollars
     Label: dollars
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: website.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: have
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: so
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: many
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: websites.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: it
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: costs
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: me
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: three
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: dollars
     Label: dollars
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

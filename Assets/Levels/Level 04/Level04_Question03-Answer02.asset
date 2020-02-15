@@ -20,59 +20,74 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: want
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: a
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: strong
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: border
     Label: border
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: do
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: want
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: a
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: wall
     Label: wall
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: Walls
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: do
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: work.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </b></i>
+    SilentWhenCancelled: 1

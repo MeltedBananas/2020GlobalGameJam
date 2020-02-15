@@ -20,19 +20,24 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: America
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: great
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-1
     Prefix: <i><b>
     Suffix: </b></i>
+    SilentWhenCancelled: 1
   - Text: again.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

@@ -90,7 +90,7 @@ public class TextSpeachAnimation : MonoBehaviour
                 }
             }
 
-            _letterTimer = delayBetweenLetters;
+            _letterTimer += delayBetweenLetters;
         }
         
         textBox.SetText(result);

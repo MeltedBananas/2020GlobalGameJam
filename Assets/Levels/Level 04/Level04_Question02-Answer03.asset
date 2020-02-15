@@ -21,75 +21,94 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: country
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: is
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: in
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: serious
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: trouble.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: We
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: don't
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-2
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: have
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: any
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: jobs
     Label: jobs
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: anymore.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: We
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: used
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: to
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: have
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: jobs
     Label: jobs
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

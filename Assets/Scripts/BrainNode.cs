@@ -126,4 +126,28 @@ public class BrainNode : MonoBehaviour
         yield return new WaitForSeconds(StopPingAfterSeconds);
         PingPS.Stop();
     }
+
+    public void Refresh(ref Word word)
+    {
+        if (word.Label == data.Word.Label)
+        {
+            if (BrainNodeEnabled)
+            {
+                word = data.Word;
+            }
+            else
+            {
+                if (word.SilentWhenCancelled)
+                {
+                    word = new Word("");
+                }
+                else
+                {
+                    word = new Word("*hmm*");
+                }
+                word.Label = data.Word.Label;
+            }
+            Ping();
+        }
+    }
 }

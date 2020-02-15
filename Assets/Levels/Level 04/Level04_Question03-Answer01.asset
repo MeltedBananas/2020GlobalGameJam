@@ -21,87 +21,109 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: also
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: talk
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: about
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: building
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: a
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: wall
     Label: wall
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: and
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: oftentimes
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I'll
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: say
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: '*BARK*'
     Label: bark-3
     Prefix: <b><i>
     Suffix: </i></b>
+    SilentWhenCancelled: 1
   - Text: and
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: there's
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: going
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: to
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: be
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: a
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: big
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: beautiful
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: door.
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
