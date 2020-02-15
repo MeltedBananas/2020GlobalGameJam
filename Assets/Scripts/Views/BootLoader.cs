@@ -52,7 +52,7 @@ public class BootLoader : MonoBehaviour
     private Camera _brainCamera = null;
     private Rect _brainCameraViewport = Rect.zero;
     private bool _isBrainCameraOpened = true;
-    private FadeInOut _brainFadeInOut = null;
+    public FadeInOut _brainFadeInOut = null;
     private int CurrentLevelIndex = -1;
     private bool bWaitingForSpawn = false;
     private GameObject item;
@@ -90,7 +90,9 @@ public class BootLoader : MonoBehaviour
 
             _brainCameraViewport = _brainCamera.rect;
             _brainFadeInOut = _brainCamera.GetComponentInChildren<FadeInOut>(true);
-            _brainCamera.gameObject.SetActive(false);
+            _brainFadeInOut.AssociatedGameObject = _brainCamera.gameObject;
+            _brainFadeInOut.SnapOut();
+            _isBrainCameraOpened = false;
 
             foreach (var root in _brainSceneRootGameObjects)
             {
@@ -148,7 +150,7 @@ public class BootLoader : MonoBehaviour
 
         _brain.Reset();
         _brain.Show(false);
-        _brainCamera.gameObject.SetActive(false);
+        UI_TurnOffScreen();
         _clipboard.UI_EndofGame();
         _startGameButton.enabled = true;
     }
@@ -203,7 +205,7 @@ public class BootLoader : MonoBehaviour
             {
                 LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
                 {
-                    _brainCamera.gameObject.SetActive(true);
+                    UI_TurnOnScreen();
                     _brain.Show(true);
                     ActionsMenu.UI_ShowQuestions();
 
@@ -251,6 +253,7 @@ public class BootLoader : MonoBehaviour
             _currentClient.Talk();
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.ClientDescription);
+            UI_TurnOnScreen();
         });
     }
 
@@ -327,11 +330,8 @@ public class BootLoader : MonoBehaviour
 
     public void UI_ShowMenu()
     {
-        if (_brainCamera != null)
-        {
-            _brain.Reset();
-            _brainCamera.gameObject.SetActive(false);
-        }
+        _brain.Reset();
+        UI_TurnOffScreen();
         QuestionButtons.ForEach(x => x.gameObject.SetActive(false));
         ActionsMenu.UI_HideQuestions();
         InventoryMenuButton.gameObject.SetActive(false);
@@ -367,6 +367,7 @@ public class BootLoader : MonoBehaviour
             _currentClient.Talk();
             _audioManager.PlaySound(AudioManager.SoundsBank.TalkSpeech);
             _speachBubble.SetupLine(_currentLevel.SuccessSpeech);
+            UI_TurnOffScreen();
 
             QuestionAskedIndex = -1;
             bStartNextLevelAfterSpeech = true;
@@ -374,15 +375,25 @@ public class BootLoader : MonoBehaviour
         }
     }
 
-    public void UI_CloseScreen()
+    public void UI_ToggleScreen()
     {
-        // TODO: only enable after it has opened
-        _isBrainCameraOpened = !_isBrainCameraOpened;
-        
         if (_isBrainCameraOpened)
-            _brainFadeInOut.FadeOut();
+            UI_TurnOffScreen();
         else
-            _brainFadeInOut.FadeIn();
+            UI_TurnOnScreen();
+    }
+
+    public void UI_TurnOnScreen()
+    {
+        _isBrainCameraOpened = true;
+        _brainFadeInOut.FadeIn();
+
+    }
+
+    public void UI_TurnOffScreen()
+    {
+        _isBrainCameraOpened = false;
+        _brainFadeInOut.FadeOut();
     }
 
     public void Update()

@@ -49,6 +49,9 @@ public class Brain : MonoBehaviour
     
     public List<BrainNode> Nodes = new List<BrainNode>();
 
+    public Color OnColor = new Color(1.0f, 1.0f, 1.0f, 1.0f);
+    public Color OffColor = new Color(0.0f, 0.0f, 0.0f, 0.0f);
+
     public Texture2D BarUI;
     public Vector2 BarPosition;
     public Vector2 BarWidth;
@@ -240,6 +243,8 @@ public class Brain : MonoBehaviour
         {
             return;
         }
+
+        GUI.color = Color.Lerp(OffColor, OnColor, CurrentBootLoader._brainFadeInOut.GetRatio());
 
         GUI.DrawTexture(new Rect(BarPosition, BarWidth), BarUI);
 

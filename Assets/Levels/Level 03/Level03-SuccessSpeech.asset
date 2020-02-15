@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d85bd652aed4e7f8b5223e16f07aca9, type: 3}
   m_Name: Level03-SuccessSpeech
   m_EditorClassIdentifier: 
-  Phrase: Ah! I remeber everything now, I can't thank you enough!
+  Phrase: Ah! I remember everything now, I can't thank you enough!
   sperator:
   - ' '
   wordList:
@@ -20,39 +20,49 @@ MonoBehaviour:
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I
     Label: 
     Prefix: 
     Suffix: 
-  - Text: remeber
+    SilentWhenCancelled: 0
+  - Text: remember
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: everything
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: now,
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: I
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: can't
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: thank
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: you
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0
   - Text: enough!
     Label: 
     Prefix: 
     Suffix: 
+    SilentWhenCancelled: 0

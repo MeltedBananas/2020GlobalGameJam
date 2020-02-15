@@ -3,8 +3,10 @@ using UnityEngine;
 
 public class FadeInOut : MonoBehaviour
 {
-    [SerializeField] private SpriteRenderer _renderer = null;
+    [SerializeField] public SpriteRenderer _renderer = null;
     [SerializeField] private float _fadeTime = 1f;
+
+    public GameObject AssociatedGameObject;
 
     private bool _isAnimated = false;
     private bool _isFadingIn = true;
@@ -12,18 +14,70 @@ public class FadeInOut : MonoBehaviour
     
     private static readonly Color BlackTransparent = new Color(0f, 0f, 0f, 0f); 
 
-    public void FadeOut()
-    {
-        _isAnimated = true;
-        _isFadingIn = false;
-        _deltaTime = 0f;
-    }
-
     public void FadeIn()
     {
-        _isAnimated = true;
+        if (!_isFadingIn)
+        {
+            _isAnimated = true;
+            _isFadingIn = true;
+            _deltaTime = 0f;
+
+            if (AssociatedGameObject != null)
+            {
+                AssociatedGameObject.SetActive(true);
+            }
+        }
+    }
+
+    public void FadeOut()
+    {
+        if (_isFadingIn)
+        {
+            _isAnimated = true;
+            _isFadingIn = false;
+            _deltaTime = 0f;
+        }
+    }
+
+    public void SnapIn()
+    {
+        _isAnimated = false;
         _isFadingIn = true;
-        _deltaTime = 0f;
+        _deltaTime = _fadeTime;
+
+        if(AssociatedGameObject != null)
+        {
+            AssociatedGameObject.SetActive(true);
+        }
+
+        RefreshColor();
+    }
+
+    public void SnapOut()
+    {
+        _isAnimated = false;
+        _isFadingIn = false;
+        _deltaTime = _fadeTime;
+
+        if (AssociatedGameObject != null)
+        {
+            AssociatedGameObject.SetActive(false);
+        }
+
+        RefreshColor();
+    }
+
+    public float GetRatio()
+    {
+        return Mathf.Lerp(
+            _isFadingIn ? 0.0f : 1.0f,
+            _isFadingIn ? 1.0f : 0.0f, 
+            Mathf.Clamp01(_deltaTime / _fadeTime));
+    }
+
+    private void RefreshColor()
+    {
+        _renderer.color = Color.Lerp(Color.black, BlackTransparent, GetRatio());
     }
 
     private void Update()
@@ -31,12 +85,19 @@ public class FadeInOut : MonoBehaviour
         if (_isAnimated)
         {
             _deltaTime += Time.deltaTime;
-            _renderer.color = Color.Lerp(_isFadingIn ? BlackTransparent : Color.black,
-                _isFadingIn ? Color.black : BlackTransparent, _deltaTime / _fadeTime);
+            RefreshColor();
             
             if (_deltaTime >= _fadeTime)
             {
                 _isAnimated = false;
+
+                if(!_isFadingIn)
+                {
+                    if (AssociatedGameObject != null)
+                    {
+                        AssociatedGameObject.SetActive(false);
+                    }
+                }
             }
         }
     }
