@@ -8,6 +8,7 @@ public class Menu : MonoBehaviour
     [SerializeField] private GameObject _postItsParent = null;
     [SerializeField] private GameObject _levelDescParent = null;
     [SerializeField] private GameObject _creditParent = null;
+    [SerializeField] private string _introText = "Explain the game here";
     public AudioManager _audioManager = null;
 
     [Header("Menu Disappear")]
@@ -29,13 +30,13 @@ public class Menu : MonoBehaviour
     public void UI_StartGame()
     {
         _audioManager.PlayMusic();
-        Bootloader.StartGame(false);
+        
         LeanTween.moveY(gameObject, -Screen.height -100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
         {
             _postItsParent.SetActive(false);
             _levelDescParent.SetActive(true);
-
-            Bootloader.StartGame(true);
+            Bootloader.StartGame(BootLoader.EGameFlow.GameIntro);
+            _levelDescription.SetText(_introText);
         });
     }
 

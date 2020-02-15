@@ -61,6 +61,12 @@ public class BootLoader : MonoBehaviour
 
     int QuestionAskedIndex = -1;
 
+    public enum EGameFlow
+    {
+        GameIntro,
+        Game,
+    };
+
     private void Start()
     {
         _speachBubble.enabled = false;
@@ -201,7 +207,11 @@ public class BootLoader : MonoBehaviour
         }
         else
         {
-            if (CurrentLevelIndex < _levelDefinitions.Count)
+            if(CurrentLevelIndex == -1)
+            {
+                StartGame(EGameFlow.Game);
+            }
+            else if (CurrentLevelIndex < _levelDefinitions.Count)
             {
                 LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
                 {
@@ -409,15 +419,19 @@ public class BootLoader : MonoBehaviour
         }
     }
 
-    public void StartGame(bool bMenuAnimDone)
+    public void StartGame(EGameFlow gameFlow)
     {
-        if (bMenuAnimDone)
+        switch (gameFlow)
         {
-            UI_ShowMenu();
-        }
-        else
-        {
-            NextLevel(false);
+            case EGameFlow.GameIntro:
+                UI_ShowMenu();
+                break;
+            case EGameFlow.Game:
+                LeanTween.moveY(_menu, -Screen.height - 100, _disappearSeconds).setEase(_disappearEaseType).setOnComplete(() =>
+                {
+                    NextLevel(true);
+                });
+                break;
         }
     }
 

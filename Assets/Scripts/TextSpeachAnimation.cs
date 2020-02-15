@@ -8,6 +8,7 @@ public class TextSpeachAnimation : MonoBehaviour
 {
     public int lastLetterfontSize = 50;
     public float delayBetweenLetters = 0.5f;
+    public float fastDelayBetweenLetters = 0.05f;
     private float _letterTimer = 0.0f;
     public TextDiagnostic TextDiagnostic;
     List<WordDisplayText> wordDisplayList = new List<WordDisplayText>();
@@ -90,7 +91,7 @@ public class TextSpeachAnimation : MonoBehaviour
                 }
             }
 
-            _letterTimer += delayBetweenLetters;
+            _letterTimer += Input.GetButton("FastTalk") ? fastDelayBetweenLetters : delayBetweenLetters;
         }
         
         textBox.SetText(result);
